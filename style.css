@@ -1,0 +1,23 @@
+.nav {
+  width: 140px;
+  min-height: 70px;
+  padding: 15px;
+  background-color: coral;
+  border-radius: 20px
+}
+.nav:hover {
+  background-color: coral;
+  box-shadow: 10px 10px;
+}
+* {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
