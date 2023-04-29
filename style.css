@@ -21,7 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.Sim Rez {
+.Simrez {
   background-color: #f4511e;
   border: none;
   color: white;
@@ -34,6 +34,6 @@
   transition: 0.3s;
 }
 
-.Sim Rez:hover {
+.Simrez:hover {
 opacity: 1
 }
