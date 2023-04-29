@@ -30,10 +30,10 @@
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 20px;
-  opacity: 0.6;
+  opacity: 1;
   transition: 0.3s;
 }
 
 .Simrez:hover {
-opacity: 1
+opacity: 1.4;
 }
