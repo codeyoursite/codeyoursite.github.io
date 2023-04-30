@@ -21,7 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.Simrez {
+.headerbtn {
   background-color: #0080AF;
   border: none;
   color: white;
@@ -33,6 +33,6 @@
   transition: 0.3s;
 }
 
-.Simrez:hover {
+.headerbtn:hover {
   background: #9EC8D6;
 }
