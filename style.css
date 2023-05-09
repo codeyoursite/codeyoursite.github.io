@@ -37,9 +37,11 @@
   background: #9EC8D6;
 }
 
-.page
-{
-  min-height: 100vh;
-  min-width: 100vw;
+.page {
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
   background-color: black;
 }
