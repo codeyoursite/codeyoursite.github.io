@@ -36,3 +36,10 @@
 .headerbtn:hover {
   background: #9EC8D6;
 }
+
+.page
+{
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: black;
+}
