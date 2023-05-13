@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a {
+	text-decoration: none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+body{
+	font-family: arial,helvetica;
+	color: #333;
+	color: rgba(0,0,0,0.5);
+}
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	position: relative;
+}
+h1 {
+	font-size: 6em;
+}
+p {
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1.5em;
+}
+.section {
+	text-align:center;
+}
+h1 {
+	font-size: 5em;
+	font-family: arial,helvetica;
+	color: #fff;
+	margin:0;
+}
+.section p,
+.intro p {
+	color: #fff;
+}
+.section{
+	text-align:center;
+}
+#section0{
+	background-image: linear-gradient(128deg,#40afff,#3f61ff);
+}
+
+#section1{
+	background-image: linear-gradient(128deg,#ff9a3f,#ff4b40);
+}
+
+#section2{
+	background-image: linear-gradient(128deg,#fc40ff,#543fff);
+}
+
+#section3{
+	background-image: linear-gradient(128deg,#40fff2,#3fbcff);
+}
