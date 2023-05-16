@@ -16,7 +16,7 @@ table {
 fieldset,img {
     border: 0;
 }
-address,caption,cite,code,dfn,em,strong,th,var {
+address,caption,cite,code,dfn,th,var {
     font-weight: normal;
     font-style: normal;
 }
