@@ -21,6 +21,7 @@ a {
   height: 30px;
   border: 2px solid;
   border-radius: 2px;
+  color: white;
   animation: jumpInfinite 1.5s infinite;
 }
 
