@@ -19,6 +19,7 @@ em {
   height: 30px;
   border: 2px solid white;
   border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
 }
 
 .down-arrow:after {
