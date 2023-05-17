@@ -34,7 +34,7 @@ q:before,q:after {
     content:'';
 }
 body{
-	font-family: arial,helvetica;
+	font-family: 'Roboto Slab', serif;
 	color: #333;
 	color: rgba(0,0,0,0.5);
 }
@@ -45,6 +45,7 @@ body{
 	position: relative;
 }
 h1 {
+	font-family: 'Roboto Slab', serif;
 	font-size: 6em;
 }
 p {
@@ -57,7 +58,7 @@ p {
 }
 h1 {
 	font-size: 5em;
-	font-family: arial,helvetica;
+	font-family: 'Roboto Slab', serif;
 	color: #fff;
 	margin:0;
 }
