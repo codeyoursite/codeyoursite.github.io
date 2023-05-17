@@ -19,7 +19,7 @@ a {
   left: calc(50% - 14px);
   width: 0;
   height: 30px;
-  border: 2px solid;
+  border: 2px solid white;
   border-radius: 2px;
 }
 
@@ -30,8 +30,8 @@ a {
   left: -10px;
   width: 16px;
   height: 16px;
-  border-bottom: 4px solid;
-  border-right: 4px solid;
+  border-bottom: 4px solid white;
+  border-right: 4px solid white;
   border-radius: 4px;
   transform: rotateZ(45deg);
 }
