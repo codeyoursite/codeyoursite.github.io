@@ -19,17 +19,14 @@ a {
   left: calc(50% - 14px);
   width: 0;
   height: 30px;
-  border: 2px solid;
+  border: 2px solid white;
   border-radius: 2px;
-  color: white;
   animation: jumpInfinite 1.5s infinite;
 }
 
 .down-arrow:after {
   content: " ";
   position: absolute;
-  top: 12px;
-  left: -10px;
   width: 16px;
   height: 16px;
   border-bottom: 4px solid;
