@@ -9,6 +9,7 @@ em {
 }
 .text {
 	color: white;
+	text-decoration: underline;
 }
 .down-arrow {
   position: absolute;
