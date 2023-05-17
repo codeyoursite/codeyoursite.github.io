@@ -11,7 +11,7 @@ em {
 	color: white;
 	text-decoration: underline;
 }
-.down-arrow {
+.animation {
   animation: jumpInfinite 1.5s infinite;
 }
 
