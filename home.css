@@ -7,9 +7,6 @@ form,fieldset,input,textarea,p,blockquote,th,td {
 em {
     font-style: italic;
 }
-a {
-	text-decoration: none;
-}
 .text {
 	color: white;
 }
