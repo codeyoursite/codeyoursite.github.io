@@ -29,7 +29,10 @@ em {
   height: 30px;
   border: 2px solid white;
   border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
 }
+
+
 
 .down-arrow:after {
   content: " ";
@@ -49,12 +52,13 @@ em {
     margin-top: 0;
   }
   50% {
-    margin-top: 65px;
+    margin-top: 20px;
   }
   100% {
     margin-top: 0;
   }
 }
+
 table {
     border-spacing: 0;
 }
@@ -65,7 +69,7 @@ address,caption,cite,code,dfn,th,var {
     font-weight: normal;
     font-style: normal;
 }
-strong{
+strong {
 	font-weight: bold;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -78,7 +82,7 @@ h1,h2,h3,h4,h5,h6 {
 q:before,q:after {
     content:'';
 }
-body{
+body {
 	font-family: 'Roboto Slab', serif;
 	color: #333;
 	color: rgba(0,0,0,0.5);
