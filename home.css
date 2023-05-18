@@ -15,6 +15,12 @@ em {
   animation: jumpInfinite 1.5s infinite;
 }
 
+#fixed-div {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
 .down-arrow {
   position: absolute;
   top: calc(100vh - 60px);
