@@ -6,7 +6,8 @@ function changeState(newState)
     case 0:
       break;
     case 1:
-      window.scrollTo(0,innerHeight);
+      const page2 = document.getElementById("page2");
+      element.scrollIntoView();
       break;
   }
 }
