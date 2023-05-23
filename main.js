@@ -1,14 +1,13 @@
 var state = 0
 function changeState(newState)
 {
-  let case = state;
-  switch(case)
+  switch(newState)
   {
     case 0:
       break;
     case 1:
       const page2 = document.getElementById("page2");
-      element.scrollIntoView();
+      page2.scrollIntoView();
       break;
   }
 }
