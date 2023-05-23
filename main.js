@@ -1,6 +1,7 @@
 var state = 0
 function changeState(newState)
 {
+  let case = state;
   switch(case)
   {
     case 0:
