@@ -9,6 +9,9 @@ function changeState(newState)
       const page2 = document.getElementById("page2");
       page2.scrollIntoView();
       break;
+    case 2:
+      const page3 = document.getElementById("page3");
+      page3.scrollIntoView();
   }
 }
 document.addEventListener("click", function()
