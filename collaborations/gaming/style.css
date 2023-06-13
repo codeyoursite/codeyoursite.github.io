@@ -44,7 +44,10 @@ header {
 }
 
 .nav_links li a:hover {
-  color: #0088a9
+  color: #0088a9;
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3)
 }
 
 #button button {
