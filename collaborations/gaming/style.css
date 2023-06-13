@@ -1,3 +1,9 @@
 html {
   scroll-behaviour: smooth;
 }
+body {
+  background-color: #2425A;
+}
+header {
+  position: fixed;
+}
