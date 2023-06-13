@@ -7,9 +7,61 @@ body {
 li {
   font-family: 'Montserrat', sans-serif;
 }
-header {
-  position: fixed;
-}
 img {
   border-radius: 50px;
+}
+#navbardiv {
+  background-color: #24252a;
+}
+
+#logo2 {
+  width: 130px;
+  height: 130px;
+  background-image: url(Capture.Png);
+  background-position: 50% 50%;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  border-radius: 190px;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  border: none
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+  font-size: x-large;
+}
+
+.nav_links li a:hover {
+  color: #0088a9
+}
+
+#button button {
+  padding: 9px 25px;
+  background-color: rgba(0,136,169,1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+#button button:hover {
+  background-color: rgba(0,136,169,0.8);
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3)
 }
