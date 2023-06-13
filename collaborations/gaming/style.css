@@ -76,15 +76,15 @@ header {
 }
 @font-face {
     font-family: panton;
-    src: url(fonts/PantonNarrow-Trial-Black.ttf);
+    src: url(Fonts/PantonNarrow-Trial-Black.ttf);
 }
 
 @font-face {
   font-family: panton2;
-  src: url(fonts/Panton-BlackCaps.woff2) format(woff2);
+  src: url(Fonts/Panton-BlackCaps.woff2) format(woff2);
 }
 
 @font-face {
   font-family: panton3;
-  src: url(fonts/Panton-BlackitalicCaps.woff2) format(woff2);
+  src: url(Fonts/Panton-BlackitalicCaps.woff2) format(woff2);
 }
