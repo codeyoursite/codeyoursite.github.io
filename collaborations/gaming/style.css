@@ -55,8 +55,33 @@ header {
   border: none
 }
 
-.nav_links, .mobile {
+.nav_links, .mobile-links {
   list-style: none;
+}
+
+.mobile {
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.mobile-links li a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.mobile-links li a:hover, .mobile-links li a:focus {
+  color: #f1f1f1;
 }
 
 .nav_links li {
