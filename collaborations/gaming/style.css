@@ -35,7 +35,7 @@ li, a, button {
         .menu-icon {
           display: block;
         }
-        .computer {
+        .computer, .cta {
           display: none;
         }
       }
