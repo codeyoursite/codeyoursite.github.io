@@ -40,10 +40,6 @@ li, a, button {
   display: none;
 }
 
-.menu icon:active,  {
-  
-}
-
 header {
   display: flex;
   justify-content: space-between;
