@@ -2,15 +2,12 @@ html {
   scroll-behaviour: smooth;
 }
 body {
-  background-color: #7393B3;
+  background-color: #71797E;
   font-family: panton;
   color: white;
 }
 img {
   border-radius: 50px;
-}
-#navbardiv {
-  background-color: #24252a;
 }
 #logo2 {
   width: 130px;
