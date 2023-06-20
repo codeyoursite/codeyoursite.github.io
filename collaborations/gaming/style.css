@@ -27,12 +27,12 @@ li, a, button {
   text-decoration: none;
 }
 
-.menu icon {
+.menu-icon {
   display: none;
 }
 
 @media (max-width: 767px) {
-        .menu icon {
+        .menu-icon {
           display: block;
         }
         .computer {
