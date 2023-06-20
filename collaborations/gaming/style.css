@@ -8,6 +8,7 @@ body {
 }
 .hero {
   background-color: #594545;
+  padding: 10px;
 }
 .hero-welcome {
   text-size: 60px;
