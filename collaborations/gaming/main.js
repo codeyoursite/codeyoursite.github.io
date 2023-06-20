@@ -1,3 +1,5 @@
-function openMenu() {
-  document.getElementById(mobile).style.display = 'block';
-}
+$(document).ready(function(){
+  $("menu-icon").click(function(){
+    $("mobile").slideToggle();
+  });
+});
