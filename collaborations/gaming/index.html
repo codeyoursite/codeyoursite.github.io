@@ -8,18 +8,11 @@
            <div id="navbardiv">
              <header>
                <img class="logo" id="logo2" src="Capture.PNG" alt="logo">
-               <div class="menu-icon">
+               <div class="menu-icon" onclick="openMenu()">
                     <span class="material-symbols-outlined">
                      menu
                      </span>
                  </div>
-                <div class="mobile">
-                   <ul class="mobile-links">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Platforms</a></li>
-                      <li><a href="#">Features</a></li>
-                   </ul>
-                </div>
                 <nav class="computer">
                  <ul class="nav_links">
                    <li><a href="#">About Us</a></li>
@@ -30,6 +23,13 @@
                 <a class="cta" href="#" id="button"><button>Download</button></a>
              </header>
            </div>
+            <div class="mobile">
+                   <ul class="mobile-links">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Platforms</a></li>
+                      <li><a href="#">Features</a></li>
+                   </ul>
+                </div>
            <div class="hero">
               <h1>Welcome to our gaming website!</h1>
               <p>We are going to put the newest gaming platforms, websites and even browsers.</p>
@@ -42,6 +42,7 @@
               <br><br><br><br><br><br><br><br>
            </div>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="main.js"></script>
         <script>
          AOS.init();
         </script>
