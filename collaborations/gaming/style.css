@@ -27,6 +27,22 @@ li, a, button {
   text-decoration: none;
 }
 
+@media (max-width: 767px) {
+        .menu icon {
+          display: block;
+        }
+        .computer {
+          display: none;
+        }
+      }
+
+.menu icon {
+  display: none;
+}
+
+.menu icon:active,  {
+  
+}
 
 header {
   display: flex;
