@@ -55,7 +55,7 @@ header {
   border: none
 }
 
-.nav_links {
+.nav_links, .mobile {
   list-style: none;
 }
 
