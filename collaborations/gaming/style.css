@@ -2,9 +2,12 @@ html {
   scroll-behaviour: smooth;
 }
 body {
-  background-color: #6e5050;
+  background-color: black;
   font-family: panton;
   color: white;
+}
+.hero {
+  background-color: #594545;
 }
 .hero-welcome {
   text-size: 60px;
