@@ -6,6 +6,10 @@ body {
   font-family: panton;
   color: white;
 }
+.hero-welcome {
+  text-size: 60px;
+  text-align: center;
+}
 img {
   border-radius: 50px;
 }
@@ -97,9 +101,4 @@ header {
 @font-face {
   font-family: panton3;
   src: url(Fonts/Panton-BlackitalicCaps.woff2) format(woff2);
-}
-
-h2 {
-  text-size: 60px;
-  text-align: center;
 }
