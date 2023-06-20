@@ -3,6 +3,7 @@ html {
 }
 body {
   background-color: #24252A;
+  font-family: panton;
 }
 img {
   border-radius: 50px;
@@ -10,7 +11,6 @@ img {
 #navbardiv {
   background-color: #24252a;
 }
-
 #logo2 {
   width: 130px;
   height: 130px;
