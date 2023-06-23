@@ -17,7 +17,7 @@
 .square-rotate-2 {
   --size: 100px;
   --accent-opacity: .25;
-  --color: currentColor;
+  --color: #ff7373;
   --animation-timing-function: linear;
   --animation-duration: 2s;
   position: relative;
