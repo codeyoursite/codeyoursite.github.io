@@ -14,32 +14,55 @@
   background-color: none;
 }
 
-#loader {
+.square-rotate-2 {
+  --size: 100px;
+  --accent-opacity: .25;
+  --color: currentColor;
+  --animation-timing-function: linear;
+  --animation-duration: 2s;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
   position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid white;
-  border-right: 16px solid orange;
-  border-bottom: 16px solid white;
-  border-left: 16px solid orange;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
 }
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+.square-rotate-2::before,
+.square-rotate-2::after {
+  content: '';
+  position: absolute;
+  transform: rotate(0deg);
+  animation: var(--animation-timing-function) var(--animation-duration) infinite square-rotate-2-animation;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.square-rotate-2::before {
+  inset: 0;
+  background-color: var(--color);
+  opacity: var(--accent-opacity);
+}
+
+.square-rotate-2::after {
+  top: 12.5%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
+  background-color: var(--color);
+  animation-direction: reverse;
+}
+
+@keyframes square-rotate-2-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Add animation to "page content" */
