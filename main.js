@@ -1,3 +1,13 @@
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 2500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 var state = 0
 function changeState(newState)
 {
@@ -19,13 +29,3 @@ document.addEventListener("click", function()
   state += 1;
   changeState(state);
 });
-var myVar;
-
-function myFunction() {
-  myVar = setTimeout(showPage, 2500);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
