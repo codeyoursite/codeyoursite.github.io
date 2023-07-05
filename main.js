@@ -14,7 +14,10 @@ function showPage() {
   "thumbnail_IMG_9690.jpg",
   "thumbnail_image1.jpg",
   "thumbnail_image0.jpg",
-  "thumbnail_IMG_9688.jpg"
+  "thumbnail_IMG_9688.jpg",
+  "thumbnail_IMG_9699.jpg",
+  "thumbnail_IMG_9700.jpg",
+  "thumbnail_IMG_9695.jpg"
   ];
   let i = 0;
   changePicture()
