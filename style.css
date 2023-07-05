@@ -8,6 +8,11 @@
     scroll-behavior: smooth;
 }
 
+body {
+ background-image: url("bg.jpg");
+ background-attachment: fixed;
+}
+
 .square-rotate-2 {
   --size: 100px;
   --accent-opacity: .25;
