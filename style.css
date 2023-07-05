@@ -7,13 +7,6 @@
     user-select: none; /* Standard */
     scroll-behavior: smooth;
 }
-.page {
-  height: 100vh;
-}
-
-#page2 {
-  background-color: none;
-}
 
 .square-rotate-2 {
   --size: 100px;
@@ -122,4 +115,8 @@ nav ul li {
 #myDiv {
   display: none;
   text-align: center;
+}
+
+.bg-body-tertiary {
+  background: none !important;
 }
