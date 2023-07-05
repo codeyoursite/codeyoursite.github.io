@@ -12,7 +12,7 @@ function showPage() {
   const images = [
   "developer.jpg",
   "thumbnail_IMG_9690.jpg",
-  "thumbnail_image1.jpg"
+  "thumbnail_image1.jpg",
   "thumbnail_image0.jpg"
   ];
   let i = 0;
