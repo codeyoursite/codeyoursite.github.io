@@ -14,8 +14,9 @@ function showPage() {
   "https://images.unsplash.com/photo-1588250318414-908688966feb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2089&q=80",
   "https://images.unsplash.com/photo-1524077410193-2f667f9ab09a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80"
   ];
-  window.setInterval(changePicture, 3000);
   let i = 0;
+  changePicture()
+  window.setInterval(changePicture, 3000);
   function changePicture() {
     i++;
     if (i > images.length - 1) i = 0;
