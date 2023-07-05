@@ -101,7 +101,7 @@ nav ul li {
 @media (min-width: 992px) {
  .underline {
    position: relative;
-   color: black;
+   color: white;
    text-decoration: none;
  }
  
