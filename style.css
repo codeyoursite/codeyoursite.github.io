@@ -119,4 +119,5 @@ nav ul li {
 
 .bg-body-tertiary {
   background: none !important;
+  --bs-bg-opacity: 0;
 }
