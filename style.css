@@ -8,9 +8,13 @@
     scroll-behavior: smooth;
 }
 
-.main {
+body {
+ color: white;
  background-image: url("bg.jpg");
  background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
 }
 
 .square-rotate-2 {
