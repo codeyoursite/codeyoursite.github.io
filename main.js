@@ -1,6 +1,6 @@
 var myVar;
-document.getElementbyId("body").style.backgroundImage = none
-document.getElementbyId("body").style.backgroundColor = #fff
+document.body.style.backgroundImage = "none";
+document.body.style.backgroundColor = "#fff";
 
 function myFunction() {
   myVar = setTimeout(showPage, 1500);
