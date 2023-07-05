@@ -116,8 +116,3 @@ nav ul li {
   display: none;
   text-align: center;
 }
-
-.bg-body-tertiary {
-  background: none !important;
-  --bs-bg-opacity: 0 !important;
-}
