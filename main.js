@@ -9,6 +9,7 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+  const main = document.getElementById("main")
   const images = [
   "Screenshot 2023-07-05 155147.jpg",
   "thumbnail_IMG_9690.jpg",
@@ -25,6 +26,6 @@ function showPage() {
   function changePicture() {
     i++;
     if (i > images.length - 1) i = 0;
-    body.style.backgroundImage = `url(${images[i]})`;
+    main.style.backgroundImage = `url(${images[i]})`;
 }
 }
