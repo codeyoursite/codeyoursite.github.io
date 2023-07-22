@@ -44,3 +44,10 @@ li a:hover:not(.active) {
   font-family: Poppins;
   src: url(Poppins-Regular.ttf);
 }
+
+header {
+  color: white;
+  padding: 20px;
+  justify-content: center;
+  background-color: #333;
+}
