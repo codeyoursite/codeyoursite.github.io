@@ -49,7 +49,10 @@ li a:hover:not(.active) {
 
 header {
   color: white;
-  padding: 20px;
+  padding-top: 50px;
+  padding-right: 60px;
+  padding-left: 20px;
+  padding-bottom: 60px;
   justify-content: center;
   background-color: #333;
 }
