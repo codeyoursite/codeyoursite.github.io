@@ -8,7 +8,7 @@ function myFunction() {
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
+  document.getElementById("main").style.display = "block";
   const main = document.getElementById("main")
   const images = [
   "Screenshot 2023-07-05 155147.jpg",
