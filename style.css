@@ -119,6 +119,7 @@ nav ul li {
  .underline:hover:after {
    transform: scaleX(1);
  }
+}
 
 #myDiv {
   display: none;
