@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
 }
 
-.main {
+.page {
  background-attachment: fixed;
  background-size: cover;
  background-position: center;
@@ -121,7 +121,7 @@ nav ul li {
  }
 }
 
-#main {
+#page {
   display: none;
   text-align: center;
 }
