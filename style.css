@@ -135,7 +135,12 @@ h1 {
      1px 1px 0 #000 !important;
 }
 
-scratch_video {
+.scratch_video {
   height: auto;
   width: 100%;
+}
+
+.scratch_link {
+  color: black;
+  text-decoration: none;
 }
