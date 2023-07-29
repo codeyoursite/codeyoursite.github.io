@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 * {
     font-family: 'Roboto Slab', serif;
     -webkit-user-select: none; /* Safari */        
@@ -141,10 +141,11 @@ h1 {
   height: auto;
  }
 }
-
-.scratch_video {
-  height: auto;
-  width: 100%;
+@media (max-width: 650px) {
+ .scratch_video {
+   height: auto;
+   width: 100%;
+ }
 }
 
 .scratch_link {
