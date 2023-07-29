@@ -136,8 +136,10 @@ h1 {
 }
 
 @media (min-width: 650px) {
-  width: 400px;
-  height: 300px;
+ .scratch_video {
+  width: 650px;
+  height: auto;
+ }
 }
 
 .scratch_video {
