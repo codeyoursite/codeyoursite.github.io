@@ -135,6 +135,11 @@ h1 {
      1px 1px 0 #000 !important;
 }
 
+@media (min-width: 650px) {
+  width: 400px;
+  height: 300px;
+}
+
 .scratch_video {
   height: auto;
   width: 100%;
