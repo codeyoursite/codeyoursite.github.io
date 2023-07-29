@@ -141,6 +141,7 @@ h1 {
   height: auto;
  }
 }
+
 @media (max-width: 650px) {
  .scratch_video {
    height: auto;
