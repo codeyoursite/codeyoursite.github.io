@@ -143,6 +143,14 @@ h1 {
     .animations {
         margin: 0 0 0 50%;
     }
+    .scratch_video {
+       height: auto;
+       width: 50%;
+   }
+  .animations_video {
+       height: auto;
+       width: 50%;
+   }
 }
 
 @media (max-width: 650px) {
