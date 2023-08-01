@@ -9,7 +9,7 @@ body {
 @media (prefers-color-scheme: dark) {
     body {
       color: whitesmoke;
-      background: linear-gradient(125deg,#380036,#0CBABA);
+      background: linear-gradient(125deg,#380036,#0CBABA) !important;
     }
     div {
       color: whitesmoke;
@@ -19,7 +19,7 @@ body {
 @media (prefers-color-scheme: light) {
     body {
       color: #343434;
-      background: linear-gradient(125deg,#6a89cc,#b8e994);
+      background: linear-gradient(125deg,#6a89cc,#b8e994) !important;
     }
     div {
       color: #343434;
