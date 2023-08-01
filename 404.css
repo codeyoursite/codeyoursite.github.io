@@ -45,6 +45,7 @@ div h1 {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke-width: 10px;
+    font-family: 'RobotoSlabLight', serif;
 }
 
 div a {
@@ -61,4 +62,9 @@ div a {
 
 div a:hover {
     background: #e55039;
+}
+
+@font-face {
+  font-family: RobotoSlabLight;
+  src: url('RobotoSlab-ExtraLight.ttf') format('ttf');
 }
