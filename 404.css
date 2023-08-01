@@ -58,7 +58,6 @@ div a {
     font-size: 14px;
     text-transform: uppercase;
     transition: 0.4s;
-    padding: 20px;
 }
 
 div a:hover {
