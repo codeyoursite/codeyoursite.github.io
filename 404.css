@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Slab', serif;
+    background: linear-gradient(125deg,#380036,#0CBABA) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,7 +40,7 @@ div h1 {
     font-size: 160px;
     margin: 0;
     color: black;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 20px;
     background: url(404.jpg) center no-repeat;
     background-size: cover;
