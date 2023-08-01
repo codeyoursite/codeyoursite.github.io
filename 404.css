@@ -1,4 +1,29 @@
- background: linear-gradient(125deg,#6a89cc,#b8e994);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      color: whitesmoke;
+      background: linear-gradient(125deg,#380036,#0CBABA);
+    }
+    div {
+      color: whitesmoke;
+    }
+}.
+
+@media (prefers-color-scheme: light) {
+    body {
+      color: #343434;
+      background: linear-gradient(125deg,#6a89cc,#b8e994);
+    }
+    div {
+      color: #343434;
+    }
 }
 
 div {
@@ -7,7 +32,6 @@ div {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    color: #343434;
     background-size: cover;
 }
 
@@ -34,6 +58,7 @@ div a {
     font-size: 14px;
     text-transform: uppercase;
     transition: 0.4s;
+    padding: 20px;
 }
 
 div a:hover {
