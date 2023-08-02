@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>This is my first test.</h1>
+
+<style>
+#button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+#button:hover,
+#button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+#button:active {
+  opacity: .5;
+}
+</style>
+
+
+<script>
+	function audio() {
+      let myAudio = document.getElementById("audio")
+      myAudio.play()
+      document.getElementById("button").innerHTML = "Neigh!!!";
+      timeout = setTimeout(reset, 2000);
+    }
+    function reset() {
+    	document.getElementById("button").innerHTML = "Click me!";
+    }
+</script>
+
+<button onclick="audio()" id="button">Click me!</button>
+<audio id="audio">
+  <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
