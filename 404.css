@@ -23,16 +23,6 @@ body {
 	}
 }
 
-@media (prefers-color-scheme: light) {
-    body {
-      color: #343434;
-      background: linear-gradient(#6a89cc, #b8e994) !important;
-    }
-    div {
-      color: #343434;
-    }
-}
-
 div {
     width: 100%;
     position: absolute;
@@ -52,7 +42,7 @@ div h1 {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke-width: 10px;
-    font-family: 'RobotoSlabLight', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 div a {
@@ -69,9 +59,4 @@ div a {
 
 div a:hover {
     background: #e55039;
-}
-
-@font-face {
-  font-family: RobotoSlabLight;
-  src: url('RobotoSlab-ExtraLight.ttf') format('ttf');
 }
