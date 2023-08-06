@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Test 3</title>
+    <script>
+      if (document.addEventListener) {
+        document.addEventListener('contextmenu', function(e) {
+          alert("You've tried to open context menu"); //here you draw your own menu
+          console.log("You've tried to open context menu"); //here you draw your own menu
+          e.preventDefault();
+        }, false);
+      } else {
+        document.attachEvent('oncontextmenu', function() {
+          alert("You've tried to open context menu");
+          window.event.returnValue = false;
+      });
+    }
+    </script>
+  </head>
+  <h1>Test Right Click Menu</h1>
+</html>
