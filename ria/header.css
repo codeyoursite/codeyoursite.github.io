@@ -44,7 +44,7 @@ li a:hover:not(.active) {
 
 @font-face {
   font-family: Poppins;
-  src: url(Poppins-Regular.ttf);
+  src: url(//theguythatloveshtml.github.io/ria/Poppins-Regular.ttf);
 }
 
 header {
