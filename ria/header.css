@@ -3,7 +3,7 @@ body, header, nav {
 }
 
 body {
-  margin: none;
+  margin: 0;
 }
 
 ul {
