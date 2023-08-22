@@ -25,6 +25,10 @@
                 menu.style.top = e.pageY + "px"; 
             } 
       } 
+      function copyText() {
+            navigator.clipboard.writeText
+                ("https://codeyoursite.github.io/test/test3/");
+        }
     </script>
     <style>
     * {
@@ -69,7 +73,7 @@
       -o-transition: 0.5s linear;
     }
     .menu > li > a:hover {
-      background:#f1f3f7;
+      background:  #f1f3f7;
       color: #467BB9;
     }
     .menu > li > a > i {
@@ -80,8 +84,8 @@
   <h1>Test Right Click Menu</h1>
   <div id="contextMenu" class="context-menu" style="display: none"> 
         <ul class="menu"> 
-            <li class="share"><a href="#"><i class="fa fa-share" aria-hidden="true"></i> Share</a></li> 
-            <li class="link"><a href="#"><i class="fa fa-link" aria-hidden="true"></i> Copy Link Address</a></li> 
+            <li class="share"><a href="mailto:?subject=Share Code Your Site's Test;body=Go to https://codeyoursite.github.io/test to see more."><i class="fa-regular fa-share" aria-hidden="true"></i> Share</a></li> 
+            <li class="link"><a href="#" onclick="copyText()"><i class="fa-regular fa-link" aria-hidden="true"></i> Copy Link Address</a></li> 
             <li class="home"><a href="//codeyoursite.github.io" target="_blank"><i class="fa-regular fa-house" aria-hidden="true"></i> Go Home</a></li> 
             <li class="next"><a href="../test4/" target="_blank"><i class="fa-regular fa-forward" aria-hidden="true"></i> Next Test</a></li> 
         </ul> 
