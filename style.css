@@ -6,6 +6,7 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 .page {
@@ -138,7 +139,8 @@ h1 {
 @media (min-width: 650px) {
      .scratch {
         float: left;
-        width: 50%;
+        width: calc(50% - 5px);
+        margin: 5px;
     }
     .animations {
         margin: 0 0 0 50%;
