@@ -9,7 +9,7 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
-  var text = ['Shoelace', 'Fact 2', 'Fact 183'];
+  var text = ['Sole Search', 'Animations', 'RIA Book Club'];
   var randomFact = Math.floor(Math.random() * text.length);
   document.getElementById("secondText").innerHTML = text[randomFact];
   const main = document.getElementById("main")
@@ -31,4 +31,4 @@ function showPage() {
     if (i > images.length - 1) i = 0;
     main.style.backgroundImage = `url(${images[i]})`;
 }
-}
+
