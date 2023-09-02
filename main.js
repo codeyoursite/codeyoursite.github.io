@@ -9,9 +9,6 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
-  var text = ['Sole Search', 'Animations', 'RIA Book Club'];
-  var randomFact = Math.floor(Math.random() * text.length);
-  document.getElementById("secondText").innerHTML = text[randomFact];
   const main = document.getElementById("main")
   const images = [
   "Screenshot 2023-07-05 155147.jpg",
