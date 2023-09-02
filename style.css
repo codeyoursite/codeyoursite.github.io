@@ -136,11 +136,20 @@ h1 {
      1px 1px 0 #000 !important;
 }
 
+.animations {
+    background: #2424bf;
+    padding: 20px;
+}
+
+.scratch {
+    background: #b8d8e3;
+    padding: 20px;
+}
+
 @media (min-width: 650px) {
      .scratch {
         float: left;
-        width: calc(50% - 5px);
-        margin: 5px;
+        width: 50%;
     }
     .animations {
         margin: 0 0 0 50%;
