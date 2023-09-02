@@ -31,4 +31,3 @@ function showPage() {
     if (i > images.length - 1) i = 0;
     main.style.backgroundImage = `url(${images[i]})`;
 }
-
