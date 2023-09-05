@@ -10,11 +10,7 @@
 }
 
 .page {
- background-attachment: fixed;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- transition: background 0.5s linear;
+ background-color: #fff;
 }
 
 .square-rotate-2 {
