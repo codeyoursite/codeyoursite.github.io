@@ -9,8 +9,22 @@
     box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+  header {
+    background: #1f3c4a;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  header {
+    background: #aeebd5;
+    color: black;
+  }
+}
+
 .page {
- background-color: #fff;
+ background-color: #000;
 }
 
 .square-rotate-2 {
