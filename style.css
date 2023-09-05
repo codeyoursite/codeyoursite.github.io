@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (prefers-color-scheme: dark) {
   header {
     background: #1f3c4a;
@@ -27,10 +33,6 @@ nav a {
   nav a {
     color: black;
 }
-}
-
-nav {
-    justify-content: space-between;
 }
 
 nav a {
