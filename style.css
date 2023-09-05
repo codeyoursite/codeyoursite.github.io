@@ -9,11 +9,19 @@
     box-sizing: border-box;
 }
 
+header {
+    justify-content: space-between;
+    display: inline-block;
+}
+
 @media (prefers-color-scheme: dark) {
   header {
     background: #1f3c4a;
     color: white;
   }
+nav a {
+    color: white;
+}
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,6 +29,23 @@
     background: #aeebd5;
     color: black;
   }
+  nav a {
+    color: black;
+}
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
 }
 
 .page {
@@ -95,17 +120,6 @@
 @keyframes animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-right: 10px;
 }
 
 @media (min-width: 992px) {
