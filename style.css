@@ -9,11 +9,6 @@
     box-sizing: border-box;
 }
 
-header {
-    justify-content: space-between;
-    display: inline-block;
-}
-
 @media (prefers-color-scheme: dark) {
   header {
     background: #1f3c4a;
@@ -32,6 +27,11 @@ nav a {
   nav a {
     color: black;
 }
+}
+
+nav {
+    justify-content: space-between;
+    display: inline-block;
 }
 
 nav a {
