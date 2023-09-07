@@ -15,8 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 0 2rem;
-    margin: 9px;
+    padding: 9px;
 }
 
 @media (prefers-color-scheme: dark) {
