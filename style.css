@@ -20,7 +20,7 @@ header {
 
 @media (prefers-color-scheme: dark) {
   header {
-    background: #1f3c4a;
+    background: #333;
     color: white;
   }
   nav a {
@@ -38,7 +38,7 @@ header {
   }
 }
 
-@media (max-width: 992px;) {
+@media and (max-width: 992px) {
     nav {
         display: none !important;
     }
