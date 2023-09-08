@@ -78,7 +78,7 @@ header {
 
 nav {
     height: 60px;
-    margin: auto 0;
+    margin: 30px 10px 0 0;
     display: flex;
     gap: 2rem;
 }
