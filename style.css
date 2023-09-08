@@ -33,6 +33,9 @@ header {
 .dropdown_menu li {
     list-style: none;
     padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (prefers-color-scheme: dark) {
