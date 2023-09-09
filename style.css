@@ -36,7 +36,7 @@ header {
 .dropdown_menu li {
     list-style: none;
     padding: 0.7rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
