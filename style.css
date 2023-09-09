@@ -33,10 +33,14 @@ header {
     transition: height .2s ease;
 }
 
+.dropdown_menu ul {
+    display: none;
+}
+
 .dropdown_menu li {
     list-style: none;
     padding: 0.7rem;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
