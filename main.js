@@ -7,6 +7,12 @@ const dropDownMenu = document.querySelector('.dropdown_menu');
 
 toggleBtn.onclick = function () {
   dropDownMenu.classList.toggle('open');
+  var li = document.getElementById("li");
+  if (li.style.display === "none") {
+    li.style.display = "block";
+  } else {
+    li.style.display = "none";
+  }
 }
 
 function myFunction() {
