@@ -46,7 +46,7 @@ header {
 }
 
 .dropdown_menu.open {
-    height: 240px;
+    height: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
