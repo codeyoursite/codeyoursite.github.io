@@ -54,7 +54,7 @@ header {
     background: #333;
     color: white;
   }
-  nav a {
+  nav a, .dropdown_menu a {
     color: white;
   }
 }
@@ -64,12 +64,12 @@ header {
     background: #aeebd5;
     color: black;
   }
-  nav a {
+  nav a, .dropdown_menu a {
     color: black;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
     nav {
         display: none !important;
     }
@@ -81,7 +81,7 @@ header {
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 900px) {
     nav {
         display: flex !important;
     }
@@ -97,7 +97,7 @@ nav {
     gap: 2rem;
 }
 
-nav a {
+nav a, .dropdown_menu a {
     text-decoration: none;
     font-size: 1rem;
 }
