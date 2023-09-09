@@ -8,6 +8,9 @@ const dropDownMenu = document.querySelector('.dropdown_menu');
 toggleBtn.onclick = function () {
   dropDownMenu.classList.toggle('open');
   var li = document.getElementById("li");
+  toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
   if (li.style.display === "block") {
     li.style.display = "none";
   } else {
