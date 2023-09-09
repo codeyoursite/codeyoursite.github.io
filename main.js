@@ -8,10 +8,10 @@ const dropDownMenu = document.querySelector('.dropdown_menu');
 toggleBtn.onclick = function () {
   dropDownMenu.classList.toggle('open');
   var li = document.getElementById("li");
-  if (li.style.display === "none") {
-    li.style.display = "block";
-  } else {
+  if (li.style.display === "block") {
     li.style.display = "none";
+  } else {
+    li.style.display = "block";
   }
 }
 
