@@ -18,7 +18,7 @@ toggleBtn.onclick = function () {
 }
 
 function myFunction() {
-  myVar = setTimeout(showPage, 1500);
+  myVar = setTimeout(showPage, 1200);
 }
 
 function showPage() {
