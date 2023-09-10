@@ -16,22 +16,39 @@ toggleBtn.onclick = function () {
   toggleBtnIcon.classList = isOpen
     ? 'fa-solid fa-xmark'
     : 'fa-solid fa-bars'
+  if (li.style.display === "block") {
+    li.style.display = "none";
+  } else {
+    li.style.display = "block";
+  }
 }
 
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   const isOpen = oneMenu.classList.contains('open');
+  var liOne = document.getElementById("li_one");
   oneBtnIcon.classList = isOpen
     ? 'fa-solid fa-caret-up'
     : 'fa-solid fa-caret-down'
+  if (liOne.style.display === "block") {
+    liOne.style.display = "none";
+  } else {
+    liOne.style.display = "block";
+  }
 }
 
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   const isOpen = oneMenu.classList.contains('open');
-  twoBtnIcon.classList = isOpen
+  var liTwo = document.getElementById("li_two");
+  oneBtnIcon.classList = isOpen
     ? 'fa-solid fa-caret-up'
     : 'fa-solid fa-caret-down'
+  if (liTwo.style.display === "block") {
+    liTwo.style.display = "none";
+  } else {
+    liTwo.style.display = "block";
+  }
 }
 
 
