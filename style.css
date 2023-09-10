@@ -100,8 +100,6 @@ header {
 nav {
     height: 60px;
     margin: 30px 10px 0 0;
-    display: flex;
-    gap: 2rem;
 }
 
 nav a, .dropdown_menu a {
@@ -112,6 +110,8 @@ nav a, .dropdown_menu a {
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: 2rem;
 }
 
 nav ul li {
