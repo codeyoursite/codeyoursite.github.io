@@ -37,9 +37,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 class="logo">Wilson MacMahon</h2>
     <nav>
       <ul>
-        <li><a href="#" class="link active">Home</a></li>
-        <li><a href="#" class="link dropdown">Animations</a></li>
-        <li><a href="#" class="link dropdown">Other</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <div class="dropdown">
+          <li><a href="#" class="dropdown_link">Animations <i class="fa-solid fa-caret-down"></i></a></li>
+          <div class="dropdown_menu">
+            <a href="animations/">Animations</a>
+            <a href="animations/animation1/">Animation 1</a>
+            <a href="animations/animation2/">Animation 2</a>
+            <a href="animations/animation3/">Animation 3</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <li><a href="#" class="dropdown_link">Other <i class="fa-solid fa-caret-down"></i></a></li>
+          <div class="dropdown_menu">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </ul>
     </nav>
     <div class="bars">
@@ -48,9 +63,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </header>
     <div class="dropdown_menu">
     <ul id="li">
-        <li><a href="#" class="link active">Home</a></li>
-        <li><a href="#" class="link dropdown">Animations</a></li>
-        <li><a href="#" class="link dropdown">Other</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <div class="dropdown_responsive">
+          <li><a href="#" class="dropdown_link">Animations <i class="fa-solid fa-caret-down"></i></a></li>
+        </div>
+        <div class="dropdown_responsive">
+          <li><a href="#" class="dropdown_link">Other <i class="fa-solid fa-caret-down"></i></a></li>
+        </div>
       </ul>
     </div>
     <div class="page" style="height: 100vh;" id="main">
