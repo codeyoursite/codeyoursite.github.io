@@ -28,6 +28,8 @@ toggleBtn.onclick = function () {
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
+  twoBtnIcon.classList.remove("fa-solid fa-caret-up");
+  twoBtnIcon.classList.add("fa-solid fa-caret-down");
   liTwo.style.display = "none";
   const isOpen_one = oneMenu.classList.contains('open');
   oneBtnIcon.classList = isOpen_one
@@ -43,6 +45,8 @@ oneBtn.onclick = function () {
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
+  oneBtnIcon.classList.remove("fa-solid fa-caret-up");
+  oneBtnIcon.classList.add("fa-solid fa-caret-down");
   liOne.style.display = "none";
   const isOpen_two = twoMenu.classList.contains('open');
   twoBtnIcon.classList = isOpen_two
