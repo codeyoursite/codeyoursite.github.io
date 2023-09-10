@@ -43,10 +43,6 @@ header {
     right: 5rem;
 }
 
-.dropdown_menu ul {
-    display: none;
-}
-
 .dropdown_menu li, .dropdown_content_one li, .dropdown_content_two li {
     list-style: none;
     padding: 0.7rem;
@@ -55,7 +51,12 @@ header {
     justify-content: center;
 }
 
-.dropdown_menu.open, .dropdown_content.open{
+.dropdown_menu ul, .dropdown_content_one ul, .dropdown_content_two ul {
+    display: none;
+}
+
+
+.dropdown_menu.open, .dropdown_content_one.open, .dropdown_content_two.open {
     height: 150px;
 }
 
