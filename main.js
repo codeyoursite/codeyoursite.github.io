@@ -43,9 +43,9 @@ twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
   liOne.style.display = "none";
-  const isOpen_two = oneMenu.classList.contains('open');
+  const isOpen_two = twoMenu.classList.contains('open');
   var liTwo = document.getElementById("li_two");
-  oneBtnIcon.classList = isOpen_two
+  twoBtnIcon.classList = isOpen_two
     ? 'fa-solid fa-caret-up'
     : 'fa-solid fa-caret-down'
   if (liTwo.style.display === "block") {
