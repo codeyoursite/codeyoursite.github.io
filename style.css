@@ -55,7 +55,7 @@ header {
     justify-content: center;
 }
 
-.dropdown_menu.open {
+.dropdown_menu.open, .dropdown_content.open{
     height: 150px;
 }
 
