@@ -56,8 +56,12 @@ header {
 }
 
 
-.dropdown_menu.open, .dropdown_content_one.open, .dropdown_content_two.open {
+.dropdown_menu.open, .dropdown_content_two.open {
     height: 150px;
+}
+
+.dropdown_content_one.open {
+    height: 195px;
 }
 
 @media (prefers-color-scheme: dark) {
