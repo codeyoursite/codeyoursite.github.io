@@ -286,9 +286,11 @@ h1 {
      .scratch {
         float: left;
         width: 50%;
+        height: 190px;
     }
     .animations {
         margin: 0 0 0 50%;
+        height: 190px;
     }
     .scratch_video {
        height: auto;
