@@ -81,6 +81,13 @@ header {
     }
 }
 
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 1rem;
+        width: unset;
+    }
+}
+
 @media (min-width: 900px) {
     nav {
         display: flex !important;
