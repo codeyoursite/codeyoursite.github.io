@@ -25,9 +25,9 @@ toggleBtn.onclick = function () {
 
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
-  const isOpen = oneMenu.classList.contains('open');
+  const isOpen_one = oneMenu.classList.contains('open');
   var liOne = document.getElementById("li_one");
-  oneBtnIcon.classList = isOpen
+  oneBtnIcon.classList = isOpen_one
     ? 'fa-solid fa-caret-up'
     : 'fa-solid fa-caret-down'
   if (liOne.style.display === "block") {
@@ -39,9 +39,9 @@ oneBtn.onclick = function () {
 
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
-  const isOpen = oneMenu.classList.contains('open');
+  const isOpen_two = oneMenu.classList.contains('open');
   var liTwo = document.getElementById("li_two");
-  oneBtnIcon.classList = isOpen
+  oneBtnIcon.classList = isOpen_two
     ? 'fa-solid fa-caret-up'
     : 'fa-solid fa-caret-down'
   if (liTwo.style.display === "block") {
