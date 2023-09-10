@@ -20,11 +20,7 @@ header {
     height: 60px;
 }
 
-.dropdown_content ul {
-    list-style: none;
-}
-
-.dropdown_menu, .dropdown_content {
+.dropdown_menu, .dropdown_content_one, .dropdown_content_two {
     position: absolute;
     top: 60px;
     bottom: -1px;
@@ -39,15 +35,19 @@ header {
     border-radius: 10px;
 }
 
-.dropdown_menu {
+.dropdown_menu, .dropdown_content_two {
     right: 1rem;
+}
+
+.dropdown_content_one {
+    right: 5rem;
 }
 
 .dropdown_menu ul {
     display: none;
 }
 
-.dropdown_menu li {
+.dropdown_menu li, .dropdown_content_one li, .dropdown_content_two li {
     list-style: none;
     padding: 0.7rem;
     display: flex;
