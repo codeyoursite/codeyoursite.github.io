@@ -20,6 +20,10 @@ header {
     height: 60px;
 }
 
+.dropdown_content ul {
+    list-style: none;
+}
+
 .dropdown_menu, .dropdown_content {
     position: absolute;
     top: 60px;
