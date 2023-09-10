@@ -14,24 +14,24 @@ toggleBtn.onclick = function () {
   var li = document.getElementById("li");
   const isOpen = dropDownMenu.classList.contains('open');
   toggleBtnIcon.classList = isOpen
-    ? 'fa-solid fa-caret-up'
-    : 'fa-solid fa-caret-down'
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
 }
 
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   const isOpen = oneMenu.classList.contains('open');
   oneBtnIcon.classList = isOpen
-    ? 'fa-solid fa-xmark'
-    : 'fa-solid fa-bars'
+    ? 'fa-solid fa-caret-up'
+    : 'fa-solid fa-caret-down'
 }
 
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   const isOpen = oneMenu.classList.contains('open');
   twoBtnIcon.classList = isOpen
-    ? 'fa-solid fa-xmark'
-    : 'fa-solid fa-bars'
+    ? 'fa-solid fa-caret-up'
+    : 'fa-solid fa-caret-down'
 }
 
 
