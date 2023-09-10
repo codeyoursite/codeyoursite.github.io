@@ -20,20 +20,23 @@ header {
     height: 60px;
 }
 
-.dropdown_menu {
+.dropdown_menu, .dropdown_content {
     position: absolute;
-    right: 1rem;
     top: 60px;
     bottom: -1px;
     width: 300px;
-    height: 0;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    display: flex;
+    height: 0;
     transition: height .2s ease;
+    display: flex;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.dropdown_menu {
+    right: 1rem;
 }
 
 .dropdown_menu ul {
