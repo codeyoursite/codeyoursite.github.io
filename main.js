@@ -25,6 +25,8 @@ toggleBtn.onclick = function () {
 
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
+  twoMenu.classList.remove('open');
+  liTwo.style.display = "none";
   const isOpen_one = oneMenu.classList.contains('open');
   var liOne = document.getElementById("li_one");
   oneBtnIcon.classList = isOpen_one
@@ -39,6 +41,8 @@ oneBtn.onclick = function () {
 
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
+  oneMenu.classList.remove('open');
+  liOne.style.display = "none";
   const isOpen_two = oneMenu.classList.contains('open');
   var liTwo = document.getElementById("li_two");
   oneBtnIcon.classList = isOpen_two
