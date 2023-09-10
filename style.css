@@ -99,7 +99,7 @@ header {
 
 nav {
     height: 60px;
-    margin: 30px 10px 0 0;
+    margin: 30px 16px 0 0;
 }
 
 nav a, .dropdown_menu a {
@@ -139,7 +139,7 @@ nav ul li {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    margin: 0 0 0 16px;
+    margin: 0 0 5px 16px;
 }
 
 .bars {
