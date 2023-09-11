@@ -84,7 +84,7 @@ header {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
     nav {
         display: none !important;
     }
@@ -103,7 +103,7 @@ header {
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 900px) {
     nav {
         display: flex !important;
     }
