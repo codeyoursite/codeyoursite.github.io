@@ -29,6 +29,7 @@ oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
   liTwo.style.display = "none";
+  twoBtnIcon.classList.add("fa-solid fa-caret-down");
   const isOpen_one = oneMenu.classList.contains('open');
   oneBtnIcon.classList = isOpen_one
     ? 'fa-solid fa-caret-up'
@@ -44,6 +45,7 @@ twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
   liOne.style.display = "none";
+  oneBtnIcon.classList.add("fa-solid fa-caret-down");
   const isOpen_two = twoMenu.classList.contains('open');
   twoBtnIcon.classList = isOpen_two
     ? 'fa-solid fa-caret-up'
