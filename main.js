@@ -95,5 +95,8 @@ class Effect {
             window.addEventListener('mousemove', (e) => {
                 this.mouse.x = e.x
                 this.mouse.y = e.y
+            });
+            console.log(this.mouse.x);
+            console.log(this.mouse.y);
       });
 }
