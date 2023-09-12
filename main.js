@@ -28,11 +28,9 @@ toggleBtn.onclick = function () {
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
+  arrow_down();
   liTwo.style.display = "none";
   const isOpen_one = oneMenu.classList.contains('open');
-  oneBtnIcon.classList = isOpen_one
-    ? 'fa-solid fa-caret-up'
-    : 'fa-solid fa-caret-down'
   if (liOne.style.display === "block") {
     liOne.style.display = "none";
   } else {
@@ -43,11 +41,9 @@ oneBtn.onclick = function () {
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
+  arrow_down();
   liOne.style.display = "none";
   const isOpen_two = twoMenu.classList.contains('open');
-  twoBtnIcon.classList = isOpen_two
-    ? 'fa-solid fa-caret-up'
-    : 'fa-solid fa-caret-down'
   if (liTwo.style.display === "block") {
     liTwo.style.display = "none";
   } else {
@@ -55,6 +51,14 @@ twoBtn.onclick = function () {
   }
 }
 
+function arrow_down() {
+  oneBtnIcon.classList = isOpen_one
+    ? 'fa-solid fa-caret-up'
+    : 'fa-solid fa-caret-down'
+  twoBtnIcon.classList = isOpen_two
+    ? 'fa-solid fa-caret-up'
+    : 'fa-solid fa-caret-down'
+}
 
 function myFunction() {
   myVar = setTimeout(showPage, 1200);
