@@ -42,10 +42,12 @@ oneBtn.onclick = function () {
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
-  arrow_down()
-  twoBtnIcon.classList = 'fa-solid fa-caret-up';
-  liOne.style.display = "none";
   const isOpen_two = twoMenu.classList.contains('open');
+  arrow_down()
+  if (isOpen_two) {
+    twoBtnIcon.classList = 'fa-solid fa-caret-up';
+  }
+  liOne.style.display = "none";
   if (liTwo.style.display === "block") {
     liTwo.style.display = "none";
   } else {
