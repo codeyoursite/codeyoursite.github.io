@@ -83,7 +83,7 @@ class Effect {
         constructor(canvasWidth, canvasHeight){
             this.canvasWidth = canvas.width;
             this.canvasHeight = canvas.height;
-            });
+            };
             // particle text
             this.particles = [];
             this.gap = 3;
