@@ -28,10 +28,10 @@ toggleBtn.onclick = function () {
 oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
-  const isOpen_two = twoMenu.classList.contains('open');
+  const isOpen_one = oneMenu.classList.contains('open');
   arrow_down()
-  if (isOpen_two) {
-    twoBtnIcon.classList = 'fa-solid fa-caret-up';
+  if (isOpen_one) {
+    oneBtnIcon.classList = 'fa-solid fa-caret-up';
   }
   liTwo.style.display = "none";
   if (liOne.style.display === "block") {
