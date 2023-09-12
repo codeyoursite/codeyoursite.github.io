@@ -70,10 +70,8 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
-  const main = document.getElementById("main");
 }
 
-const main = document.getElementById("main");
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d', {
         willReadFrequently: true
