@@ -29,6 +29,7 @@ oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
   arrow_down();
+  oneBtnIcon.classList = 'fa-solid fa-caret-up';
   liTwo.style.display = "none";
   const isOpen_one = oneMenu.classList.contains('open');
   if (liOne.style.display === "block") {
@@ -41,7 +42,8 @@ oneBtn.onclick = function () {
 twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
-  arrow_down();
+  arrow_down()
+  twoBtnIcon.classList = 'fa-solid fa-caret-up';
   liOne.style.display = "none";
   const isOpen_two = twoMenu.classList.contains('open');
   if (liTwo.style.display === "block") {
@@ -52,12 +54,8 @@ twoBtn.onclick = function () {
 }
 
 function arrow_down() {
-  oneBtnIcon.classList = isOpen_one
-    ? 'fa-solid fa-caret-up'
-    : 'fa-solid fa-caret-down'
-  twoBtnIcon.classList = isOpen_two
-    ? 'fa-solid fa-caret-up'
-    : 'fa-solid fa-caret-down'
+ twoBtnIcon.classList = 'fa-solid fa-caret-down';
+ oneBtnIcon.classList = 'fa-solid fa-caret-down';
 }
 
 function myFunction() {
