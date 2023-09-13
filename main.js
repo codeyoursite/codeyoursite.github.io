@@ -73,7 +73,7 @@ function showPage() {
 }
 
 const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+const context = canvas.getContext('2d');
 
 var canvasPos = getPosition(canvas);
 var mouseX = 0;
