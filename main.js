@@ -30,7 +30,7 @@ oneBtn.onclick = function () {
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
   const isOpen_one = oneMenu.classList.contains('open');
-  arrow_down()
+  arrow_down();
   if (isOpen_one) {
     oneBtnIcon.classList = 'fa-solid fa-caret-up';
   }
@@ -46,7 +46,7 @@ twoBtn.onclick = function () {
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
   const isOpen_two = twoMenu.classList.contains('open');
-  arrow_down()
+  arrow_down();
   if (isOpen_two) {
     twoBtnIcon.classList = 'fa-solid fa-caret-up';
   }
@@ -56,7 +56,7 @@ twoBtn.onclick = function () {
   } else {
     liTwo.style.display = "block";
   }
-}
+};
 
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
@@ -72,7 +72,7 @@ function showPage() {
   document.getElementById("page").style.display = "block";
 }
 
-const canvas = document.getElementById('canvas')
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d', {
         willReadFrequently: true
 });
@@ -83,7 +83,7 @@ class Effect {
         constructor(canvasWidth, canvasHeight){
             this.canvasWidth = canvas.width;
             this.canvasHeight = canvas.height;
-            };
+            }
             // particle text
             this.particles = [];
             this.gap = 3;
@@ -92,10 +92,10 @@ class Effect {
                 x: 0,
                 y: 0
             }
-            window.addEventListener('mousemove', (e) => {
+            window.addEventListener('mousemove', (e) =>
                 this.mouse.x = e.x
                 this.mouse.y = e.y
-            });
+            );
             console.log(this.mouse.x);
             console.log(this.mouse.y);
       });
