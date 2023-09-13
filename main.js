@@ -73,30 +73,41 @@ function showPage() {
 }
 
 const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d', {
-        willReadFrequently: true
-});
-canvas.width = main.innerWidth;
-canvas.height = main.innerHeight;
+const ctx = canvas.getContext('2d');
 
-class Effect {
-        constructor(canvasWidth, canvasHeight){
-            this.canvasWidth = canvas.width;
-            this.canvasHeight = canvas.height;
-            }
-            // particle text
-            this.particles = [];
-            this.gap = 3;
-            this.mouse = {
-                radius: 15000,
-                x: 0,
-                y: 0
-            }
-            window.addEventListener('mousemove', (e) =>
-                this.mouse.x = e.x
-                this.mouse.y = e.y
-            );
-            console.log(this.mouse.x);
-            console.log(this.mouse.y);
-      });
+var canvasPos = getPosition(canvas);
+var mouseX = 0;
+var mouseY = 0;
+ 
+canvas.addEventListener("mousemove", setMousePosition, false);
+
+function setMousePosition(e) {
+    mouseX = e.clientX - canvasPos.x;
+    mouseY = e.clientY - canvasPos.y;
 }
+
+function getPosition(el) {
+  var xPosition = 0;
+  var yPosition = 0;
+ 
+  while (el) {
+    xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+    yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+    el = el.offsetParent;
+  }
+  return {
+    x: xPosition,
+    y: yPosition
+  };
+}
+
+function update() {
+  context.beginPath();
+  context.arc(100, 100, 50, 0, 2 * Math.PI, true);
+  context.fillStyle = "#FF6A6A";
+  context.fill();
+
+  requestAnimationFrame(update);
+}
+
+update();
