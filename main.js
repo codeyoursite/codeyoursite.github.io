@@ -74,6 +74,8 @@ function showPage() {
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
+canvas.width = main.innerWidth;
+canvas.height = main.innerHeight;
 
 var canvasPos = getPosition(canvas);
 var mouseX = 0;
