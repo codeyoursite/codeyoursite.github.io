@@ -74,8 +74,8 @@ function showPage() {
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-canvas.width = main.innerWidth;
-canvas.height = main.innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 function update() {
   context.clearRect(0, 0, canvas.width, canvas.height);
