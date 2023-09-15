@@ -76,38 +76,73 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
-function update() {
+ 
+var canvasPos = getPosition(canvas);
+var mouseX = 0;
+var mouseY = 0;
+var sqSize = 100;
+var xPos = 0;
+var yPos = 0;
+var dX = 0;
+var dY = 0;
+ 
+canvas.addEventListener("mousemove", setMousePosition, false);
+ 
+function setMousePosition(e) {
+  mouseX = e.clientX - canvasPos.x;
+  mouseY = e.clientY - canvasPos.y;
+}
+ 
+function animate() {
+  dX = mouseX - xPos;
+  dY = mouseY - yPos;
+ 
+  xPos += (dX / 10);
+  yPos += (dY / 10);
+ 
   context.clearRect(0, 0, canvas.width, canvas.height);
  
-  for (var i = 0; i < positions.length; i++) {
-    var ratio = (i + 1) / positions.length;
-    drawCircle(positions[i].x, positions[i].y, ratio);
-  }
+  context.fillStyle = "#00CCFF";
+  context.fillRect(xPos - sqSize / 2,
+                   yPos - sqSize / 2,
+                   sqSize,
+                   sqSize);
  
-  drawCircle(xPos, yPos, "source");
- 
-  storeLastPosition(xPos, yPos);
- 
-  // update position
-  if (xPos > 600) {
-    xPos = -100;
-  }
-  xPos += 3;
- 
-  requestAnimationFrame(update);
+  requestAnimationFrame(animate);
 }
-update();
+animate();
  
-function drawCircle(x, y, r) {
-  if (r == "source") {
-    r = 1;
-  } else {
-    r /= 4;
+// deal with the page getting resized or scrolled
+window.addEventListener("scroll", updatePosition, false);
+window.addEventListener("resize", updatePosition, false);
+ 
+function updatePosition() {
+  canvasPos = getPosition(canvas);
+}
+ 
+// Helper function to get an element's exact position
+function getPosition(el) {
+  var xPos = 0;
+  var yPos = 0;
+ 
+  while (el) {
+    if (el.tagName == "BODY") {
+      // deal with browser quirks with body/window/document and page scroll
+      var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+      var yScroll = el.scrollTop || document.documentElement.scrollTop;
+ 
+      xPos += (el.offsetLeft - xScroll + el.clientLeft);
+      yPos += (el.offsetTop - yScroll + el.clientTop);
+    } else {
+      // for all other non-BODY elements
+      xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+      yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+    }
+ 
+    el = el.offsetParent;
   }
- 
-  context.beginPath();
-  context.arc(x, y, 50, 0, 2 * Math.PI, true);
-  context.fillStyle = "rgba(204, 102, 153, " + r + ")";
-  context.fill();
-}       
+  return {
+    x: xPos,
+    y: yPos
+  };
+}   
