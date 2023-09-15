@@ -168,6 +168,11 @@ nav ul li {
  background-color: #242424;
 }
 
+#canvas {
+    height: 100%;
+    width: 100%;
+}
+
 .square-rotate-2 {
   --size: 100px;
   --accent-opacity: .25;
