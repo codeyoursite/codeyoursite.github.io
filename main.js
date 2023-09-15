@@ -77,38 +77,37 @@ const context = canvas.getContext('2d');
 canvas.width = main.innerWidth;
 canvas.height = main.innerHeight;
 
-var canvasPos = getPosition(canvas);
-var mouseX = 0;
-var mouseY = 0;
- 
-canvas.addEventListener("mousemove", setMousePosition, false);
-
-function setMousePosition(e) {
-    mouseX = e.clientX - canvasPos.x;
-    mouseY = e.clientY - canvasPos.y;
-}
-
-function getPosition(el) {
-  var xPosition = 0;
-  var yPosition = 0;
- 
-  while (el) {
-    xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-    yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
-    el = el.offsetParent;
-  }
-  return {
-    x: xPosition,
-    y: yPosition
-  };
-}
-
 function update() {
-  context.beginPath();
-  context.arc(100, 100, 50, 0, 2 * Math.PI, true);
-  context.fillStyle = "#FF6A6A";
-  context.fill();
-  requestAnimationFrame(update);
+  context.clearRect(0, 0, canvas.width, canvas.height);
+ 
+  for (var i = 0; i < positions.length; i++) {
+    var ratio = (i + 1) / positions.length;
+    drawCircle(positions[i].x, positions[i].y, ratio);
+  }
+ 
+  drawCircle(xPos, yPos, "source");
+ 
+  storeLastPosition(xPos, yPos);
+ 
+  // update position
+  if (xPos > 600) {
+    xPos = -100;
+  }
+  xPos += 3;
+ 
+  requestAnimationFrame(update);
 }
-
 update();
+ 
+function drawCircle(x, y, r) {
+  if (r == "source") {
+    r = 1;
+  } else {
+    r /= 4;
+  }
+ 
+  context.beginPath();
+  context.arc(x, y, 50, 0, 2 * Math.PI, true);
+  context.fillStyle = "rgba(204, 102, 153, " + r + ")";
+  context.fill();
+}       
