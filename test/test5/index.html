@@ -87,7 +87,6 @@
     buttons.forEach(function(button){
       button.addEventListener('mouseover', function(){
         verticalFrequency = 0.00001;
-        setTimeout(function(){}, i * interval);
         for (i = 0; i < steps; i++){
           setTimeout(function(){
             verticalFrequency += 0.009;
