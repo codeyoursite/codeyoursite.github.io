@@ -33,7 +33,6 @@
         z-index: -1;
         top: 0;
         left: 0;
-        filter: url('#wave');
       }
       button:hover {
         animation: squish 0.5s;
@@ -80,6 +79,19 @@
   <script>
     const button = document.querySelectorAll('button');
     const turbulence = document.querySelector('feTurbulence');
-    turbulence.setAttribute('baseFrequency', '0.30 0.21');
+    let verticalFrequency = 0.00001;
+    turbulence.setAttribute('baseFrequency', verticalFrequency + ' 0.00001');
+    const steps = 30;
+    const interval = 10;
+
+    buttons.forEach(function(button){
+      button.addEventListener('mouseover', function(){
+        verticalFrequency = 0.00001;
+        for (i = 0; i < steps; i++){
+          verticalFrequency += 0.002;
+          turbulence.setAttribute('baseFrequency', verticalFrequency + ' 0.00001');
+        }
+      });
+    });
   </script>
 </html>
