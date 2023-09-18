@@ -25,6 +25,7 @@ header {
     height: 0;
     transition: height .2s ease;
     display: flex;
+    position: absolute;
 }
 
 .dropdown_menu, .dropdown_content_one, .dropdown_content_two {
@@ -34,7 +35,6 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
     width: 300px;
     z-index: 10;
-    position: absolute;
     top: 60px;
 }
 
