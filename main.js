@@ -78,14 +78,12 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 start_canvas()
 
-document.addEventListener("resize", resize);
-
-function resize() {
+addEventListener("resize", (event) => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   start_canvas();
-}
+});
 
 function start_canvas() {
   var canvasPos = getPosition(canvas);
@@ -97,7 +95,7 @@ function start_canvas() {
   var dX = 0;
   var dY = 0;
    
-  canvas.addEventListener("mousemove", setMousePosition, false);
+  window.addEventListener("mousemove", setMousePosition, false);
    
   function setMousePosition(e) {
     mouseX = e.clientX - canvasPos.x;
@@ -121,7 +119,6 @@ function start_canvas() {
    
     requestAnimationFrame(animate);
   }
-  animate();
    
   // deal with the page getting resized or scrolled
   window.addEventListener("scroll", updatePosition, false);
