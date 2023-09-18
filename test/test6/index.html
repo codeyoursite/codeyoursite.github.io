@@ -21,7 +21,7 @@
         bottom: -30px;
         left: 50%;
         transform: translate(-50%, 0);
-        overflow: visible;
+        overflow: hidden;
         border-left: 1px solid black;
         border-right: 1px solid black;
       }
@@ -47,6 +47,7 @@
           top: 10px;
           left: 0;
           z-index: 4;
+          animation: wobble 5s ease-in-out infinite;
       }
       .radios {
           position: absolute;
@@ -165,6 +166,7 @@
           position: relative;
           width: var(--size);
           border: 1px solid black;
+          animation: roll 5.2s linear infinite;
       }
       .lines {
           border: 2px solid rgb(167,145,108);
@@ -225,6 +227,33 @@
       }
       .circle.three::after {
           top: 110%;
+      }
+      @keyframes wobble {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      @keyframes roll {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes moveLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-110%);
+        }
       }
     </style>
   </head>
