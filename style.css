@@ -35,6 +35,7 @@ header {
     width: 300px;
     z-index: 10;
     position: absolute;
+    top: 60px;
 }
 
 .dropdown_content_three, .dropdown_content_four {
