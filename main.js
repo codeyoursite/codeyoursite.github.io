@@ -121,7 +121,7 @@ function start_canvas() {
   var dX = 0;
   var dY = 0;
    
-  window.addEventListener("mousemove", setMousePosition, false);
+  canvas.addEventListener("mousemove", setMousePosition, false);
    
   function setMousePosition(e) {
     mouseX = e.clientX - canvasPos.x;
