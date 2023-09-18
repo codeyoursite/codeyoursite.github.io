@@ -20,14 +20,14 @@ header {
     height: 60px;
 }
 
-.dropdown_menu, .content_one, .content_two, .content_three, .content_four {
+.dropdown_menu, .dropdown_content_one, .dropdown_content_two, .dropdown_content_three, .dropdown_content_four {
     bottom: -1px;
     height: 0;
     transition: height .2s ease;
     display: flex;
 }
 
-.dropdown_menu, .content_one, .content_two {
+.dropdown_menu, .dropdown_content_one, .dropdown_content_two {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
