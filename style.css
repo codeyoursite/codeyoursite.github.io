@@ -110,6 +110,9 @@ header {
     .bars {
         display: none !important;
     }
+    .dropdown_menu {
+        display: block !important;
+    }
 }
 
 nav {
