@@ -33,13 +33,9 @@ oneBtn.onclick = function () {
   arrow_down();
   if (isOpen_one) {
     oneBtnIcon.classList = 'fa-solid fa-caret-up';
-  }
-  liTwo.style.display = "none";
-  if (liOne.style.display === "block") {
-    liOne.style.display = "none";
-  } else {
     liOne.style.display = "block";
   }
+  liTwo.style.display = "none";
 }
 
 twoBtn.onclick = function () {
@@ -49,14 +45,10 @@ twoBtn.onclick = function () {
   arrow_down();
   if (isOpen_two) {
     twoBtnIcon.classList = 'fa-solid fa-caret-up';
-  }
-  liOne.style.display = "none";
-  if (liTwo.style.display === "block") {
-    liTwo.style.display = "none";
-  } else {
     liTwo.style.display = "block";
   }
-};
+  liOne.style.display = "none";
+}
 
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
