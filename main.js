@@ -82,6 +82,22 @@ threeBtn.onclick = function () {
   }
 };
 
+fourBtn.onclick = function () {
+  fourMenu.classList.toggle('open');
+  threeMenu.classList.remove('open');
+  const isOpen_four = fourMenu.classList.contains('open');
+  arrow_down();
+  if (isOpen_four) {
+    fourBtnIcon.classList = 'fa-solid fa-caret-up';
+  }
+  liFour.style.display = "none";
+  if (liFour.style.display === "block") {
+    liFour.style.display = "none";
+  } else {
+    liFour.style.display = "block";
+  }
+};
+
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
  oneBtnIcon.classList = 'fa-solid fa-caret-down';
