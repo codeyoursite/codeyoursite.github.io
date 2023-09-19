@@ -19,10 +19,10 @@ toggleBtn.onclick = function () {
   toggleBtnIcon.classList = isOpen
     ? 'fa-solid fa-xmark'
     : 'fa-solid fa-bars'
-  if (li.style.display === "block") {
-    li.style.display = "none";
-  } else {
+  if (isOpen) {
     li.style.display = "block";
+  } else {
+    li.style.display = "none";
   }
 }
 
@@ -31,11 +31,13 @@ oneBtn.onclick = function () {
   twoMenu.classList.remove('open');
   const isOpen_one = oneMenu.classList.contains('open');
   arrow_down();
+  liTwo.style.display = "none";
   if (isOpen_one) {
     oneBtnIcon.classList = 'fa-solid fa-caret-up';
     liOne.style.display = "block";
+  } else {
+    liOne.style.display = "none";
   }
-  liTwo.style.display = "none";
 }
 
 twoBtn.onclick = function () {
@@ -43,11 +45,13 @@ twoBtn.onclick = function () {
   oneMenu.classList.remove('open');
   const isOpen_two = twoMenu.classList.contains('open');
   arrow_down();
+  liOne.style.display = "none";
   if (isOpen_two) {
     twoBtnIcon.classList = 'fa-solid fa-caret-up';
     liTwo.style.display = "block";
+  } else {
+    liTwo.style.display = "none";
   }
-  liOne.style.display = "none";
 }
 
 function arrow_down() {
