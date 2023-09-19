@@ -47,7 +47,7 @@
           top: 10px;
           left: 0;
           z-index: 4;
-          animation: wobble 5s ease-in-out infinite;
+          animation: wobble 9.4s ease-in-out infinite;
       }
       .radios {
           position: absolute;
@@ -232,8 +232,14 @@
         0% {
           transform: rotate(0deg);
         }
-        50% {
+        25% {
           transform: rotate(10deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-10deg);
         }
         100% {
           transform: rotate(0deg);
