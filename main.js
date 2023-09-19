@@ -4,22 +4,14 @@ const toggleBtnIcon = document.querySelector('.bars i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
 const oneBtn = document.querySelector('.dropdown_link_one');
 const twoBtn = document.querySelector('.dropdown_link_two');
-const threeBtn = document.querySelector('.dropdown_link_three');
-const fourBtn = document.querySelector('.dropdown_link_four');
 const oneBtnIcon = document.querySelector('.dropdown_link_one i');
 const twoBtnIcon = document.querySelector('.dropdown_link_two i');
-const threeBtnIcon = document.querySelector('.dropdown_link_three i');
-const fourBtnIcon = document.querySelector('.dropdown_link_four i');
 const oneMenu = document.querySelector('.dropdown_content_one');
 const twoMenu = document.querySelector('.dropdown_content_two');
-const threeMenu = document.querySelector('.dropdown_content_three');
-const fourMenu = document.querySelector('.dropdown_content_four');
 const main = document.getElementById("main");
 var li = document.getElementById("li");
 var liOne = document.getElementById("li_one");
 var liTwo = document.getElementById("li_two");
-var liThree = document.getElementById("li_three");
-var liFour = document.getElementById("li_four");
 
 toggleBtn.onclick = function () {
   dropDownMenu.classList.toggle('open');
@@ -66,43 +58,9 @@ twoBtn.onclick = function () {
   }
 };
 
-threeBtn.onclick = function () {
-  threeMenu.classList.toggle('open');
-  fourMenu.classList.remove('open');
-  const isOpen_three = threeMenu.classList.contains('open');
-  arrow_down();
-  if (isOpen_three) {
-    threeBtnIcon.classList = 'fa-solid fa-caret-up';
-  }
-  liThree.style.display = "none";
-  if (liThree.style.display === "block") {
-    liThree.style.display = "none";
-  } else {
-    liThree.style.display = "block";
-  }
-};
-
-fourBtn.onclick = function () {
-  fourMenu.classList.toggle('open');
-  threeMenu.classList.remove('open');
-  const isOpen_four = fourMenu.classList.contains('open');
-  arrow_down();
-  if (isOpen_four) {
-    fourBtnIcon.classList = 'fa-solid fa-caret-up';
-  }
-  liFour.style.display = "none";
-  if (liFour.style.display === "block") {
-    liFour.style.display = "none";
-  } else {
-    liFour.style.display = "block";
-  }
-};
-
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
  oneBtnIcon.classList = 'fa-solid fa-caret-down';
- fourBtnIcon.classList = 'fa-solid fa-caret-down';
- threeBtnIcon.classList = 'fa-solid fa-caret-down';
 }
 
 function myFunction() {
