@@ -248,6 +248,7 @@ nav ul li {
 
 #page {
   display: none;
+  text-align: center;
 }
 
 .page h1, .page h3 {
