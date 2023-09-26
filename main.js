@@ -80,8 +80,9 @@ function typeWriter() {
     document.getElementById("heading").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, 70);
-  } else {
-    deleteWriting();
+  } 
+  else {
+    deleteWriter();
   }
 }
 
