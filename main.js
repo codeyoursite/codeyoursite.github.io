@@ -92,7 +92,3 @@ function deleteWriter() {
     setTimeout(typeWriter, 70);
   }
 }
-
-for (texts of texts) {
-  console.log(texts);
-}
