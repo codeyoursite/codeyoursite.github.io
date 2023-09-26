@@ -242,13 +242,12 @@ nav ul li {
 }
 
 @keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0; opacity:1 }
 }
 
 #page {
   display: none;
-  text-align: center;
 }
 
 h1, h3 {
@@ -256,7 +255,11 @@ h1, h3 {
 }
 
 h1 {
-    transform:  translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    transform: translate(-50%, -120%);
 }
 
 .animations {
