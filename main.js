@@ -66,88 +66,17 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
+  typeWriter();
 }
 
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-start_canvas()
-
-addEventListener("resize", (event) => {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  start_canvas();
-});
-
-function start_canvas() {
-  var canvasPos = getPosition(canvas);
-  var mouseX = 0;
-  var mouseY = 0;
-  var sqSize = 100;
-  var xPos = 0;
-  var yPos = 0;
-  var dX = 0;
-  var dY = 0;
-   
-  canvas.addEventListener("mousemove", setMousePosition, false);
-   
-  function setMousePosition(e) {
-    mouseX = e.clientX - canvasPos.x;
-    mouseY = e.clientY - canvasPos.y;
+// produces the typing effect on welcome message when page is loaded
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("heading").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, 70);
   }
-   
-  function animate() {
-    dX = mouseX - xPos;
-    dY = mouseY - yPos;
-   
-    xPos += (dX / 10);
-    yPos += (dY / 10);
-   
-    context.clearRect(0, 0, canvas.width, canvas.height);
-   
-    context.fillStyle = "#00CCFF";
-    context.fillRect(xPos - sqSize / 2,
-                     yPos - sqSize / 2,
-                     sqSize,
-                     sqSize);
-   
-    requestAnimationFrame(animate);
-  }
-   
-  // deal with the page getting resized or scrolled
-  window.addEventListener("scroll", updatePosition, false);
-  window.addEventListener("resize", updatePosition, false);
-   
-  function updatePosition() {
-    canvasPos = getPosition(canvas);
-  }
-   
-  // Helper function to get an element's exact position
-  function getPosition(el) {
-    var xPos = 0;
-    var yPos = 0;
-   
-    while (el) {
-      if (el.tagName == "BODY") {
-        // deal with browser quirks with body/window/document and page scroll
-        var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
-        var yScroll = el.scrollTop || document.documentElement.scrollTop;
-   
-        xPos += (el.offsetLeft - xScroll + el.clientLeft);
-        yPos += (el.offsetTop - yScroll + el.clientTop);
-      } else {
-        // for all other non-BODY elements
-        xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-        yPos += (el.offsetTop - el.scrollTop + el.clientTop);
-      }
-   
-      el = el.offsetParent;
-    }
-    return {
-      x: xPos,
-      y: yPos
-    };
-  }   
 }
+
+var i = 0;
+var txt = 'Code Your Site';
