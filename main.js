@@ -69,14 +69,30 @@ function showPage() {
   typeWriter();
 }
 
+
+var i = 0;
+var texts = ['Thanks for checking out my site.', 'I can code your website.', 'I build with pure code. "Your site will be very easy to customise.'];
+var txt = 'Code Your Site';
+
 // produces the typing effect on welcome message when page is loaded
 function typeWriter() {
   if (i < txt.length) {
     document.getElementById("heading").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, 70);
+  } else {
+    deleteWriting();
   }
 }
 
-var i = 0;
-var txt = 'Code Your Site';
+function deleteWriter() {
+  if (txt.length > 0) {
+    var currentText = document.getElementById("heading").innerHTML
+    document.getElementById("heading").innerHTML = currentText.slice(0, currentText.length - 1);
+    setTimeout(typeWriter, 70);
+  }
+}
+
+for (texts of texts) {
+  console.log(texts);
+}
