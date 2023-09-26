@@ -72,7 +72,7 @@ function showPage() {
 
 var i = 0;
 var texts = ['Thanks for checking out my site.', 'I can code your website.', 'I build with pure code. "Your site will be very easy to customise.'];
-var txt = 'Code Your Site';
+var txt = 'Thanks for checking out my site.';
 
 // produces the typing effect on welcome message when page is loaded
 function typeWriter() {
@@ -90,6 +90,6 @@ function deleteWriter() {
   if (txt.length > 0) {
     var currentText = document.getElementById("heading").innerHTML
     document.getElementById("heading").innerHTML = currentText.slice(0, currentText.length - 1);
-    setTimeout(typeWriter, 70);
+    setTimeout(deleteWriter, 70);
   }
 }
