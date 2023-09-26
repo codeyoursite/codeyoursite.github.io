@@ -168,7 +168,7 @@ nav ul li {
 }
 
 .page {
- background-color: #0c0c0c;
+     background-color: #0c0c0c;
 }
 
 #canvas {
@@ -250,16 +250,8 @@ nav ul li {
   display: none;
 }
 
-h1, h3 {
+.page h1, .page h3 {
     color: white !important;
-}
-
-h1 {
-    transform: translate(-50%, -50%);
-}
-
-h3 {
-    transform: translate(-50%, -120%);
 }
 
 .animations {
