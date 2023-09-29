@@ -168,7 +168,8 @@ nav ul li {
 }
 
 .page {
-     background-color: #0c0c0c;
+  background: rgb(197,237,244);
+  background: linear-gradient(90deg, rgba(197,237,244,1) 0%, rgba(173,182,255,1) 25%, rgba(245,214,229,1) 50%, rgba(251,231,218,1) 75%, rgba(219,250,224,1) 100%);
 }
 
 #canvas {
@@ -252,7 +253,7 @@ nav ul li {
 }
 
 .page h1, .page h3 {
-    color: white !important;
+    color: black !important;
 }
 
 .animations {
