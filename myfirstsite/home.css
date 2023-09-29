@@ -1,4 +1,9 @@
-html {
+* {
+  font-family: 'Roboto Slab', serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
@@ -11,6 +16,8 @@ body {
   width: 100vw;
   margin: 0;
   display: block;
+  position: absolute;
+  z-index: 10;
 }
 #start.hidden {
   height: 0;
