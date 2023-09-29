@@ -12,3 +12,7 @@ body {
   margin: 0;
   display: block;
 }
+#start.hidden {
+  height: 0;
+  transition: all 0.7s;
+}
