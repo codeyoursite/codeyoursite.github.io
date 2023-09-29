@@ -19,7 +19,9 @@ body {
   position: absolute;
   z-index: 10;
 }
-#start.hidden {
-  height: 0;
-  transition: all 0.7s;
+#main {
+  display: none;
+}
+.text {
+  transform: translate(-50%, -50%);
 }
