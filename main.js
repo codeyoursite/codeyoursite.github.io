@@ -67,6 +67,7 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
 }
+
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
