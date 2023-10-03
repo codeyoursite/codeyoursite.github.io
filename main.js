@@ -66,7 +66,6 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
-  typeWriter();
 }
 
 var TxtType = function(el, toRotate, period) {
