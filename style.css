@@ -167,6 +167,11 @@ nav ul li {
     margin: 0 16px 0 0;
 }
 
+.page h3 {
+  text-decoration: none;
+  color: black;
+}
+
 .page {
   background-image: 
   linear-gradient(180deg, rgba(255, 255, 255, 0.01) 85%, rgba(255, 255, 255, 1)),
