@@ -25,7 +25,7 @@ header {
     height: 0;
     transition: height .2s ease;
     display: flex;
-    position: absolute;
+    position: fixed;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
