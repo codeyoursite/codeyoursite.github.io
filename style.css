@@ -69,8 +69,11 @@ header {
     background: #333;
     color: white;
   }
-  nav a, .dropdown_menu a {
+  .dropdown_menu a {
     color: black;
+  }
+  nav a {
+    color: white;
   }
 }
 
