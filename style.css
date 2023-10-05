@@ -12,10 +12,12 @@
 
 [data-theme="light"] {
   --color: 255, 255, 255;
+  --nav-color: black;
 }
 
 [data-theme="dark"] {
   --color: 33, 37, 41;
+  --nav-color: white;
 }
 
 header {
@@ -78,20 +80,11 @@ header {
     background: #333;
     color: white;
   }
-  .dropdown_menu a, .dropdown_menu_one a, .dropdown_menu_two a {
-    color: black;
-  }
-  nav a {
-    color: white;
-  }
 }
 
 @media (prefers-color-scheme: light) {
   header {
     background: #aeebd5;
-    color: black;
-  }
-  nav a, .dropdown_menu a, .dropdown_menu_one a, .dropdown_menu_two a {
     color: black;
   }
 }
@@ -125,6 +118,10 @@ header {
     .dropdown_menu {
         display: block !important;
     }
+}
+
+nav a, .dropdown_menu a, .dropdown_menu_one a, .dropdown_menu_two a {
+  color: var(--nav-color);
 }
 
 nav {
@@ -186,6 +183,7 @@ nav ul li {
 
 .page {
   background-image: linear-gradient(180deg, rgba(var(--color), 0.01), rgba(var(--color), 1) 85%),radial-gradient(ellipse at top left, rgba(13, 110, 253, 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(255, 228, 132, 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(112.520718, 44.062154, 249.437846, 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(214, 51, 132, 0.5), transparent 50%);
+  background-color: var(--color);
 }
 
 #canvas {
