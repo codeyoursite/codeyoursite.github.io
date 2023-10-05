@@ -70,7 +70,7 @@ header {
     color: white;
   }
   nav a, .dropdown_menu a {
-    color: white;
+    color: black;
   }
 }
 
@@ -168,8 +168,8 @@ nav ul li {
 }
 
 .page h3 {
-  text-decoration: none;
-  color: black;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .page {
