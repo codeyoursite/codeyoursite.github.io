@@ -25,6 +25,7 @@ header {
     height: 0;
     transition: height .2s ease;
     display: flex;
+    justify-content: center;
     position: fixed;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -69,7 +70,7 @@ header {
     background: #333;
     color: white;
   }
-  .dropdown_menu a {
+  .dropdown_menu a, .dropdown_menu_one a, .dropdown_menu_two a {
     color: black;
   }
   nav a {
@@ -82,7 +83,7 @@ header {
     background: #aeebd5;
     color: black;
   }
-  nav a, .dropdown_menu a {
+  nav a, .dropdown_menu a, .dropdown_menu_one a, .dropdown_menu_two a {
     color: black;
   }
 }
