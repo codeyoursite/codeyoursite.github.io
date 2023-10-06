@@ -187,7 +187,6 @@ nav ul li {
 
 .page {
   background-image: linear-gradient(180deg, rgba(var(--color), 0.01), rgba(var(--color), 1) 85%),radial-gradient(ellipse at top left, rgba(13, 110, 253, 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(255, 228, 132, 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(112.520718, 44.062154, 249.437846, 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(214, 51, 132, 0.5), transparent 50%);
-  background-color: var(--color);
 }
 
 #canvas {
@@ -268,6 +267,7 @@ nav ul li {
 #page {
   display: none;
   text-align: center;
+  background-color: var(--color);
 }
 
 .page h1, .page h3 {
