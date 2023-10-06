@@ -152,6 +152,10 @@ nav a:hover::after,.dropdown _menu a:hover::after {
     left: 0;
 }
 
+.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 nav ul {
   list-style: none;
   padding: 0;
