@@ -16,6 +16,7 @@
   --typewriter-color: #000;
   --header-color: #aeebd5;
   --header-text-color: #000;
+  --normal-dark-light-text: #000;
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
   --typewriter-color: #fff;
   --header-color: #333;
   --header-text-color: #fff;
+  --normal-dark-light-text: #fff;
 }
 
 header {
@@ -175,9 +177,9 @@ nav ul li {
     margin: 0 16px 0 0;
 }
 
-.page h3 {
+.page h3 a {
   text-decoration: none !important;
-  color: black !important;
+  color: var(--normal-dark-light-text) !important;
 }
 
 .page {
@@ -261,7 +263,7 @@ nav ul li {
 }
 
 .page h1, .page h3 {
-    color: black !important;
+    color: var(--normal-dark-light-text) !important;
 }
 
 .animations {
