@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-[data-bs-theme="light"] {
+[data-theme="light"] {
   --color: 255, 255, 255;
   --nav-color: black;
   --typewriter-color: #000;
@@ -19,7 +19,7 @@
   --normal-dark-light-text: #000;
 }
 
-[data-bs-theme="dark"] {
+[data-theme="dark"] {
   --color: 33, 37, 41;
   --nav-color: #fff;
   --typewriter-color: #fff;
