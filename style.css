@@ -14,12 +14,16 @@
   --color: 255, 255, 255;
   --nav-color: black;
   --typewriter-color: #000;
+  --header-color: #aeebd5;
+  --header-text-color: #000;
 }
 
 [data-theme="dark"] {
   --color: 33, 37, 41;
   --nav-color: #fff;
   --typewriter-color: #fff;
+  --header-color: #333;
+  --header-text-color: #fff;
 }
 
 header {
@@ -30,6 +34,8 @@ header {
     margin: 0;
     width: 100%;
     height: 60px;
+    background-color: var(--header-color);
+    color: var(--header-text-color);
 }
 
 .dropdown_menu, .dropdown_content_one, .dropdown_content_two {
@@ -77,19 +83,6 @@ header {
     height: 195px;
 }
 
-@media (prefers-color-scheme: dark) {
-  header {
-    background: #333;
-    color: white;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  header {
-    background: #aeebd5;
-    color: black;
-  }
-}
 
 @media (max-width: 900px) {
     nav {
