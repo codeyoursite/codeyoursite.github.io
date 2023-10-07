@@ -117,7 +117,7 @@ window.onload = function() {
   // INJECT CSS
   var css = document.createElement("style");
   css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid var(--typewriter-color)}";
+  css.innerHTML = ".typewrite > .wrap { color: var(--normal-dark-light-text); border-right: 0.08em solid var(--typewriter-color)}";
   document.body.appendChild(css);
 };
 
