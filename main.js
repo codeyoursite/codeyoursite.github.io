@@ -152,7 +152,7 @@ button.addEventListener("click", () => {
   button.setAttribute("aria-label", newCta);
 
   // update theme attribute on HTML to switch theme in CSS
-  document.querySelector("html").setAttribute("data-bs-theme", newTheme);
+  document.querySelector("html").setAttribute("data-theme", newTheme);
 
   // update in local storage
   localStorage.setItem("theme", newTheme);
