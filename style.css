@@ -13,11 +13,13 @@
 [data-theme="light"] {
   --color: 255, 255, 255;
   --nav-color: black;
+  --typewriter-color: #000;
 }
 
 [data-theme="dark"] {
   --color: 33, 37, 41;
-  --nav-color: white;
+  --nav-color: #fff;
+  --typewriter-color: #fff;
 }
 
 header {
