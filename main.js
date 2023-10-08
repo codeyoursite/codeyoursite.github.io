@@ -1,4 +1,3 @@
-setTimeout(showPage, 1200);
 const toggleBtn = document.querySelector('.bars');
 const toggleBtnIcon = document.querySelector('.bars i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
@@ -57,6 +56,10 @@ twoBtn.onclick = function () {
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
  oneBtnIcon.classList = 'fa-solid fa-caret-down';
+}
+
+function loader() {
+ setTimeout(showPage, 1200);
 }
 
 function showPage() {
