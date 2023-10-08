@@ -9,6 +9,7 @@
 body {
   background-color: #fce043;
   background-image: linear-gradient(315deg, #fce043 0%, #fb7ba2 74%);
+  font-family: 'Roboto Slab', serif;
 }
 
 h1 {
@@ -17,7 +18,6 @@ h1 {
     color: black;
     margin-top: 10vh;
     font-weight: 250;
-    font-family: 'Roboto Slab', serif;
 }
 .up {
     margin-top: 0;
@@ -29,7 +29,6 @@ p {
     margin-left: 5vw;
     overflow-wrap: break-word;
     padding-right: 3vh;
-    font-family: 'Roboto Slab', serif;
 }
 body {
     background-color: #55d9f0a4;
@@ -46,39 +45,12 @@ ul {
     <p class="text">
         This page of my website is the base of my animations. There are quite a few so here is the list of them in order:
     </p>
-      <div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+    <ul class="list-group">
+      <li class="list-group-item active">Animations</li>
+      <li class="list-group-item"><a href="animation1/">Animation 1 (click the screen randomly)</a></li>
+      <li class="list-group-item"><a href="animation2/">Animation 2 (a big spinning chessboard)</a></li>
+      <li class="list-group-item"><a href="animation3/">Animation 3 (an on/off switch)</a></li>
+    </ul>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
