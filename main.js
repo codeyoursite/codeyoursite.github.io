@@ -1,3 +1,4 @@
+
 const toggleBtn = document.querySelector('.bars');
 const toggleBtnIcon = document.querySelector('.bars i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
@@ -58,9 +59,7 @@ function arrow_down() {
  oneBtnIcon.classList = 'fa-solid fa-caret-down';
 }
 
-function loader() {
- setTimeout(showPage, 1200);
-}
+setTimeout(showPage, 2000);
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
