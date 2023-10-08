@@ -1,4 +1,3 @@
-
 const toggleBtn = document.querySelector('.bars');
 const toggleBtnIcon = document.querySelector('.bars i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
@@ -59,8 +58,6 @@ function arrow_down() {
  oneBtnIcon.classList = 'fa-solid fa-caret-down';
 }
 
-setTimeout(showPage, 2000);
-
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page").style.display = "block";
@@ -108,6 +105,7 @@ TxtType.prototype.tick = function() {
 };
 
 window.onload = function() {
+  showPage();
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
