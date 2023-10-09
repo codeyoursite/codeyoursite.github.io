@@ -139,17 +139,18 @@ const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
 
 const button = document.querySelector("[data-theme-toggle]");
+const light = document.getElementById("light");
+const dark = document.getElementById("dark");
 
 button.addEventListener("click", () => {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
-  // update the button text
-  const newCta = newTheme === "dark" ? "Change to light theme?" : "Change to dark theme?";
-  button.innerText = newCta;  
-
-  // use an aria-label if you are omitting text on the button
-  // and using sun/moon icons, for example
-  button.setAttribute("aria-label", newCta);
+  if (light.style.color === 'orange'){
+    light.style.color = 'var(--normal-light-dark-text-color)';
+    light.style.color = 'black';
+  } else {
+    el.style.color = 'orange';
+  }
 
   // update theme attribute on HTML to switch theme in CSS
   document.querySelector("html").setAttribute("data-theme", newTheme);
