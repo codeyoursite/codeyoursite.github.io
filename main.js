@@ -145,8 +145,8 @@ button.addEventListener("click", () => {
   buttonOnclick();
 });
 
-fuunction buttonOnclick() {
-const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+function buttonOnclick() {
+  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   if (light.style.color === 'orange'){
     light.style.color = 'white';
