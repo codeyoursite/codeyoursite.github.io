@@ -129,7 +129,6 @@ function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark })
   if (systemSettingDark.matches) {
     return "dark";
   }
-
   return "light";
 }
 
@@ -143,7 +142,11 @@ const light = document.getElementById("light");
 const dark = document.getElementById("dark");
 
 button.addEventListener("click", () => {
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+  buttonOnclick();
+});
+
+fuunction buttonOnclick() {
+const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   if (light.style.color === 'orange'){
     light.style.color = 'white';
@@ -161,4 +164,4 @@ button.addEventListener("click", () => {
 
   // update the currentThemeSetting in memory
   currentThemeSetting = newTheme;
-});
+};
