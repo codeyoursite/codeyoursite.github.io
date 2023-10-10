@@ -121,6 +121,8 @@ window.onload = function() {
   document.body.appendChild(css);
 };
 
+buttonOnclick();
+
 function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
   if (localStorageTheme !== null) {
     return localStorageTheme;
