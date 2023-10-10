@@ -146,10 +146,11 @@ button.addEventListener("click", () => {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   if (light.style.color === 'orange'){
-    light.style.color = 'var(--normal-light-dark-text-color)';
-    light.style.color = 'black';
+    light.style.color = 'white';
+    dark.style.color = 'orange';
   } else {
-    el.style.color = 'orange';
+    light.style.color = 'orange';
+    dark.style.color = 'black';
   }
 
   // update theme attribute on HTML to switch theme in CSS
