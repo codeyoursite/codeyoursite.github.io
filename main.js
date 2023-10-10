@@ -143,11 +143,6 @@ const dark = document.getElementById("dark");
 
 button.addEventListener("click", () => {
   buttonOnclick();
-});
-
-function buttonOnclick() {
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
-
   if (light.style.color === 'orange'){
     light.style.color = 'white';
     dark.style.color = 'orange';
@@ -155,6 +150,10 @@ function buttonOnclick() {
     light.style.color = 'orange';
     dark.style.color = 'black';
   }
+});
+
+function buttonOnclick() {
+  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   // update theme attribute on HTML to switch theme in CSS
   document.querySelector("html").setAttribute("data-theme", newTheme);
