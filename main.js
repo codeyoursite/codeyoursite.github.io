@@ -140,9 +140,6 @@ button.addEventListener("click", () => {
   // update theme attribute on HTML to switch theme in CSS
   document.querySelector("html").setAttribute("data-theme", newTheme);
 
-  // update in local storage
-  localStorage.setItem("theme", newTheme);
-
   // update the currentThemeSetting in memory
   currentThemeSetting = newTheme;
 });
