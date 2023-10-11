@@ -128,7 +128,6 @@ const light = document.getElementById("light");
 const dark = document.getElementById("dark");
 
 button.addEventListener("click", () => {
-  buttonOnclick();
   if (light.style.color === 'orange'){
     light.style.color = 'white';
     dark.style.color = 'orange';
