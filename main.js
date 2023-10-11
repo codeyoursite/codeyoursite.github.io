@@ -136,7 +136,7 @@ button.addEventListener("click", () => {
     dark.style.color = 'black';
   }
 
-  if (currentThemeSetting === "light") {
+  if (currentThemeSetting = "light") {
      document.querySelector("html").setAttribute("data-theme", "dark");
      let currentThemeSetting = "dark";
   } else {
