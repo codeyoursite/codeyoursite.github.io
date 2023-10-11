@@ -107,7 +107,7 @@ TxtType.prototype.tick = function() {
 window.onload = function() {
   showPage();
   document.querySelector("html").setAttribute("data-theme", "light");
-  let currentThemeSetting = "dark";
+  let currentThemeSetting = "light";
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
@@ -135,11 +135,12 @@ button.addEventListener("click", () => {
     light.style.color = 'orange';
     dark.style.color = 'black';
   }
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
-  // update theme attribute on HTML to switch theme in CSS
-  document.querySelector("html").setAttribute("data-theme", newTheme);
-
-  // update the currentThemeSetting in memory
-  currentThemeSetting = newTheme;
+  if (currentThemeSetting = "light"){
+     document.querySelector("html").setAttribute("data-theme", "dark");
+     let currentThemeSetting = "dark";
+  } else {
+    document.querySelector("html").setAttribute("data-theme", "light");
+     let currentThemeSetting = "light";
+  }
 });
