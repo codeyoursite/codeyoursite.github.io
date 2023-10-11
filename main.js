@@ -122,23 +122,6 @@ window.onload = function() {
 };
 
 document.querySelector("html").setAttribute("data-theme", "light");
-
-function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
-  if (localStorageTheme !== null) {
-    return localStorageTheme;
-  }
-
-  if (systemSettingDark.matches) {
-    return "dark";
-  }
-  return "light";
-}
-
-const localStorageTheme = localStorage.getItem("theme");
-const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
-
 const button = document.querySelector("[data-theme-toggle]");
 const light = document.getElementById("light");
 const dark = document.getElementById("dark");
@@ -152,9 +135,6 @@ button.addEventListener("click", () => {
     light.style.color = 'orange';
     dark.style.color = 'black';
   }
-});
-
-function buttonOnclick() {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   // update theme attribute on HTML to switch theme in CSS
@@ -165,4 +145,4 @@ function buttonOnclick() {
 
   // update the currentThemeSetting in memory
   currentThemeSetting = newTheme;
-};
+});
