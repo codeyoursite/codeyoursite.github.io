@@ -107,7 +107,7 @@ TxtType.prototype.tick = function() {
 window.onload = function() {
   showPage();
   document.querySelector("html").setAttribute("data-theme", "light");
-  let currentThemeSetting = "light";
+  let currentThemeSetting = "dark";
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
