@@ -125,24 +125,17 @@ const button = document.querySelector("[data-theme-toggle]");
 const light = document.getElementById("light");
 const dark = document.getElementById("dark");
 document.querySelector("html").setAttribute("data-theme", "light");
-let currentThemeSetting = "light";
 
 button.addEventListener("click", () => {
   if (light.style.color === 'orange'){
     light.style.color = 'white';
     dark.style.color = 'orange';
+    document.querySelector("html").setAttribute("data-theme", "dark");
+    console.log("Changed to dark mode");
   } else {
     light.style.color = 'orange';
     dark.style.color = 'black';
-  }
-
-  if (currentThemeSetting = "light") {
-     document.querySelector("html").setAttribute("data-theme", "dark");
-     let currentThemeSetting = "dark";
-     console.log("Changed to dark mode");
-  } else {
-     document.querySelector("html").setAttribute("data-theme", "light");
-     let currentThemeSetting = "light";
-     console.log("Changed to light mode");
+    document.querySelector("html").setAttribute("data-theme", "light");
+    console.log("Changed to light mode");
   }
 });
