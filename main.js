@@ -139,8 +139,10 @@ button.addEventListener("click", () => {
   if (currentThemeSetting = "light") {
      document.querySelector("html").setAttribute("data-theme", "dark");
      let currentThemeSetting = "dark";
+     console.log("Changed to dark mode");
   } else {
      document.querySelector("html").setAttribute("data-theme", "light");
      let currentThemeSetting = "light";
+     console.log("Changed to light mode");
   }
 });
