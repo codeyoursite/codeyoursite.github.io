@@ -2,7 +2,6 @@ body {
     background: linear-gradient(90deg, rgba(255,188,188,0.7784522988883054) 0%, rgba(255,197,171,0.8764915145745799) 25%, rgba(245,214,229,0.9353150439863446) 50%, rgba(255,204,171,0.9185083212972689) 75%, rgba(219,250,224,0.960525128019958) 100%);
 }
 nav {
-    color: white !important;
     background: linear-gradient(90deg, rgba(13,110,253,1) 41%, rgba(147,194,255,1) 100%) !important;
 }
 h1 {
