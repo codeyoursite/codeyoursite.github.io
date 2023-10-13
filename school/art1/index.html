@@ -7,6 +7,9 @@
       body, img {
         max-height: 100vh;
       }
+      video {
+        max-height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -27,14 +30,14 @@
             </button>
             
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
+              <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Here is a funny video of the drawing:</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <video autoplay loop>
+                    <video controls>
                        <source src="walk_swing_arms.mp4" type="video/mp4"></source>
                     </video>
                   </div>
