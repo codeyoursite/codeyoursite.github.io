@@ -1,5 +1,6 @@
 body {
     background: url(https://wallpapers.com/images/featured/paris-zy4x2ow5p7j5qi4a.jpg);
+    background-attachment: fixed;
 }
 nav {
     background: linear-gradient(90deg, rgba(13,110,253,1) 15%, rgba(147,194,255,1) 100%) !important;
