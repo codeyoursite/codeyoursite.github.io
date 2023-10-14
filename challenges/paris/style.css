@@ -3,15 +3,19 @@ body {
 }
 nav {
     background: linear-gradient(90deg, rgba(13,110,253,1) 15%, rgba(147,194,255,1) 100%) !important;
+    color: #fff !important;
 }
 h1 {
     box-shadow: inset 0 0 0 0 #5cc5eb;
     color: #5cc5eb !important;
     padding: 0 .25rem !important;
     margin: 0 -.25rem !important;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    width: 100%;
+    transition: color .3s ease-in-out, border .3s ease-in-out;
 }
 h1:hover {
     color: #fff !important;
-    box-shadow: inset 610px 0 0 0 #5cc5eb;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(0.25turn, #DE6262, #FFB88C);
+    border-image-slice: 1;
 }
