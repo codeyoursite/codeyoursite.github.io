@@ -8,3 +8,14 @@ h1:hover {
     border-image: linear-gradient(0.25turn, #DE6262, #FFB88C);
     border-image-slice: 1;
 }
+h1:not(:hover) {
+    animation: .5s animateheading;
+}
+@keyframes animateheading {
+    from {
+        border-bottom: 10px solid transparent;
+    }
+    to {
+        border-bottom: 0px solid transparent;
+    }
+}
