@@ -5,6 +5,7 @@ body {
 nav {
     background: linear-gradient(90deg, rgba(13,110,253,1) 15%, rgba(147,194,255,1) 100%) !important;
     color: #fff !important;
+    --bs-navbar-color: #fff !important;
 }
 a {
     color: #fff !important;
