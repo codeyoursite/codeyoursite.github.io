@@ -4,14 +4,14 @@
     bottom: 10px;
     display: block;
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
     z-index: 100;
     text-decoration: none;
     text-shadow: 0;
     width: 35px;
     height: 35px;
-    border-bottom: 2px solid #000;
-    border-right: 2px solid #000;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
     z-index: 9;
     left: 50%;
     -webkit-transform: translate(-50%, 0%) rotate(45deg);
