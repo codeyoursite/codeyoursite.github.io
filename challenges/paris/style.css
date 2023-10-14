@@ -1,14 +1,10 @@
 h1 {
-    box-shadow: inset 0 0 0 0 #5cc5eb;
-    color: #5cc5eb !important;
     padding: 0 .25rem !important;
     margin: 0 -.25rem !important;
-    width: 100%;
     transition: color .3s ease-in-out, border .3s ease-in-out;
 }
 h1:hover {
-    color: #fff !important;
-    border-bottom: 4px solid transparent;
+    border-bottom: 6px solid transparent;
     border-image: linear-gradient(0.25turn, #DE6262, #FFB88C);
     border-image-slice: 1;
 }
