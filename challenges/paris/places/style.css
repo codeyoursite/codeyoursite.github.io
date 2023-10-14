@@ -22,8 +22,6 @@
     animation:         fade_move_down 4s ease-in-out infinite;
   }
   
-  
-  /*animated scroll arrow animation*/
   @-webkit-keyframes fade_move_down {
     0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
     50%  { opacity: 1;  }
