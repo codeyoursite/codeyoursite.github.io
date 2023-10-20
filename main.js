@@ -107,8 +107,7 @@ TxtType.prototype.tick = function() {
 window.onload = function() {
   showPage();
   window.scrollTo(0,0);
-  const header = document.getElementById("header");
-  header.style.opacity = "1";
+  setTimeout(headerAnimate, 500);
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
@@ -123,6 +122,11 @@ window.onload = function() {
   css.innerHTML = ".typewrite > .wrap { color: var(--normal-dark-light-text); border-right: 0.08em solid var(--typewriter-color)}";
   document.body.appendChild(css);
 };
+
+function headerAnimate() {
+  const header = document.getElementById("header");
+  header.style.opacity = "1";
+}
 
 const button = document.querySelector("[data-theme-toggle]");
 const light = document.getElementById("light");
