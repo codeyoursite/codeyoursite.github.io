@@ -106,6 +106,7 @@ TxtType.prototype.tick = function() {
 
 window.onload = function() {
   showPage();
+  window.scrollTo(0,0);
   const header = document.getElementById("header");
   header.style.opacity = "1";
   var elements = document.getElementsByClassName('typewrite');
