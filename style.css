@@ -10,7 +10,7 @@
 }
 
 :root {
-  --bs-font-sans-serif: 'Roboto Slab', serif;
+  --bs-font-sans-serif: 'Roboto Slab', serif !important;
 }
 
 html {
