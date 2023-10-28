@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300+Agbalumo&display=swap');
 
 * {
+  font-family: 'Roboto Slab', serif;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -261,7 +261,7 @@ nav ul li {
 .page_text {
   top: calc(50% - 80px);
   position: relative;
-  font-family: 'Agbalumo', sans-serif;
+  font-family: 'Agbalumo', sans-serif !important;
 }
 
 /* Add animation to "page content" */
