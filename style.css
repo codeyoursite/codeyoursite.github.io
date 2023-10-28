@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bs-font-sans-serif: 'Roboto Slab', serif;
+}
+
 html {
   font-family: 'Roboto Slab', serif;
 }
