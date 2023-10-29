@@ -262,7 +262,11 @@ nav ul li {
 }
 
 .page_text {
-  top: calc(50% - 80px);
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   font-family: 'Agbalumo', sans-serif !important;
 }
