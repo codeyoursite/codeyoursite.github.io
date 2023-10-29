@@ -104,9 +104,13 @@ TxtType.prototype.tick = function() {
   }, delta);
 };
 
+const page = document.getElementById("page");
+
 window.onload = function() {
   showPage();
-  window.scrollTo(0,0);
+  page.addEventListener('animationend', function() {
+    window.scrollTo(0, 0);
+  });
   setTimeout(headerAnimate, 500);
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
