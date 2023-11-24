@@ -32,8 +32,8 @@ body {
 h1, h2, .iframe {
   margin: 0;
 }
-.iframe {
+.iframe, iframe {
   height: 100%;
-  width: 100vw;
+  width: 100%;
   padding: 0;
 }
