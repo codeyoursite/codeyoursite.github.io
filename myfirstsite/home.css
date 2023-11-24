@@ -25,6 +25,9 @@ body {
   background-color: #8d1911;
   color: white;
 }
+.start-hidden {
+  opacity: 0;
+}
 #main {
   display: none;
   padding: 15px;
