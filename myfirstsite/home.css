@@ -33,6 +33,7 @@ h1, h2, .iframe {
   margin: 0;
 }
 .iframe {
-  height: 75vh;
+  height: 100%;
+  width: 100vw;
   padding: 0;
 }
