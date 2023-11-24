@@ -29,6 +29,10 @@ body {
   display: none;
   padding: 15px;
 }
-h1 {
+h1, h2, .iframe {
   margin: 0;
+}
+.iframe {
+  height: 75vh;
+  padding: 0;
 }
