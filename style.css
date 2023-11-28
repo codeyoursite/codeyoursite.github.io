@@ -306,8 +306,12 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.creations h1 {
+  margin: 0;
+}
+
 .scratch, .firstsite {
-    background: #d0d0d0;
+    background: #7c7c7c;
     padding: 20px;
     float: left;
     width: 50%;
