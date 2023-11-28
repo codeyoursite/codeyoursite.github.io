@@ -133,32 +133,59 @@ function headerAnimate() {
 }
 
 const button = document.querySelector("[data-theme-toggle]");
-const light = document.getElementById("light");
-const dark = document.getElementById("dark");
+const buttontwo = document.querySelector("[data-theme-toggle-two]");
+const light = document.getElementsByClass("light");
+const dark = document.getElementsByClass("dark");
 
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 if (systemSettingDark.matches) {
-    light.style.color = 'white';
-    dark.style.color = 'orange';
+    light[0].style.color = 'white';
+    dark[0].style.color = 'orange';
+    light[1].style.color = 'white';
+    dark[1].style.color = 'orange';
     document.querySelector("html").setAttribute("data-theme", "dark");
     console.log("Started on dark mode");
 } else {
-    light.style.color = 'orange';
-    dark.style.color = 'black';
+    light[0].style.color = 'orange';
+    dark[0].style.color = 'black';
+    light[1].style.color = 'orange';
+    dark[1].style.color = 'black';
     document.querySelector("html").setAttribute("data-theme", "light");
     console.log("Started on light mode");
 }
 
 button.addEventListener("click", () => {
   if (light.style.color === 'orange'){
-    light.style.color = 'white';
-    dark.style.color = 'orange';
+    light[0].style.color = 'white';
+    dark[0].style.color = 'orange';
+    light[1].style.color = 'white';
+    dark[1].style.color = 'orange';
     document.querySelector("html").setAttribute("data-theme", "dark");
     console.log("Changed to dark mode");
   } else {
-    light.style.color = 'orange';
-    dark.style.color = 'black';
+    light[0].style.color = 'orange';
+    dark[0].style.color = 'black';
+    light[1].style.color = 'orange';
+    dark[1].style.color = 'black';
+    document.querySelector("html").setAttribute("data-theme", "light");
+    console.log("Changed to light mode");
+  }
+});
+
+buttontwo.addEventListener("click", () => {
+  if (light.style.color === 'orange'){
+    light[0].style.color = 'white';
+    dark[0].style.color = 'orange';
+    light[1].style.color = 'white';
+    dark[1].style.color = 'orange';
+    document.querySelector("html").setAttribute("data-theme", "dark");
+    console.log("Changed to dark mode");
+  } else {
+    light[0].style.color = 'orange';
+    dark[0].style.color = 'black';
+    light[1].style.color = 'orange';
+    dark[1].style.color = 'black';
     document.querySelector("html").setAttribute("data-theme", "light");
     console.log("Changed to light mode");
   }
