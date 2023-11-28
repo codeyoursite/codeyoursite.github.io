@@ -134,8 +134,8 @@ function headerAnimate() {
 
 const button = document.querySelector("[data-theme-toggle]");
 const buttontwo = document.querySelector("[data-theme-toggle-two]");
-const light = document.getElementsByClass("light");
-const dark = document.getElementsByClass("dark");
+const light = document.getElementsByClassName("light");
+const dark = document.getElementsByClassName("dark");
 
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
