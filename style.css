@@ -306,50 +306,15 @@ nav ul li {
     color: white;
 }
 
-.scratch {
-    background: #b8d8e3;
+.scratch, .firstsite {
+    background: #d0d0d0;
     padding: 20px;
+    float: left;
+    width: 50%;
+    height: auto;
 }
 
-@media (min-width: 650px) {
-     .scratch {
-        float: left;
-        width: 50%;
-        height: auto;
-    }
-    .animations {
-        margin: 0 0 0 50%;
-        height: auto;
-    }
-    .scratch_video {
-       height: auto;
-       width: 50%;
-   }
-  .animations_video {
-       height: auto;
-       width: 50%;
-   }
-}
-
-@media (max-width: 650px) {
-   .scratch_video {
-       height: auto;
-       width: 100%;
-   }
-  .animations_video {
-       height: auto;
-       width: 100%;
-   }
-  .scratch {
-      float: none;
-      width: 100%;
-    }
-  .animations {
-      margin: 0;
-  }
-}
-
-.scratch_link {
+.projects_link, {
   color: black;
   text-decoration: none;
 }
