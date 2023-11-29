@@ -159,9 +159,19 @@ function toggleTheme() {
 
 // Initial theme setup
 if (systemSettingDark.matches) {
-  toggleTheme();
+    light[0].style.color = 'white';
+    dark[0].style.color = 'orange';
+    light[1].style.color = 'white';
+    dark[1].style.color = 'orange';
+    document.querySelector("html").setAttribute("data-theme", "dark");
+    console.log("Started on dark mode");
 } else {
-  console.log("Started on light mode");
+    light[0].style.color = 'orange';
+    dark[0].style.color = 'black';
+    light[1].style.color = 'orange';
+    dark[1].style.color = 'black';
+    document.querySelector("html").setAttribute("data-theme", "light");
+    console.log("Started on light mode");
 }
 
 // Button click events
