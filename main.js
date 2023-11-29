@@ -185,4 +185,4 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Elements with classes 'light' or 'dark' not found.");
   }
-}
+});
