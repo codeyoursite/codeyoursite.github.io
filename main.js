@@ -132,55 +132,57 @@ function headerAnimate() {
   header.style.opacity = "1";
 }
 
-const light = document.getElementsByClassName("light");
-const dark = document.getElementsByClassName("dark");
-
-// Check if elements with the specified classes exist
-if (light.length > 0 && dark.length > 0) {
-  const button = document.querySelector("[data-theme-toggle]");
-  const buttontwo = document.querySelector("[data-theme-toggle-two]");
+document.addEventListener("DOMContentLoaded", function () {
+  const light = document.getElementsByClassName("light");
+  const dark = document.getElementsByClassName("dark");
   
-  const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-  
-  function toggleTheme() {
-    if (light[0].style.color === 'orange') {
-      light[0].style.color = 'white';
-      dark[0].style.color = 'orange';
-      light[1].style.color = 'white';
-      dark[1].style.color = 'orange';
-      document.querySelector("html").setAttribute("data-theme", "dark");
-      console.log("Changed to dark mode");
-    } else {
-      light[0].style.color = 'orange';
-      dark[0].style.color = 'black';
-      light[1].style.color = 'orange';
-      dark[1].style.color = 'black';
-      document.querySelector("html").setAttribute("data-theme", "light");
-      console.log("Changed to light mode");
+  // Check if elements with the specified classes exist
+  if (light.length > 0 && dark.length > 0) {
+    const button = document.querySelector("[data-theme-toggle]");
+    const buttontwo = document.querySelector("[data-theme-toggle-two]");
+    
+    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+    
+    function toggleTheme() {
+      if (light[0].style.color === 'orange') {
+        light[0].style.color = 'white';
+        dark[0].style.color = 'orange';
+        light[1].style.color = 'white';
+        dark[1].style.color = 'orange';
+        document.querySelector("html").setAttribute("data-theme", "dark");
+        console.log("Changed to dark mode");
+      } else {
+        light[0].style.color = 'orange';
+        dark[0].style.color = 'black';
+        light[1].style.color = 'orange';
+        dark[1].style.color = 'black';
+        document.querySelector("html").setAttribute("data-theme", "light");
+        console.log("Changed to light mode");
+      }
     }
-  }
+    
+    // Initial theme setup
+    if (systemSettingDark.matches) {
+        light[0].style.color = 'white';
+        dark[0].style.color = 'orange';
+        light[1].style.color = 'white';
+        dark[1].style.color = 'orange';
+        document.querySelector("html").setAttribute("data-theme", "dark");
+        console.log("Started on dark mode");
+    } else {
+        light[0].style.color = 'orange';
+        dark[0].style.color = 'black';
+        light[1].style.color = 'orange';
+        dark[1].style.color = 'black';
+        document.querySelector("html").setAttribute("data-theme", "light");
+        console.log("Started on light mode");
+    }
+    
+    // Button click events
+    button.addEventListener("click", toggleTheme);
+    buttontwo.addEventListener("click", toggleTheme);
   
-  // Initial theme setup
-  if (systemSettingDark.matches) {
-      light[0].style.color = 'white';
-      dark[0].style.color = 'orange';
-      light[1].style.color = 'white';
-      dark[1].style.color = 'orange';
-      document.querySelector("html").setAttribute("data-theme", "dark");
-      console.log("Started on dark mode");
   } else {
-      light[0].style.color = 'orange';
-      dark[0].style.color = 'black';
-      light[1].style.color = 'orange';
-      dark[1].style.color = 'black';
-      document.querySelector("html").setAttribute("data-theme", "light");
-      console.log("Started on light mode");
+    console.error("Elements with classes 'light' or 'dark' not found.");
   }
-  
-  // Button click events
-  button.addEventListener("click", toggleTheme);
-  buttontwo.addEventListener("click", toggleTheme);
-
-} else {
-  console.error("Elements with classes 'light' or 'dark' not found.");
 }
