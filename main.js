@@ -136,8 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const light = document.getElementsByClassName("light");
   const dark = document.getElementsByClassName("dark");
   
-  // Check if elements with the specified classes exist
-  if (light.length > 0 && dark.length > 0) {
     const button = document.querySelector("[data-theme-toggle]");
     const buttontwo = document.querySelector("[data-theme-toggle-two]");
     
@@ -181,8 +179,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Button click events
     button.addEventListener("click", toggleTheme);
     buttontwo.addEventListener("click", toggleTheme);
-  
-  } else {
-    console.error("Elements with classes 'light' or 'dark' not found.");
-  }
 });
