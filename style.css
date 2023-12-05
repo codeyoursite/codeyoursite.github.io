@@ -86,8 +86,12 @@ header {
 }
 
 
-.dropdown_menu.open, .dropdown_content_two.open {
+.dropdown_content_two.open {
     height: 150px;
+}
+
+.dropdown_menu.open {
+    height: 190px;
 }
 
 .dropdown_content_one.open {
