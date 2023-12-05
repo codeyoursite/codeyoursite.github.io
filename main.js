@@ -180,5 +180,5 @@ button.addEventListener("click", toggleTheme);
 buttontwo.addEventListener("click", toggleTheme);
 
 function right() {
-  alert("HI");
+  document.getElementById("text").innerText = "Working?";
 }
