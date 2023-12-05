@@ -178,3 +178,7 @@ function toggleTheme() {
 // Button click events
 button.addEventListener("click", toggleTheme);
 buttontwo.addEventListener("click", toggleTheme);
+
+function right() {
+  alert("HI");
+}
