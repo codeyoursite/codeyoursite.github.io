@@ -188,5 +188,11 @@ function changeName(isRight) {
   else if (!isRight && index > 0){
     index--;
   }
+  else if(isRight) {
+    index = 0;
+  }
+  else if(!isRight) {
+    index = array.length - 1;
+  }
   document.getElementById("text").innerText = array[index];
 }
