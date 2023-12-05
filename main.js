@@ -179,6 +179,14 @@ function toggleTheme() {
 button.addEventListener("click", toggleTheme);
 buttontwo.addEventListener("click", toggleTheme);
 
-function right() {
-  document.getElementById("text").innerText = "Working?";
+const array = ["Code Your Site", "Nom Two", "Nom Three"];
+const index = 0;
+function changeName(isRight) {
+  if (isRight){
+    index++;
+  }
+  else{
+    index--;
+  }
+  document.getElementById("text").innerText = array[index];
 }
