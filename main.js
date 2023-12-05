@@ -182,10 +182,10 @@ buttontwo.addEventListener("click", toggleTheme);
 const array = ["Code Your Site", "Nom Two", "Nom Three"];
 const index = 0;
 function changeName(isRight) {
-  if (isRight){
+  if (isRight && index < array.length){
     index++;
   }
-  else{
+  else if (!isRight && index > 0){
     index--;
   }
   document.getElementById("text").innerText = array[index];
