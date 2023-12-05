@@ -179,8 +179,8 @@ function toggleTheme() {
 button.addEventListener("click", toggleTheme);
 buttontwo.addEventListener("click", toggleTheme);
 
-const array = ["Code Your Site", "Nom Two", "Nom Three"];
-const index = 0;
+let array = ["Code Your Site", "Nom Two", "Nom Three"];
+let index = 0;
 function changeName(isRight) {
   if (isRight && index < array.length){
     index++;
