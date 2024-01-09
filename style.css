@@ -162,15 +162,20 @@ nav a:hover::after,.dropdown _menu a:hover::after {
 }
 
 .arrow-left {
-  position: absolute;
   top: 50vh;
   left: 5vw;
 }
 
 .arrow-right {
-  position: absolute;
   top: 50vh;
   right: 5vw;
+}
+
+.arrow-right, .arrow-left {
+  position: absolute;
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid black;
 }
 
 .active::after {
