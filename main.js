@@ -182,6 +182,10 @@ buttontwo.addEventListener("click", toggleTheme);
 let array = ["Code Your Site", "Check out the Navbar!", "Keep moving right!"];
 let index = 0;
 function changeName(isRight) {
+  let textchange = document.getElementById("text");
+  if (textchange.classList.contains("animating_text")) {
+    textchange.classList.remove("animating_text");
+  }
   if (isRight && index < array.length - 1){
     index++;
   }
@@ -194,5 +198,6 @@ function changeName(isRight) {
   else if(!isRight) {
     index = array.length - 1;
   }
-  document.getElementById("text").innerText = array[index];
+  textchange.innerText = array[index];
+  textchange.classList.add("animating_text");
 }
