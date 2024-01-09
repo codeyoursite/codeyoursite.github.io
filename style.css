@@ -161,6 +161,12 @@ nav a:hover::after,.dropdown _menu a:hover::after {
     left: 0;
 }
 
+.arrow-left {
+  position: absolute;
+  top: 300px;
+  left:  20px;
+}
+
 .active::after {
     content: "";
     position: absolute;
