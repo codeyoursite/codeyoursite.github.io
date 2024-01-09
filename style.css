@@ -98,7 +98,6 @@ header {
     height: 195px;
 }
 
-
 @media (max-width: 900px) {
     nav {
         display: none !important;
@@ -302,6 +301,15 @@ nav ul li {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--normal-dark-light-text) !important;
+}
+
+.animating_text {
+  animation: text_animatate 1s linear;
+}
+
+@keyframes text_animatate { 
+  from { opacity:0 } 
+  to { opacity:1 }
 }
 
 .animations {
