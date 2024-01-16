@@ -198,5 +198,6 @@ function changeName(isRight) {
   textchange.innerText = array[index];
   textchange.style.animationPlayState = 'paused';
   textchange.classList.add("animating_text");
+  textchange.style.animationPlayState = 'running';
   textchange.onanimationend = function() {textchange.classList.remove("animating_text")};
 }
