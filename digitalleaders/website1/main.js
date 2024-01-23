@@ -2,7 +2,9 @@ const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const btn = document.querySelector('.btn');
 
-function click(){
+btn.onclick = function() {click()};
+
+function click() {
   console.log("The 'click' function has started.");
   if (two.style.display = "none") {
     two.style.display = "block";
