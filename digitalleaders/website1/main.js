@@ -14,7 +14,7 @@ function click() {
     one.style.display = "none";
     btn.innerHTML = '← Previous';
     console.log("One is now hidden.");
-  } else if (one.style.display === "none") {
+  } else {
     one.style.display = "block";
     two.style.display = "none";
     btn.innerHTML = 'Next →';
