@@ -9,10 +9,20 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
 }
-two {
+.two {
   display: none;
   z-index: 100;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-one {
+.one {
   display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
