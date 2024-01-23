@@ -4,6 +4,8 @@
 }
 body {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   font-family: 'Montserrat', sans-serif;
 }
