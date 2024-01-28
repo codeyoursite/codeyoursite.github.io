@@ -8,7 +8,7 @@ btn.onclick = function() {
 
 function click() {
   console.log("The 'click' function has started.");
-
+  
   if (two.style.display === "none") {
     two.style.display = "block";
     one.style.display = "none";
