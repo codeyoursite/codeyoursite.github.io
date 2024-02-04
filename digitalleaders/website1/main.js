@@ -2,6 +2,9 @@ const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const btn = document.querySelector('.btn');
 
+one.style.display = "block";
+two.style.display = "none";
+
 btn.onclick = function() {
   click();
 };
