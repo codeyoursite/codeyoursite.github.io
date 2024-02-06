@@ -316,7 +316,7 @@ nav ul li {
   background-color: rgb(var(--color));
 }
 
-h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6 {
     color: var(--normal-dark-light-text) !important;
 }
 
@@ -340,14 +340,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scratch, .firstsite {
-    background: #7c7c7c;
+    background: var(--header-color);
     padding: 20px;
     float: left;
     width: 50%;
     height: auto;
 }
 
-.projects_link, {
-  color: black;
+.projects_link {
+  font-size: 1rem;
   text-decoration: none;
+}
+
+.scratch_video {
+  width: 100% !important;
+}
+
+.scratch {
+  text-align: left !important;
+}
+
+.firstsite {
+  text-align: right !important;
 }
