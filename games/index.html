@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Poster</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center;">
+    <form id="dog-form">
+        <h1>Create your dog's poster!</h1>
+        <label for="name">What is your dog's name?</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="breed">What is the breed of your dog?</label>
+        <input type="text" name="breed" id="breed">
+        <br>
+        <label for="color">What is the colour of your dog?</label>
+        <input type="text" name="colour" id="colour">
+        <br>
+        <label for="bark">Select a barking dog sound from your computer:</label>
+        <input type="file" name="bark" id="bark" accept="audio/mp3">
+        <br>
+        <label for="picture">Select a picture of your dog from your computer:</label>
+        <input type="file" name="picture" id="picture" accept="image/*">
+        <br>
+        <button type="button" onclick="send()">Submit</button>
+        <p id="error" style="color: red;"></p>
+        <br><br>
+    </form>
+    <div id="fact-file">
+        <h2>My dog <span id="fact-name"></span></h2>
+        <p>Breed: <span id="fact-breed"></span></p>
+        <p>Fur Color: <span id="fact-colour"></span></p>
+        <img style="border-radius: 20px;" id="dog-picture" height="300" width="auto">
+    </div>
+    <br>
+    <button id="download-btn" onclick="downloadImage()">Download Fact File Image</button>
+</body>
+<script src="main.js"></script>
+</html>
