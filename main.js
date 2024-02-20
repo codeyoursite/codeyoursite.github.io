@@ -111,10 +111,6 @@ const page = document.getElementById("page");
 
 window.onload = function() {
   showPage();
-  page.addEventListener('animationend', function() {
-    window.scrollTo(0, 0);
-    console.log("Scrolled to top.")
-  });
   const light = document.getElementsByClassName("light");
   const dark = document.getElementsByClassName("dark");
   if (systemSettingDark.matches) {
