@@ -12,7 +12,7 @@ var li = document.getElementById("li");
 var liOne = document.getElementById("li_one");
 var liTwo = document.getElementById("li_two");
 
-toggleBtn.onclick = function (e) {
+toggleBtn.addEventListener('click', function(e){
   e.preventDefault();
   dropDownMenu.classList.toggle('open');
   const isOpen = dropDownMenu.classList.contains('open');
@@ -24,9 +24,9 @@ toggleBtn.onclick = function (e) {
   } else {
     li.style.display = "none";
   }
-}
+});
 
-oneBtn.onclick = function (e) {
+oneBtn.addEventListener('click', function(e){
   e.preventDefault();
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
@@ -39,9 +39,9 @@ oneBtn.onclick = function (e) {
   } else {
     liOne.style.display = "none";
   }
-}
+});
 
-twoBtn.onclick = function (e) {
+twoBtn.addEventListener('click', function(e){
   e.preventDefault();
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
@@ -54,7 +54,7 @@ twoBtn.onclick = function (e) {
   } else {
     liTwo.style.display = "none";
   }
-}
+});
 
 function arrow_down() {
  twoBtnIcon.classList = 'fa-solid fa-caret-down';
