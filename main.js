@@ -12,7 +12,8 @@ var li = document.getElementById("li");
 var liOne = document.getElementById("li_one");
 var liTwo = document.getElementById("li_two");
 
-toggleBtn.onclick = function () {
+toggleBtn.onclick = function (e) {
+  e.preventDefault();
   dropDownMenu.classList.toggle('open');
   const isOpen = dropDownMenu.classList.contains('open');
   toggleBtnIcon.classList = isOpen
@@ -25,7 +26,8 @@ toggleBtn.onclick = function () {
   }
 }
 
-oneBtn.onclick = function () {
+oneBtn.onclick = function (e) {
+  e.preventDefault();
   oneMenu.classList.toggle('open');
   twoMenu.classList.remove('open');
   const isOpen_one = oneMenu.classList.contains('open');
@@ -39,7 +41,8 @@ oneBtn.onclick = function () {
   }
 }
 
-twoBtn.onclick = function () {
+twoBtn.onclick = function (e) {
+  e.preventDefault();
   twoMenu.classList.toggle('open');
   oneMenu.classList.remove('open');
   const isOpen_two = twoMenu.classList.contains('open');
