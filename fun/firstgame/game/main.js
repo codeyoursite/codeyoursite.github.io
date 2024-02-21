@@ -2,10 +2,10 @@ const button = document.getElementById("btn");
 let clicks = 0;
 
 button.addEventListener('click', function(e){
+    e.preventDefault();
     if (complete !== 1) {
-        e.preventDefault();
         clicks++;
-        console.log;
+        console.log("You clicked the button.");
     } else {
         console.log("This button is disabled.");
     }
