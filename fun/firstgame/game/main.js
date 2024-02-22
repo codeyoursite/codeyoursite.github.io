@@ -13,12 +13,13 @@ button.addEventListener('click', function(e){
     }
 });
 
-const beginOne = setTimeout(one, 1000);
-const beginTwo = setTimeout(two, 2000);
-const beginThree = setTimeout(three, 3000);
-const beginFour = setTimeout(begin, 4000);
+one();
+const beginTwo = setTimeout(two, 1000);
+const beginThree = setTimeout(three, 2000);
+const beginFour = setTimeout(begin, 3000);
 
 function one() {
+    button.classList.add("disabled");
     txt.innerText = "3...";
 }
 
@@ -33,6 +34,7 @@ function three() {
 function begin() {
     txt.innerText = "Click the button! Your timer has started.";
     complete++;
+    button.classList.remove("disabled");
     const end = setTimeout(end, 10000);
 }
 
