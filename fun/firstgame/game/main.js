@@ -1,5 +1,6 @@
 const button = document.getElementById("btn");
 let clicks = 0;
+let complete = 0;
 
 button.addEventListener('click', function(e){
     e.preventDefault();
@@ -17,4 +18,5 @@ function end() {
     console.log("Game Ended");
     console.log(`You finished with ${clicks} clicks.`);
     button.classList.add("disabled");
+
 }
