@@ -4,7 +4,7 @@ let complete = 1;
 
 button.addEventListener('click', function(e){
     e.preventDefault();
-    if (complete !== 1) {
+    if (complete === 1) {
         clicks++;
         console.log("You clicked the button.");
     } else {
