@@ -35,7 +35,7 @@ function begin() {
     txt.innerText = "Click the button! Your timer has started.";
     complete++;
     button.classList.remove("disabled");
-    const end = setTimeout(end, 10000);
+    setTimeout(end, 10000);
 }
 
 function end() {
