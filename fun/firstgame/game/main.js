@@ -41,6 +41,7 @@ function begin() {
 function end() {
     console.log("Game Ended");
     console.log(`You finished with ${clicks} clicks.`);
+    txt.innerText = `You finished with ${clicks} clicks.`;
     button.classList.add("disabled");
     complete--;
 }
