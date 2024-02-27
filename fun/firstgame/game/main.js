@@ -50,7 +50,8 @@ function end() {
     form.addEventListener("submit", logSubmit);
 }
 
-function logSubmit() {
+function logSubmit(e) {
+    e.preventDefault();
     const name = this.value;
     if (localStorage.getItem("highscore") == undefined) {
         localStorage.setItem("highscore", `${name} has got ${clicks}!`);
