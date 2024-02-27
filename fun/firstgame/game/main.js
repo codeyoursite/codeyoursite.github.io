@@ -52,7 +52,7 @@ function end() {
 
 function logSubmit(e) {
     e.preventDefault();
-    const name = this.value;
+    const name = document.getElementById("form").value;
     if (localStorage.getItem("highscore") == undefined) {
         localStorage.setItem("highscore", `${name} has got ${clicks}!`);
     }
