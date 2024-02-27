@@ -44,4 +44,10 @@ function end() {
     txt.innerText = `You finished with ${clicks} clicks.`;
     button.classList.add("disabled");
     complete--;
+    const prevHighscore = localStorage.getItem("highscore");
+    if (clicks > prevHighscore) {
+        localStorage.setItem("highscore", clicks);
+    }
+    const newHighscore = localStorage.getItem("highscore");
+    console.log(newHighscore);
 }
