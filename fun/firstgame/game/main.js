@@ -53,7 +53,7 @@ function end() {
 
 function logSubmit(e) {
     e.preventDefault();
-    const name = document.getElementById("form").value;
+    const name = document.getElementById("name").value;
     if (localStorage.getItem("highscore") == undefined) {
         localStorage.setItem("highscore", `${name} has got ${clicks}!`);
     }
@@ -64,5 +64,5 @@ function logSubmit(e) {
     }
     const newHighscore = localStorage.getItem("highscore");
     console.log(`${name} has got ${clicks}!`);
-    moreTxt.innerText = `The highest score is ${clicks} by ${name}!`;
+    moreTxt.innerText = newHighscore;
 }
