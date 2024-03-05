@@ -1,6 +1,7 @@
 const button = document.getElementById("btn");
 const txt = document.getElementById("text");
 const form = document.getElementById("form");
+const moreTxt = document.getElementById("moreTxt");
 let clicks = 0;
 let complete = 0;
 
@@ -58,9 +59,10 @@ function logSubmit(e) {
     }
     const prevHighscore = localStorage.getItem("highscore");
     if (clicks > prevHighscore) {
-        localStorage.setItem("highscore", clicks);
+        localStorage.setItem("highscore", `${name} is winning with ${clicks}!`);
         console.log("New Highscore!");
     }
     const newHighscore = localStorage.getItem("highscore");
     console.log(`${name} has got ${clicks}!`);
+    moreTxt.innerText = `The highest score is ${clicks} by ${name}!`;
 }
