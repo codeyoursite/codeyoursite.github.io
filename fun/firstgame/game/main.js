@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-=======
 const button = document.getElementById("btn");
 const txt = document.getElementById("text");
 const form = document.getElementById("form");
 const moreTxt = document.getElementById("moreTxt");
 let clicks = 0;
 let complete = 0;
->>>>>>> 70e3fd41b8cc0beab94c01222991768b7db63d2c
 
-<<<<<<< HEAD
-=======
 button.addEventListener('click', function(e){
     e.preventDefault();
     if (complete === 1) {
@@ -71,5 +66,3 @@ function logSubmit(e) {
     console.log(`${name} has got ${clicks}!`);
     moreTxt.innerText = newHighscore;
 }
-
->>>>>>> 70e3fd41b8cc0beab94c01222991768b7db63d2c
