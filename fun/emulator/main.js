@@ -2,7 +2,8 @@ const form = document.getElementById("form");
 const pass = document.getElementById("pass").value;
 const char = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+=\`¬<>,./?!"£$%^&*()|[]{}#~@;:'`;
 
-function checkForm() {
+function checkForm(e) {
+    e.preventDefault();
     let isfound = false;
     for (let i = 0; i < char.length; i++) {
         let char1 = char[i];
