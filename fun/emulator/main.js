@@ -1,8 +1,8 @@
 const form = document.getElementById("form");
 const pass = document.getElementById("pass").value;
-const char = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+=\`¬<>,./?!"£$%^&*()|[]{}#~@;:'`
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+const char = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+=\`¬<>,./?!"£$%^&*()|[]{}#~@;:'`;
+
+fuunction checkForm() {
     let isfound = false;
     for (let i = 0; i < char.length; i++) {
         let char1 = char[i];
@@ -19,7 +19,7 @@ form.addEventListener("submit", function(e) {
             }
         }
     }
-    if (isfound === true) {
-        console.log("Yay!");
+    if (isfound !== true) {
+        console.log("There was an error with your password. Please remember to only enter 3 digits.");
     }
-});
+}
