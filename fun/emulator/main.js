@@ -1,6 +1,6 @@
 const form = document.getElementById("form");
 const pass = document.getElementById("pass").value;
-const char = `abcdefghijklmnopqrstuvwxyz1234567890_-+=\`¬<>,./?!"£$%^&*()|[]{}#~@;:'`
+const char = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+=\`¬<>,./?!"£$%^&*()|[]{}#~@;:'`
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     let isfound = false;
