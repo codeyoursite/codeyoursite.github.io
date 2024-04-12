@@ -6,8 +6,7 @@ form.addEventListener("submit", (e) => {
     let data = new URLSearchParams();
     data.append("age", age);
     if (age < 7) {
-        console.log("P2")
-        const url = `../p2`;
+        const url = `../young`;
         window.location.href = url;
     } else {
         const url = `../second/index.html?${data.toString()}`;
