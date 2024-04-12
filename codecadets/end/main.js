@@ -26,7 +26,7 @@ if (age >= 7 && age <= 9) {
     points = 3;
 } else {
     console.error("Form Skipped.");
-    window.location.href("../start");
+    window.location.href = "../start";
 }
 
 if (level === "1") {
@@ -39,7 +39,7 @@ if (level === "1") {
     points += 4;
 } else {
     console.error("Form Skipped.");
-    window.location.href("../start");
+    window.location.href = "../start";
 }
 
 const txt = document.getElementById("info");
@@ -105,7 +105,7 @@ if (points == 3) {
     }
 } else {
     console.error("Form Skipped.");
-    window.location.href("../start");
+    window.location.href = "../start";
 }
 
 function change(act) {
