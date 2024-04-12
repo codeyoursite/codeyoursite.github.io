@@ -17,12 +17,16 @@ let dict = {
     "Python": {url: "https://code-cadets.getlearnworlds.com/course/pytu", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/42f7fd08f470a0c54903e248a1a24057.jpeg?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
     "Data Science": {url: "https://code-cadets.getlearnworlds.com/course/agentbriefing", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/e1ca2d31edac59cede18a980165336a3.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
     "Advanced Web Development": {url: "https://code-cadets.getlearnworlds.com/course/gameproject", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
+    "Advanced Web Development and Data Science": {img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"}
 };
 
 if (age >= 7 && age <= 9) {
     points = 2;
-} else {
+} else if (age > 9) {
     points = 3;
+} else {
+    console.error("Form Skipped.");
+    window.location.href("../start");
 }
 
 if (level === "1") {
@@ -31,8 +35,11 @@ if (level === "1") {
     points += 2;
 } else if (level === "3") {
     points += 3;
-} else {
+} else if (level === "4") {
     points += 4;
+} else {
+    console.error("Form Skipped.");
+    window.location.href("../start");
 }
 
 const txt = document.getElementById("info");
@@ -72,7 +79,7 @@ if (points == 3) {
     } else {
         change("Python");
     }
-} else {
+} else if (points === "7") {
     if (level !== "1") {
         if (radio === "5" || radio === "3") {
             change("Data Science");
@@ -96,6 +103,9 @@ if (points == 3) {
             txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
         }
     }
+} else {
+    console.error("Form Skipped.");
+    window.location.href("../start");
 }
 
 function change(act) {
