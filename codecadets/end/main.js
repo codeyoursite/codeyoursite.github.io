@@ -22,11 +22,8 @@ let dict = {
 
 if (age >= 7 && age <= 9) {
     points = 2;
-} else if (age > 9) {
-    points = 3;
 } else {
-    console.error("Form Skipped.");
-    window.location.href = "../start";
+    points = 3;
 }
 
 if (level === "1") {
@@ -35,11 +32,8 @@ if (level === "1") {
     points += 2;
 } else if (level === "3") {
     points += 3;
-} else if (level === "4") {
-    points += 4;
 } else {
-    console.error("Form Skipped.");
-    window.location.href = "../start";
+    points += 4;
 }
 
 const txt = document.getElementById("info");
@@ -79,7 +73,7 @@ if (points == 3) {
     } else {
         change("Python");
     }
-} else if (points === "7") {
+} else {
     if (level !== "1") {
         if (radio === "5" || radio === "3") {
             change("Data Science");
@@ -103,9 +97,6 @@ if (points == 3) {
             txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
         }
     }
-} else {
-    console.error("Form Skipped.");
-    window.location.href = "../start";
 }
 
 function change(act) {
