@@ -1,13 +1,12 @@
 const receive = new URLSearchParams(window.location.search);
-const age = parseInt(receive.get("age"));
-const level = parseInt(receive.get("level"));
-let radio = receive.get("radio");
+const age = receive.get("age");
+const level = receive.get("level");
+let radio = undefined;
+if (level !== "1") {
+    radio = receive.get("radio");
+}
 const choice = receive.get("choice");
 let points = 0;
-
-if (isNaN(age) || isNaN(level)) {
-    console.error("Invalid parameters in URL");
-}
 
 let dict = {
     "Block Coding": {url: "https://code-cadets.getlearnworlds.com/course/space-invaders", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/4d2eb929c413e767e3a14e01a211d5a2.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway A", purl: "https://code-cadets.getlearnworlds.com/coursesa"},
@@ -27,44 +26,83 @@ if (age >= 7 && age <= 9) {
     points = 3;
 }
 
-points += level;
+if (level === "1") {
+    points++;
+} else if (level === "2") {
+    points += 2;
+} else if (level === "3") {
+    points += 3;
+} else {
+    points += 4;
+}
 
-switch (points) {
-    case 3:
-        change("Block Coding");
-        break;
-    case 4:
-        if (level !== 1) {
-            change(radio === "1" ? "Makecode Arcade" : "Scratch");
+const txt = document.getElementById("info");
+const img = document.getElementById("img");
+const a = document.getElementById("link");
+let o = undefined;
+
+if (points == 3) {
+    change("Block Coding");
+} else if (points == 4) {
+    if (level !== "1") {
+        if (radio === "1") {
+            change("Makecode Arcade");
         } else {
             change("Scratch");
         }
-        break;
-    case 5:
-        change(level !== 1 && radio === "3" ? "JavaScript" : "HTML");
-        break;
-    case 6:
-        change(level !== 1 && radio === "2" ? "JavaScript" : "Python");
-        break;
-    default:
-        if (level !== 1 && (radio === "5" || radio === "3" || choice === "4")) {
+    } else {
+        change("Scratch");
+    }
+} else if (points == 5) {
+    if (level !== "1") {
+        if (radio === "3" && radio !== "5") {
+            change("JavaScript");
+        } else {
+            change("HTML");
+        }
+    } else {
+        change("HTML");
+    }
+} else if (points == 6) {
+    if (level !== "1") {
+        if (radio === "2" && radio !== "5") {
+            change("JavaScript");
+        } else {
+            change("Python");
+        }
+    } else {
+        change("Python");
+    }
+} else {
+    if (level !== "1") {
+        if (radio === "5" || radio === "3") {
+            change("Data Science");
+        } else {
+            if (choice === "4") {
+                change("Data Science");
+            } else if (choice === "3" || choice === "5") {
+                change("Advanced Web Development");
+            } else {
+                o = "The AI has chosen Advanced Web Development and Data Science for you.";
+                txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
+            }
+        }
+    } else {
+        if (choice === "4") {
             change("Data Science");
         } else if (choice === "3" || choice === "5") {
             change("Advanced Web Development");
         } else {
-            const combined = "Advanced Web Development and Data Science";
-            const combinedUrl = dict[combined].purl;
-            const combinedLink = `<a href="${combinedUrl}">${combined}</a>`;
-            const message = `The AI has chosen ${combined} for you. Click ${combinedLink} for more information.`;
-            txt.innerHTML = message;
+            o = "The AI has chosen Advanced Web Development and Data Science for you.";
+            txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
         }
+    }
 }
 
-function change(activity) {
-    const url = dict[activity].url;
-    const pathwayUrl = dict[activity].purl;
-    const message = `The AI has chosen ${activity} for you. Click <a href="${url}">here</a> for a link to the site or select any activity in <a href="${pathwayUrl}">${dict[activity].path}</a>`;
-    txt.innerHTML = message;
-    img.src = dict[activity].img;
-    a.href = url;
+function change(act) {
+    o = `The AI has chosen ${act} for you.`;
+    let url = dict[act].url;
+    txt.innerHTML = o + "<br>" + `Click <a href="${url}">here</a> for a link to the site or selct any activity in <a href="${dict[act].purl}">${dict[act].path}</a>`;
+    img.src = dict[act].img;
+    a.href = dict[act].url;
 }
