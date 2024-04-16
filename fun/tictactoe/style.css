@@ -4,3 +4,7 @@
     width: 20px;
     position: absolute;
 }
+
+.board {
+    position: relative;
+}
