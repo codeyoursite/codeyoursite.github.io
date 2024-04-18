@@ -11,6 +11,16 @@
     animation-duration: 1s;
 }
 
+.load {
+    animation: glitch cubic-bezier(.5,-0.25,.75,1) 0.15s infinite;
+}
+
+@keyframes glitch {
+    50% {
+      transform: skew(170deg);
+    }
+  }
+
 body {
     min-height: 100vh;
     padding: 20px;
