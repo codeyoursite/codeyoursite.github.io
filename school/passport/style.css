@@ -14,15 +14,16 @@
 }
 
 .load {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
     animation: flip var(--ease-elastic-in-1) 600ms infinite alternate;
 }
 
 @keyframes flip {
-    from {
-        transform: translate(-50%,-50%) !important;
-    }
-    to {
-      transform: translate(-50%,-50%) rotateY(180deg) !important;
+    100% {
+      transform: rotateY(180deg) !important;
     }
   }  
 
