@@ -1,3 +1,5 @@
+@import "https://unpkg.com/open-props@1.6.17/easings.min.css";
+
 .start {
     display: block;
 }
@@ -12,14 +14,14 @@
 }
 
 .load {
-    animation: glitch cubic-bezier(.5,-0.25,.75,1) 0.15s infinite;
+    animation: flip var(--ease-elastic-in-1) 600ms infinite alternate;
 }
 
-@keyframes glitch {
-    50% {
-      transform: skew(170deg);
+@keyframes flip {
+    100% {
+      transform: rotateY(180deg);
     }
-  }
+  }  
 
 body {
     min-height: 100vh;
