@@ -1,5 +1,10 @@
 .start {
-    display: none;
+    display: block;
+}
+
+.page {
+    animation-name: animatebottom;
+    animation-duration: 1s;
 }
 
 body {
@@ -7,3 +12,7 @@ body {
     padding: 20px;
 }
 
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
