@@ -19,7 +19,7 @@
 
 @keyframes flip {
     100% {
-      transform: rotateY(180deg);
+      transform: translate(-50%,-50%) rotateY(180deg) !important;
     }
   }  
 
