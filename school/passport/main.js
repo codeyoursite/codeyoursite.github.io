@@ -1,5 +1,5 @@
 document.body.onload = function(){
-    document.body.addEventListener(showPage, 1200);
+    setTimeout(showPage, 1200);
 }
   
 function showPage() {
