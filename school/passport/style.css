@@ -3,6 +3,7 @@
 }
 
 .page {
+    display: none;
     position: relative;
     -webkit-animation-name: animatebottom;
     -webkit-animation-duration: 1s;
