@@ -1,10 +1,18 @@
 document.body.onload = function(){
     setTimeout(showPage, 4000);
-    PowerGlitch.glitch('.img')
+    const {
+        startGlitch,
+        stopGlitch
+    } = PowerGlitch.glitch('.img');
+    startGlitch();
 }
   
 function showPage() {
-    PowerGlitch.glitch('.start');
+    const {
+        startTwoGlitch,
+        stopTwoGlitch
+    } = PowerGlitch.glitch('.start');
+    startTwoGlitch();
     setTimeout(showPageTwo, 1500);
     setTimeout(showPageThree, 700);
 }
@@ -20,10 +28,14 @@ function showPageTwo() {
             el.style.opacity = opacity;
         }
         if (times >= 150) {
-            el.remove();
+            stopGlitch();
+            stopTwoGlitch();
+            el.style.display = "none";
         } else if (times >= 300) {
             console.error("There seems to be an error. Please refresh the page.");
-            el.remove();
+            stopGlitch();
+            stopTwoGlitch();
+            el.style.display = "none";
             setTimeout(reload, 500);
             return;
         }
