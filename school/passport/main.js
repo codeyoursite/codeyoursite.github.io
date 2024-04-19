@@ -10,7 +10,7 @@ function showPage() {
 
 function showPageTwo() {
     document.getElementById("page").style.display = "block";
-    var el = document.getElementById("start");
+    const el = document.getElementById("start");
     let opacity = 1;
     let times = 0;
     setInterval(function() {
@@ -20,9 +20,9 @@ function showPageTwo() {
             el.style.opacity = opacity;
         }
         if (times >= 150) {
-            console.error("There seems to be an error. Please refresh the page.")
+            console.error("There seems to be an error. Please refresh the page.");
             return;
         }
     }, 8);
-    console.log(`Finished opacity loop with ${times} tries.`)
+    console.log(`Finished opacity loop with ${times} tries.`);
 }
