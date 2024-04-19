@@ -10,13 +10,12 @@ function showPage() {
 
 function showPageTwo() {
     document.getElementById("page").style.display = "block";
-    var el = document.getElementById(start);
-    let opacity = undefined;
+    var el = document.getElementById("start");
+    let opacity = 1;
     setInterval(function() {
-      opacity = el.style.opacity;
-      if (opacity > 0) {
-         opacity -= 0.01;
-         el.style.opacity = opacity;
-      }
+        if (opacity > 0) {
+            opacity -= 0.01;
+            el.style.opacity = opacity;
+        }
     }, 8);
 }
