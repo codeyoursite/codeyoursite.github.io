@@ -12,10 +12,15 @@ function showPageTwo() {
     document.getElementById("page").style.display = "block";
     var el = document.getElementById("start");
     let opacity = 1;
+    let times = 0;
     setInterval(function() {
+        times += 1;
         if (opacity > 0) {
             opacity -= 0.01;
             el.style.opacity = opacity;
+        }
+        if (times >= 150) {
+            break;
         }
     }, 8);
 }
