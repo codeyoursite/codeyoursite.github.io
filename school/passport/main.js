@@ -1,5 +1,8 @@
+import { PowerGlitch } from 'powerglitch'
+
 document.body.onload = function(){
     setTimeout(showPage, 5000);
+    PowerGlitch.glitch('.img')
 }
   
 function showPage() {
