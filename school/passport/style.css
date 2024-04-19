@@ -5,7 +5,7 @@
     position: fixed;
     z-index: 10;
     align-items: center;
-    padding-left: calc(100vw - 7rem);
+    padding-left: calc(50vw - 7rem);
     top: 0;
 }
 
