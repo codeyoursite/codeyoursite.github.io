@@ -4,7 +4,8 @@
     display: flex;
     position: absolute;
     z-index: 10;
-    margin: auto; /* Center the logo */
+    padding: 50vh 50vw 0 0;
+    height: 100vh;
 }
 
 .page {
