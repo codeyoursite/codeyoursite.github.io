@@ -20,10 +20,10 @@ function showPageTwo() {
             el.style.opacity = opacity;
         }
         if (times >= 150) {
-            stopGlitch();
+            el.remove();
         } else if (times >= 300) {
             console.error("There seems to be an error. Please refresh the page.");
-            stopGlitch();
+            el.remove();
             setTimeout(reload, 500);
             return;
         }
