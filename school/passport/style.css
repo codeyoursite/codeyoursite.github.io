@@ -16,15 +16,19 @@
     animation-duration: 1s;
 }
 
-.start img.load {
-    animation: flip var(--ease-elastic-in-1) 600ms infinite alternate;
-}
-
 @keyframes flip {
     100% {
         transform: rotateY(180deg) !important;
     }
-}  
+}
+
+.start img.load {
+    animation-name: flip; /* Name of the keyframes animation */
+    animation-duration: 600ms; /* Duration of the animation */
+    animation-timing-function: var(--ease-elastic-in-1); /* Timing function for the animation */
+    animation-iteration-count: infinite; /* Number of times the animation should repeat */
+    animation-direction: alternate; /* Direction of the animation (e.g., alternate, reverse) */
+}
 
 body {
     min-height: 100vh;
