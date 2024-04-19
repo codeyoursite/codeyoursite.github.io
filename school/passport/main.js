@@ -9,10 +9,10 @@ document.body.onload = function(){
   
 function showPage() {
     const {
-        startTwoGlitch,
-        stopTwoGlitch
+        startGlitch,
+        stopGlitch
     } = PowerGlitch.glitch('.start');
-    startTwoGlitch();
+    startGlitch();
     setTimeout(showPageTwo, 1500);
     setTimeout(showPageThree, 700);
 }
@@ -29,12 +29,12 @@ function showPageTwo() {
         }
         if (times >= 150) {
             stopGlitch();
-            stopTwoGlitch();
+            stopGlitch();
             el.style.display = "none";
         } else if (times >= 300) {
             console.error("There seems to be an error. Please refresh the page.");
             stopGlitch();
-            stopTwoGlitch();
+            stopGlitch();
             el.style.display = "none";
             setTimeout(reload, 500);
             return;
