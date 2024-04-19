@@ -2,10 +2,10 @@
 
 .start {
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 10;
-    padding: 50vh 50vw 0 0;
-    height: 100vh;
+    align-items: center;
+    padding-left: 50vw;
 }
 
 .page {
