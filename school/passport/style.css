@@ -1,13 +1,14 @@
 @import "https://unpkg.com/open-props@1.6.17/easings.min.css";
 
 .start {
-    display: flex;
+    display: block;
     position: fixed;
     z-index: 10;
     align-items: center;
     padding-left: calc(50vw - 7rem);
     padding-top: calc(50vh - 7rem);
     top: 0;
+    background: #fff;
 }
 
 .page {
