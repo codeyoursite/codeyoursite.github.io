@@ -6,10 +6,10 @@ document.body.onload = function(){
 function showPage() {
     PowerGlitch.glitch('.start');
     setTimeout(showPageTwo, 1500);
+    setTimeout(showPageThree, 700);
 }
 
 function showPageTwo() {
-    document.getElementById("page").style.display = "block";
     const el = document.getElementById("start");
     let opacity = 1;
     let times = 0;
@@ -33,4 +33,8 @@ function showPageTwo() {
 
 function reload() {
     location.reload();
+}
+
+function showPageThree() {
+    document.getElementById("page").style.display = "block";
 }
