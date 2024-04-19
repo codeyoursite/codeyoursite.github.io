@@ -1,6 +1,6 @@
 document.body.onload = function(){
 	$( ".load" ).mgGlitch({
-			destroy : false,
+		destroy : false,
 	        glitch: true,
 	        scale: true,
 	        blend : true,
