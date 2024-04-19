@@ -1,12 +1,12 @@
 document.body.onload = function(){
     setTimeout(showPage, 1200);
 	$( ".load" ).mgGlitch({
-		destroy : false,
+	destroy : false,
 	    glitch: true,
 	    scale: true,
 	    blend : true,
 	    blendModeType : 'hue',
-		glitch1TimeMin : 10
+	glitch1TimeMin : 10
 	});
 }
   
