@@ -16,7 +16,7 @@
     animation-duration: 1s;
 }
 
-.load {
+.start img.load {
     animation: flip var(--ease-elastic-in-1) 600ms infinite alternate;
 }
 
