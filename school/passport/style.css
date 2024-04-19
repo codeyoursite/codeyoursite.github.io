@@ -4,8 +4,7 @@
     display: flex;
     position: absolute;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
+    margin: auto; /* Center the logo */
 }
 
 .page {
@@ -23,9 +22,9 @@
 
 @keyframes flip {
     100% {
-      transform: rotateY(180deg) !important;
+        transform: rotateY(180deg) !important;
     }
-  }  
+}  
 
 body {
     min-height: 100vh;
@@ -38,6 +37,6 @@ body {
 }  
 
 @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0; opacity:1 }
 }
