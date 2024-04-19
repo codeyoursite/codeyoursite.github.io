@@ -20,7 +20,9 @@ function showPageTwo() {
             el.style.opacity = opacity;
         }
         if (times >= 150) {
-            break;
+            console.error("There seems to be an error. Please refresh the page.")
+            return;
         }
     }, 8);
+    console.log(`Finished opacity loop with ${times} tries.`)
 }
