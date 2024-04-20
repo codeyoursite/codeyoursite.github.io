@@ -1,12 +1,10 @@
 document.body.onload = function(){
     setTimeout(showPage, 4000);
     const power = PowerGlitch.glitch('.img');
-    startGlitch();
 }
   
 function showPage() {
     const power2 = PowerGlitch.glitch('.start');
-    startGlitch();
     setTimeout(showPageTwo, 1500);
     setTimeout(showPageThree, 700);
 }
