@@ -14,7 +14,7 @@ function showPageTwo() {
     let opacity = 1;
     let times = 0;
     var interval = setInterval(function() {
-        repeat(interval);
+        repeat(interval, el);
     }, 8);
     console.log(`Finished opacity loop with ${times} tries.`);
 }
@@ -27,13 +27,12 @@ function showPageThree() {
     document.getElementById("page").style.display = "block";
 }
 
-function repeat(interval) {
-        let int = interval;
+function repeat(interval, el) {
         let opacity = 1;
-        repeat2(opacity, int);
+        repeat2(opacity, interval, el);
 }
 
-function repeat2(opacity, interval) {
+function repeat2(opacity, interval, el) {
     if (opacity > 0) {
             opacity -= 0.01;
             el.style.opacity = opacity;
