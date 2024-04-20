@@ -42,12 +42,5 @@ function repeat2(opacity, interval) {
             power2.stopGlitch();
             el.style.display = "none";
             clearInterval(interval);
-        } else if (times >= 300) {
-            clearInterval(interval);
-            power2.stopGlitch();
-            power.stopGlitch();
-            el.style.display = "none";
-            setTimeout(reload, 500);
-            return;
         }
 }
