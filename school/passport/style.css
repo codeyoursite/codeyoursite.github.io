@@ -7,6 +7,8 @@
     align-items: center;
     padding-left: calc(50vw - 7rem);
     padding-top: calc(50vh - 7rem);
+    padding-right: calc(50vw - 7rem);
+    padding-bottom: calc(50vh - 7rem);
     top: 0;
     left: 0;
     height: 100vh;
