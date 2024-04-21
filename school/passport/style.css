@@ -22,13 +22,19 @@
     -webkit-animation-duration: 1s;
     animation-name: animatebottom;
     animation-duration: 1s;
+    color: #fff !important;
+    background: none;
 }
 
 body {
     min-height: 100vh;
     padding: 20px;
-    color: white;
     background: url(https://codeyoursite.github.io/cool-bg.png);
+    background-repeat: none;
+}
+
+body:not(.start) {
+    color: #fff !important;
 }
 
 .l-p {
