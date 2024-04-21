@@ -4,7 +4,7 @@ document.body.onload = function(){
 
 function showPage() {
     const start = document.getElementById("start");
-    const page = document.getElementById("page")
+    const page = document.getElementById("page");
     start.style.opacity = "0";
     start.addEventListener('transitionend', () => start.remove());
     page.style.display = "block";
