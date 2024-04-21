@@ -31,6 +31,10 @@ body {
     background: url(https://codeyoursite.github.io/cool-bg.png);
 }
 
+.l-p {
+    font-size: 2rem;
+}
+
 @-webkit-keyframes animatebottom {
     from { bottom:-100px; opacity:0 } 
     to { bottom:0px; opacity:1 }
