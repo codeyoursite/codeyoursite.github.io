@@ -31,8 +31,10 @@
 body {
     min-height: 100vh;
     padding: 20px;
-    background: url(https://codeyoursite.github.io/cool-bg.png) no-repeat fixed;
-    background-repeat: none;
+    background: url(https://codeyoursite.github.io/cool-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body:not(.start) {
