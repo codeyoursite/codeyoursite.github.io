@@ -26,6 +26,8 @@
 body {
     min-height: 100vh;
     padding: 20px;
+    color: white;
+    background: url(.../cool-bg.png);
 }
 
 @-webkit-keyframes animatebottom {
