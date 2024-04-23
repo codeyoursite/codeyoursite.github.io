@@ -3,8 +3,15 @@
     height: 20px;
     width: 20px;
     position: absolute;
+    font-size: 7rem;
 }
 
 .board {
     position: relative;
+}
+
+#one {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.4rem;
 }
