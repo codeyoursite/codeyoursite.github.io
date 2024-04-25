@@ -13,6 +13,6 @@ function showPage() {
     page.style.display = "block";
 }
 
-movePage(id) {
-    
+function movePage(id) {
+    document.body.classList.remove("")
 }
