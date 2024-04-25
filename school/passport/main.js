@@ -11,6 +11,7 @@ function showPage() {
     start.style.opacity = "0";
     start.addEventListener('transitionend', () => start.remove());
     page.style.display = "block";
+    movePage("first");
 }
 
 function movePage(id) {
