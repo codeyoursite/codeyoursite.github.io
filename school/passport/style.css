@@ -1,5 +1,9 @@
 @import "https://unpkg.com/open-props@1.6.17/easings.min.css";
 
+html {
+    scroll-behavior: smooth;
+}
+
 .start {
     display: block;
     position: fixed;
