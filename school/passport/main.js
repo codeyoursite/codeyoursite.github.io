@@ -14,5 +14,8 @@ function showPage() {
 }
 
 function movePage(id) {
-    document.body.classList.remove("")
+    const el = document.getElementById(id);
+    document.body.classList.remove("stop-scrolling");
+    el.scrollIntoView({ behavior: "smooth", });
+    document.body.classList.add("stop-scrolling");
 }
