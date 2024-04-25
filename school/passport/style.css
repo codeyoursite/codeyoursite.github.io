@@ -4,6 +4,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.f-link {
+    text-decoration: underline;
+}
+
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
