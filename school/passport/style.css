@@ -9,6 +9,10 @@ html {
     overflow: hidden;
 }
 
+.divider {
+    height: 110vh;
+}
+
 .start {
     display: block;
     position: fixed;
