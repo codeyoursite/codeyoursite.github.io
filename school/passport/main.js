@@ -12,3 +12,7 @@ function showPage() {
     start.addEventListener('transitionend', () => start.remove());
     page.style.display = "block";
 }
+
+movePage(id) {
+    
+}

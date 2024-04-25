@@ -4,6 +4,11 @@ html {
     scroll-behavior: smooth;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .start {
     display: block;
     position: fixed;
