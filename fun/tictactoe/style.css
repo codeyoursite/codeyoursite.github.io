@@ -3,6 +3,7 @@ body {
 }
 
 .cross {
+    opacity: 0;
     font-size: 4.5rem;
     width: 100px;
     display: inline-block;
@@ -22,5 +23,5 @@ body {
 .grid {
     position: absolute;
     top: 0px;
-    width: 300px;
+    width: 315px;
 }
