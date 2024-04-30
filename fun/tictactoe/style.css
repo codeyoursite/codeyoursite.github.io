@@ -10,7 +10,7 @@ body {
 
 .board {
     position: relative;
-    width: 300px;
+    width: 306px;
 }
 
 .board > img {
