@@ -4,14 +4,14 @@ body {
 
 .cross {
     opacity: 0;
-    font-size: 6rem;
+    font-size: 5rem;
     width: 100px;
     display: inline-block;
 }
 
 .board {
     position: relative;
-    width: 306px;
+    width: 315px;
 }
 
 .board > img {
