@@ -12,10 +12,9 @@ body {
 
 .board {
     position: relative;
+    width: 300px;
 }
 
-#one {
-    position: absolute;
-    top: 0.5rem;
-    left: 1.4rem;
+.grid{
+    display: flex;
 }
