@@ -6,6 +6,7 @@ body {
     opacity: 0;
     font-size: 6rem;
     width: 100px;
+    display: inline-block;
 }
 
 .board {
