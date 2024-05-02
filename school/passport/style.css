@@ -7,7 +7,7 @@ html {
 .f-link {
     text-decoration: underline;
     color: white !important;
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
 }
 
 .stop-scrolling {
