@@ -9,7 +9,7 @@ function showPage() {
     start.style.opacity = "0";
     start.addEventListener('transitionend', () => start.remove());
     page.style.display = "block";
-    page.addEventListener(animationend, () => {movePage("first")})
+    page.addEventListener("animationend", () => {movePage("first")})
 }
 
 function movePage(id) {
