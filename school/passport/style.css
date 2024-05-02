@@ -78,6 +78,7 @@ body {
     padding: 15px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
     font-size: 18px; /* Increase font size */
+    transition: background-color 0.8s;
 }
   
 #myBtn:hover {
