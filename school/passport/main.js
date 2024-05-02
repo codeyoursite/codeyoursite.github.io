@@ -9,6 +9,7 @@ function showPage() {
     start.style.opacity = "0";
     start.addEventListener('transitionend', () => start.remove());
     page.style.display = "block";
+    page.addEventListener(animationend, () => {movePage("first")})
 }
 
 function movePage(id) {
@@ -19,7 +20,7 @@ function movePage(id) {
 }
 
 let mybutton = document.getElementById("myBtn");
-let myhelp = document.getElementById("myhelp");
+let myhelp = document.getElementById("help");
 let seconds = 0;
 mybutton.style.display = "none";
 window.onscroll = function() {scrollFunction()};
