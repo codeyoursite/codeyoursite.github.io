@@ -11,6 +11,12 @@ html {
     cursor: pointer;
 }
 
+img:not(.load) {
+    box-shadow: 0 0 100px whitesmoke;
+    max-height: 300px;
+    width: auto;
+}
+
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
