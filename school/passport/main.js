@@ -20,7 +20,6 @@ function movePage(id) {
 
 let mybutton = document.getElementById("myBtn");
 mybutton.style.display = "none";
-mynav.style.display = "none";
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
