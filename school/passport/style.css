@@ -92,6 +92,10 @@ body:not(.start) {
     font-size: 2rem;
 }
 
+.s-p {
+    font-size: 1.1rem;
+}
+
 @-webkit-keyframes animatebottom {
     from { bottom:-100px; opacity:0 } 
     to { bottom:0px; opacity:1 }
