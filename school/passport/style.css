@@ -8,6 +8,7 @@ html {
     text-decoration: underline;
     color: white !important;
     font-size: 1.7rem !important;
+    cursor: pointer;
 }
 
 .stop-scrolling {
