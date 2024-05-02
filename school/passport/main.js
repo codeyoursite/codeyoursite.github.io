@@ -21,32 +21,32 @@ function movePage(id) {
 }
 
 let mybutton = document.getElementById("myBtn");
-let myhelp = document.getElementById("help");
-let seconds = 0;
+// let myhelp = document.getElementById("help");
+// let seconds = 0;
 mybutton.style.display = "none";
 window.addEventListener('scroll', scrollFunction);
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       mybutton.style.display = "block";
-      myhelp.style.display = "none";
-      checkHelp();
+      // myhelp.style.display = "none";
+      // checkHelp();
   } else {
       mybutton.style.display = "none";
-      myhelp.style.display = "none";
+      // myhelp.style.display = "none";
   }
 }
 
-function checkHelp() {
-  if (seconds < 5) {
-      setTimeout(changeTimer, 1000);
-      myhelp.style.display = "none";
-  } else {
-      myhelp.style.display = "block";
-  }
-}
+// function checkHelp() {
+//   if (seconds < 5) {
+//       setTimeout(changeTimer, 1000);
+//       myhelp.style.display = "none";
+//   } else {
+//       myhelp.style.display = "block";
+//   }
+// }
 
-function changeTimer() {
-  seconds += 1;
-  checkHelp();
-}
+// function changeTimer() {
+//   seconds += 1;
+//   checkHelp();
+// }

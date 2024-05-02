@@ -84,13 +84,13 @@ body {
 #myBtn:hover {
     background-color: #555;
 }
-
+/* 
 .help {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 100px;
-}
+} */
 
 body:not(.start) {
     color: #fff !important;
