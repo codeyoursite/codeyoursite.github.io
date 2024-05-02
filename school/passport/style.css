@@ -85,6 +85,12 @@ body {
     background-color: #555;
 }
 
+.help {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+}
+
 body:not(.start) {
     color: #fff !important;
 }
