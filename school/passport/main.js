@@ -19,12 +19,32 @@ function movePage(id) {
 }
 
 let mybutton = document.getElementById("myBtn");
+let myhelp = document.getElementById("myhelp");
+let seconds = 0;
 mybutton.style.display = "none";
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     mybutton.style.display = "block";
+    myhelp.style.display = "none";
+    checkHelp();
   } else {
     mybutton.style.display = "none";
+    myhelp.style.display = "none";
   }
+}
+
+function checkHelp() {
+  while (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (seconds < 5) {
+      setTimeout(1000, changeTimer);
+      myhelp.style.display = "none";
+    } else {
+      myhelp.style.display = "block";
+    }
+  }
+}
+
+function changeTimer() {
+  seconds += 1;
 }
