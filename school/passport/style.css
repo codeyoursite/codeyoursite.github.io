@@ -1,5 +1,3 @@
-@import "https://unpkg.com/open-props@1.6.17/easings.min.css";
-
 html {
     scroll-behavior: smooth;
 }
@@ -13,6 +11,15 @@ body {
     scrollbar-width: none;
 }
 
+.scroller::-webkit-scrollbar {
+    display: none;
+  }
+
+.scroller {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .f-link {
     text-decoration: underline;
     color: white !important;
@@ -20,12 +27,15 @@ body {
     cursor: pointer;
 }
 
+body {
+    overflow: hidden;
+}
+
 .scroller {
     height: 100vh;
     width: 100vw;
-    overflow: scroll;
+    overflow: scroll !important;
     scroll-snap-type: y mandatory;
-
 }
 
 .scroller .snap {
