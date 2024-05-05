@@ -8,6 +8,8 @@ const seven = document.getElementById("seven");
 const eight = document.getElementById("eight");
 const nine = document.getElementById("nine");
 
+const noms = [one, two, three, four, five, six, seven, eight, nine];
+
 let turn = undefined;
 
 let ones = undefined;
@@ -20,6 +22,24 @@ let sevens = undefined;
 let eights = undefined;
 let nines = undefined;
 let times = 0;
+
+let currentNom = undefined;
+for (let i = 0; i < noms.length; i++) {
+        currentNom = noms[i];
+        currentNom.addEventListener("click", function() {
+            if (times % 2 == 0) {
+                if (currentNom.textContent = "") {
+                    currentNom.textContent = "O";
+                }
+            } else {
+                if (currentNom.textContent = "") {
+                    currentNom.textContent = "X";
+                }
+            }
+            times += 1;
+            currentNom.style.opacity = "100%";
+        });
+}
 
 one.addEventListener("click", function() {
     if (times % 2 == 0) {
