@@ -4,6 +4,15 @@ html {
     scroll-behavior: smooth;
 }
 
+.scroller::-webkit-scrollbar {
+    display: none;
+  }
+
+.scroller {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .f-link {
     text-decoration: underline;
     color: white !important;
