@@ -7,20 +7,8 @@ const six = document.getElementById("six");
 const seven = document.getElementById("seven");
 const eight = document.getElementById("eight");
 const nine = document.getElementById("nine");
-
 const noms = [one, two, three, four, five, six, seven, eight, nine];
-
 let turn = undefined;
-
-let ones = undefined;
-let twos = undefined;
-let threes = undefined;
-let fours = undefined;
-let fives = undefined;
-let sixs = undefined;
-let sevens = undefined;
-let eights = undefined;
-let nines = undefined;
 let times = 0;
 
 let currentNom = undefined;
