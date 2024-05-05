@@ -15,7 +15,9 @@ function showPage() {
 
 function movePage(id) {
   const el = document.getElementById(id);
+  document.body.classList.remove("stop-scrolling");
   el.scrollIntoView({ behavior: "smooth" });
+  document.body.classList.add("stop-scrolling");
 }
 
 let mybutton = document.getElementById("myBtn");
