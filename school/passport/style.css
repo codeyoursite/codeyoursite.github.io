@@ -4,15 +4,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.scroller::-webkit-scrollbar {
-    display: none;
-  }
-
-.scroller {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
 .f-link {
     text-decoration: underline;
     color: white !important;
@@ -20,21 +11,15 @@ html {
     cursor: pointer;
 }
 
-.scroller {
-    height: 100%;
-    overflow: scroll;
-    scroll-snap-type: y mandatory;
-
-}
-
-.scroller .snap {
-    scroll-snap-align: start;
-}
-
 img:not(.load) {
     box-shadow: 0 0 100px whitesmoke;
     max-height: 300px;
     width: auto;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 
 .divider {
