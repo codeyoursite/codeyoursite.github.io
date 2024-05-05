@@ -12,16 +12,22 @@ let times = 1;
 
 let currentNom = undefined;
 for (let i = 0; i < noms.length; i++) {
+    console.log("Inside for loop.");
     currentNom = noms[i];
     currentNom.addEventListener("click", function() {
+        console.log("Event Listener Started.");
         if (currentNom.textContent === "") {
+            console.log("Inside if Statement.");
             currentNom.textContent = times % 2 === 0 ? "O" : "X";
             times++;
             currentNom.style.opacity = "100%";
             const winner = checkWinner();
             displayWinner(winner);
+            console.log("Finished if Statement.");
         }
+        console.log("Event Listener Finished.");
     });
+    console.log("Finished for loop.");
 }
 
 function checkWinner() {
