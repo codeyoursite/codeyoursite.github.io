@@ -11,15 +11,6 @@ body {
     scrollbar-width: none;
 }
 
-.scroller::-webkit-scrollbar {
-    display: none;
-  }
-
-.scroller {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
 .f-link {
     text-decoration: underline;
     color: white !important;
@@ -36,6 +27,23 @@ body {
     width: 100vw;
     overflow: scroll !important;
     scroll-snap-type: y mandatory;
+}
+
+.scroller::-webkit-scrollbar {
+    width: 16px;
+}
+
+.scroller::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+.scroller:-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background: linear-gradient(#e66465, #9198e5, #e66465);
 }
 
 .scroller .snap {
