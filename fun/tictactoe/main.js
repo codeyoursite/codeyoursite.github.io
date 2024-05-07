@@ -18,6 +18,7 @@ one.addEventListener("click", function() {
     } else {
         one.textContent = "X";
     }
+    checkWinner();
     times += 1;
     one.style.opacity = "100%";
 });
@@ -28,6 +29,7 @@ two.addEventListener("click", function() {
     } else {
         two.textContent = "X";
     }
+    checkWinner();
     times += 1;
     two.style.opacity = "100%";
 });
@@ -38,6 +40,7 @@ three.addEventListener("click", function() {
     } else {
         three.textContent = "X";
     }
+    checkWinner();
     times += 1;
     three.style.opacity = "100%";
 });
@@ -48,6 +51,7 @@ four.addEventListener("click", function() {
     } else {
         four.textContent = "X";
     }
+    checkWinner();
     times += 1;
     four.style.opacity = "100%";
 });
@@ -58,6 +62,7 @@ five.addEventListener("click", function() {
     } else {
         five.textContent = "X";
     }
+    checkWinner();
     times += 1;
     five.style.opacity = "100%";
 });
@@ -68,6 +73,7 @@ six.addEventListener("click", function() {
     } else {
         six.textContent = "X";
     }
+    checkWinner();
     times += 1;
     six.style.opacity = "100%";
 });
@@ -78,6 +84,7 @@ seven.addEventListener("click", function() {
     } else {
         seven.textContent = "X";
     }
+    checkWinner();
     times += 1;
     seven.style.opacity = "100%";
 });
@@ -88,6 +95,7 @@ eight.addEventListener("click", function() {
     } else {
         eight.textContent = "X";
     }
+    checkWinner();
     times += 1;
     eight.style.opacity = "100%";
 });
@@ -98,6 +106,7 @@ nine.addEventListener("click", function() {
     } else {
         nine.textContent = "X";
     }
+    checkWinner();
     times += 1;
     nine.style.opacity = "100%";
 });
