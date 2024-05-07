@@ -1,45 +1,29 @@
-const one = document.getElementById("one");
-const two = document.getElementById("two");
-const three = document.getElementById("three");
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const six = document.getElementById("six");
-const seven = document.getElementById("seven");
-const eight = document.getElementById("eight");
-const nine = document.getElementById("nine");
-const noms = [one, two, three, four, five, six, seven, eight, nine];
+const board = document.getElementById("board");
+const noms = document.querySelectorAll(".cell");
 let times = 1;
 
-let currentNom = undefined;
-for (let i = 0; i < noms.length; i++) {
-    console.log("Inside for loop.");
-    currentNom = noms[i];
-    currentNom.addEventListener("click", function() {
-        console.log("Event Listener Started.");
-        if (currentNom.textContent === "") {
-            console.log("Inside if Statement.");
-            currentNom.textContent = times % 2 === 0 ? "O" : "X";
-            times++;
-            currentNom.style.opacity = "100%";
-            const winner = checkWinner();
-            displayWinner(winner);
-            console.log("Finished if Statement.");
-        }
-        console.log("Event Listener Finished.");
-    });
-    console.log("Finished for loop.");
-}
+board.addEventListener("click", function(event) {
+    const clickedCell = event.target;
+    if (!clickedCell.matches(".cell")) return;
+    if (clickedCell.textContent === "") {
+        clickedCell.textContent = times % 2 === 0 ? "O" : "X";
+        times++;
+        clickedCell.style.opacity = "100%";
+        const winner = checkWinner();
+        displayWinner(winner);
+    }
+});
 
 function checkWinner() {
     const winningCombos = [
-        [one, two, three],
-        [four, five, six],
-        [seven, eight, nine],
-        [one, four, seven],
-        [two, five, eight],
-        [three, six, nine],
-        [one, five, nine],
-        [three, five, seven]
+        [noms[0], noms[1], noms[2]],
+        [noms[3], noms[4], noms[5]],
+        [noms[6], noms[7], noms[8]],
+        [noms[0], noms[3], noms[6]],
+        [noms[1], noms[4], noms[7]],
+        [noms[2], noms[5], noms[8]],
+        [noms[0], noms[4], noms[8]],
+        [noms[2], noms[4], noms[6]]
     ];
 
     for (let combo of winningCombos) {
@@ -48,7 +32,6 @@ function checkWinner() {
             return a.textContent;
         }
     }
-
     return null;
 }
 
