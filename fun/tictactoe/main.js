@@ -8,7 +8,7 @@ board.addEventListener("click", (event) => {
     if (clickedCell.classList.contains("cell") && clickedCell.textContent.trim() === "") {
         console.log("Inside if statement");
         clickedCell.textContent = turn;
-        clickedCell.style.opacity = "100%"; // Corrected to style.opacity
+        clickedCell.style.opacity = "100%";
         turn = turn === "X" ? "O" : "X";
         times++;
         checkWinner();
