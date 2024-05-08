@@ -4,10 +4,12 @@ let times = 0;
 
 board.addEventListener("click", (event) => {
     const clickedCell = event.target; 
-    console.log(event.target)
     console.log("Inside event Listener");
+    console.log("Clicked cell:", clickedCell);
+    console.log("Is cell:", clickedCell.classList.contains("cell"));
+    console.log("Text content:", clickedCell.textContent.trim());
     if (clickedCell.classList.contains("cell") && clickedCell.textContent.trim() === "") {
-        console.log("Inside if statement - " + clickedCell.classList.contains("cell") + clickedCell.textContent.trim() === "");
+        console.log("Inside if statement");
         clickedCell.textContent = turn;
         clickedCell.style.opacity = "100%";
         turn = turn === "X" ? "O" : "X";
