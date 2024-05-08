@@ -2,10 +2,6 @@ const board = document.getElementById("board");
 let turn = "X";
 let times = 0;
 
-const board = document.getElementById("board");
-let turn = "X";
-let times = 0;
-
 board.addEventListener("click", (event) => {
     const clickedCell = event.target;
     if (clickedCell.classList.contains("cell") && !clickedCell.textContent) {
@@ -49,12 +45,10 @@ function checkWinner() {
 }
 
 function resetGame() {
-    // Clear the text content of all cells
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
         cell.textContent = "";
     });
-    // Reset turn and times variables
     turn = "X";
     times = 0;
 }
