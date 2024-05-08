@@ -4,7 +4,7 @@ const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell => {
     cell.addEventListener("click", () => {
-        if (cell.textContent === "") {
+        if (cell.textContent === "W") {
             cell.textContent = turn;
             cell.style.opacity = "100%";
             turn = turn === "X" ? "O" : "X";
