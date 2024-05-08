@@ -3,15 +3,20 @@ let turn = "X";
 let times = 0;
 
 board.addEventListener("click", (event) => {
-    const clickedCell = event.target;
-    if (clickedCell.classList.contains("cell") && !clickedCell.textContent) {
+    const clickedCell = event.target; 
+    console.log("Inside event Listener");
+    if (clickedCell.classList.contains("cell") && clickedCell.textContent.trim() === "") {
+        console.log("Inside if statement");
         clickedCell.textContent = turn;
-        clickedCell.opacity = "100%";
+        clickedCell.style.opacity = "100%"; // Corrected to style.opacity
         turn = turn === "X" ? "O" : "X";
         times++;
         checkWinner();
+    } else {
+        console.log("There is an error. The if statement was not completed.")
     }
 });
+console.log("Finished event listener");
 
 function checkWinner() {
     const winningCombos = [
