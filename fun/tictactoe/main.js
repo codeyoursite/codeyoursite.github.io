@@ -1,24 +1,28 @@
-const board = document.getElementById("board");
 let turn = "X";
 let times = 1;
+const cells = document.querySelectorAll(".cell");
 
-board.addEventListener("click", (event) => {
-    const clickedCell = event.target; 
-    console.log("Inside event Listener");
-    console.log("Clicked cell:", clickedCell);
-    console.log("Is cell:", clickedCell.classList.contains("cell"));
-    console.log("Text content:", clickedCell.textContent.trim());
-    if (clickedCell.classList.contains("cell") && clickedCell.textContent.trim() === "") {
-        console.log("Inside if statement");
-        clickedCell.textContent = turn;
-        clickedCell.style.opacity = "100%";
-        turn = turn === "X" ? "O" : "X";
-        times++;
-        checkWinner();
-    } else {
-        console.log("There is an error. The if statement was not completed.")
-    }
+cells.forEach(cell => {
+    cell.addEventListener("click", () => {
+        if (cell.textContent === "") {
+            cell.textContent = turn;
+            cell.style.opacity = "100%";
+            turn = turn === "X" ? "O" : "X";
+            times++;
+            checkWinner();
+        } else if (cell.classList.contains("grid")) {
+            console.log("Whaaaaaaaaaaaaaaaaaaaat!!!")
+        } else {
+            console.log("There was a small problem with the code.")
+            cell.textContent = turn;
+            cell.style.opacity = "100%";
+            turn = turn === "X" ? "O" : "X";
+            times++;
+            checkWinner();
+        }
+    });
 });
+
 console.log("Finished event listener");
 
 function checkWinner() {
