@@ -1,139 +1,65 @@
-const one = document.getElementById("one");
-const two = document.getElementById("two");
-const three = document.getElementById("three");
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const six = document.getElementById("six");
-const seven = document.getElementById("seven");
-const eight = document.getElementById("eight");
-const nine = document.getElementById("nine");
-let turn = undefined;
+const board = document.getElementById("board");
+let turn = "X";
 let times = 0;
 
-one.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        one.textContent = "O";
-    } else {
-        one.textContent = "X";
-    }
-    one.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    one.style.opacity = "100%";
-});
+board.addEventListener("click", function(event) {
+    const clickedCell = event.target;
 
-two.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        two.textContent = "O";
-    } else {
-        two.textContent = "X";
+    // Check if the clicked element is a cell
+    if (clickedCell.classList.contains("cell")) {
+        // Check if the cell is empty
+        if (!clickedCell.textContent) {
+            // Set the text content based on the turn
+            clickedCell.textContent = turn;
+            clickedCell.style.opacity = "100%";
+            // Toggle the turn between "X" and "O"
+            turn = turn === "X" ? "O" : "X";
+            // Increment the number of times clicked
+            times++;
+            // Check for a winner after each move
+            checkWinner();
+        }
     }
-    two.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    two.style.opacity = "100%";
-});
-
-three.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        three.textContent = "O";
-    } else {
-        three.textContent = "X";
-    }
-    three.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    three.style.opacity = "100%";
-});
-
-four.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        four.textContent = "O";
-    } else {
-        four.textContent = "X";
-    }
-    four.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    four.style.opacity = "100%";
-});
-
-five.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        five.textContent = "O";
-    } else {
-        five.textContent = "X";
-    }
-    five.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    five.style.opacity = "100%";
-});
-
-six.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        six.textContent = "O";
-    } else {
-        six.textContent = "X";
-    }
-    six.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    six.style.opacity = "100%";
-});
-
-seven.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        seven.textContent = "O";
-    } else {
-        seven.textContent = "X";
-    }
-    seven.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    seven.style.opacity = "100%";
-});
-
-eight.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        eight.textContent = "O";
-    } else {
-        eight.textContent = "X";
-    }
-    eight.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    eight.style.opacity = "100%";
-});
-
-nine.addEventListener("click", function() {
-    if (times % 2 == 0) {
-        nine.textContent = "O";
-    } else {
-        nine.textContent = "X";
-    }
-    nine.style.opacity = "100%";
-    checkWinner();
-    times += 1;
-    nine.style.opacity = "100%";
 });
 
 function checkWinner() {
     const winningCombos = [
-        [one, two, three],
-        [four, five, six],
-        [seven, eight, nine],
-        [one, four, seven],
-        [two, five, eight],
-        [three, six, nine],
-        [one, five, nine],
-        [three, five, seven]
+        ["one", "two", "three"],
+        ["four", "five", "six"],
+        ["seven", "eight", "nine"],
+        ["one", "four", "seven"],
+        ["two", "five", "eight"],
+        ["three", "six", "nine"],
+        ["one", "five", "nine"],
+        ["three", "five", "seven"]
     ];
+    
     for (let combo of winningCombos) {
-        const [a, b, c] = combo;
+        const [aId, bId, cId] = combo;
+        const a = document.getElementById(aId);
+        const b = document.getElementById(bId);
+        const c = document.getElementById(cId);
+
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent) {
-            return a.textContent;
+            alert(`Player ${a.textContent} wins!`);
+            resetGame();
+            return;
         }
     }
-    return null;
+
+    if (times === 9) {
+        alert("It's a draw!");
+        resetGame();
+    }
+}
+
+function resetGame() {
+    // Clear the text content of all cells
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => {
+        cell.textContent = "";
+    });
+    // Reset turn and times variables
+    turn = "X";
+    times = 0;
 }
