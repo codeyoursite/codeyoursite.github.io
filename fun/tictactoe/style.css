@@ -3,7 +3,6 @@ body {
 }
 
 .cross {
-    opacity: 0;
     font-size: 4.25rem;
     width: 100px;
     display: inline-block;
