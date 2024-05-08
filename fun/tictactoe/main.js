@@ -1,6 +1,6 @@
 const board = document.getElementById("board");
 let turn = "X";
-let times = 0;
+let times = 1;
 
 board.addEventListener("click", (event) => {
     const clickedCell = event.target; 
