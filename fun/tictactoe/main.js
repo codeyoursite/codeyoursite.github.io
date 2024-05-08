@@ -11,7 +11,6 @@ let turn = undefined;
 let times = 0;
 
 one.addEventListener("click", function() {
-    if 
     if (times % 2 == 0) {
         one.textContent = "O";
     } else {
