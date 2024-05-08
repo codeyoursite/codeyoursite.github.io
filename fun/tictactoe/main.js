@@ -2,23 +2,18 @@ const board = document.getElementById("board");
 let turn = "X";
 let times = 0;
 
-board.addEventListener("click", function(event) {
-    const clickedCell = event.target;
+const board = document.getElementById("board");
+let turn = "X";
+let times = 0;
 
-    // Check if the clicked element is a cell
-    if (clickedCell.classList.contains("cell")) {
-        // Check if the cell is empty
-        if (!clickedCell.textContent) {
-            // Set the text content based on the turn
-            clickedCell.textContent = turn;
-            clickedCell.style.opacity = "100%";
-            // Toggle the turn between "X" and "O"
-            turn = turn === "X" ? "O" : "X";
-            // Increment the number of times clicked
-            times++;
-            // Check for a winner after each move
-            checkWinner();
-        }
+board.addEventListener("click", (event) => {
+    const clickedCell = event.target;
+    if (clickedCell.classList.contains("cell") && !clickedCell.textContent) {
+        clickedCell.textContent = turn;
+        clickedCell.opacity = "100%";
+        turn = turn === "X" ? "O" : "X";
+        times++;
+        checkWinner();
     }
 });
 
