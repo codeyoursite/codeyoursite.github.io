@@ -43,7 +43,7 @@ function checkWinner() {
         const b = document.getElementById(bId);
         const c = document.getElementById(cId);
 
-        if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W"&& b.textContent !== "W" && c.textContent !== "W") {
+        if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
             alert(`Player ${a.textContent} wins!`);
             resetGame();
             return;
