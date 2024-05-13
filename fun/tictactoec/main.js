@@ -1,6 +1,5 @@
 let turn = "X";
 let times = 0;
-let rand = undefined;
 let done = [];
 const cells = document.querySelectorAll(".cell");
 
@@ -13,7 +12,7 @@ cells.forEach(cell => {
             times++;
             done.push(cell);
             findthewinner();
-            random();
+            computer();
         } else if (cell.classList.contains("grid")) {
             Swal.fire({
                 icon: "error",
@@ -29,7 +28,7 @@ cells.forEach(cell => {
             times++;
             done.push(cell);
             findthewinner();
-            random();
+            computer();
         } else {
             Swal.fire({
                 icon: "error",
@@ -45,18 +44,11 @@ function refresh() {
 }
 
 function computer() {
-    for (let i = 0; i < cells.length; i++) {
-        if (rand == i) {
-            random();
-            return;
-        }
+    let rand = 0;
+    while (cells[rand].textContent === "X" || cells[rand].textContent === "O")  {
+             rand = Math.floor(Math.random() * cells.length);
     }
-    cells[random].click();
-}
-
-function random() {
-    rand = Math.floor(Math.random() * cells.length);
-    computer();
+    cells[rand].click();
 }
 
 function findthewinner() {
