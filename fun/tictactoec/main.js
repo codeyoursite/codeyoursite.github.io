@@ -1,6 +1,6 @@
 let turn = "X";
 let times = 0;
-let random = undefined;
+let rand = undefined;
 let done = [];
 const cells = document.querySelectorAll(".cell");
 
@@ -46,7 +46,7 @@ function refresh() {
 
 function computer() {
     for (let i = 0; i < cells.length; i++) {
-        if (random == i) {
+        if (rand == i) {
             random();
             return;
         }
@@ -55,7 +55,7 @@ function computer() {
 }
 
 function random() {
-    random = Math.floor(Math.random() * cells.length);
+    rand = Math.floor(Math.random() * cells.length);
     computer();
 }
 
