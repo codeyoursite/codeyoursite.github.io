@@ -32,9 +32,11 @@ function handleClick(event) {
                 icon: "error",
                 title: "Oops...",
                 text: "There is an issue. Please come back later."
-            });
-            // Refresh the game after a delay
-            setTimeout(3400, refresh);
+            }).then((result) => {
+                  if (result.isConfirmed) {
+                    refresh();
+                  }
+                });
         } else {
             // Display error message if cell is already marked
             Swal.fire({
