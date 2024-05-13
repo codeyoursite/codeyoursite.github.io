@@ -6,9 +6,9 @@ let rand = 0; // Index for computer's random move
 let done = []; // Array to track marked cells
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 
-// Add event listener to the board for player's move
-board.addEventListener("click", function() {
-    cell.addEventListener("click", handleClick); // Add event listener
+// Add event listener to each cell for player's move
+cells.forEach(cell => {
+    cell.addEventListener("click", handleClick); // Add event listener to each cell
 });
 
 // Function to handle cell click
@@ -140,4 +140,8 @@ function resetGame() {
     done = []; // Clear list of marked cells
     turn = "X"; // Reset player turn
     times = 0; // Reset move count
+    // Reattach event listener to each cell for player's move
+    cells.forEach(cell => {
+        cell.addEventListener("click", handleClick); // Add event listener to each cell
+    });
 }
