@@ -6,31 +6,27 @@ let rand = 0; // Index for computer's random move
 let done = []; // Array to track marked cells
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 
-// Add event listener to each cell for player's move
-cells.forEach(cell => {
-    cell.addEventListener("click", () => handleClick(cell)); // Pass the clicked cell to handleClick function
-});
-
 // Function to handle cell click
-function handleClick(cell) {
+function handleClick(event) {
+    const clickedCell = event.target; // Get the clicked cell
     // Remove event listener from the clicked cell
-    this.removeEventListener("click", handleClick);
+    clickedCell.removeEventListener("click", handleClick);
     // Check if text content is the placeholder
-    if (cell.textContent === "W") {
+    if (clickedCell.textContent === "W") {
             // Mark cell with player's symbol
-            cell.textContent = turn;
-            cell.style.opacity = "100%";
+            clickedCell.textContent = turn;
+            clickedCell.style.opacity = "100%";
             // Switch player turn
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
             // Add cell to list of marked cells
-            done.push(cell);
+            done.push(clickedCell);
             // Check for winner
             findthewinner();
             // Computer makes its move
             computer();
-        } else if (cell.classList.contains("grid")) {
+        } else if (clickedCell.classList.contains("grid")) {
             // Display error message if invalid cell is clicked
             Swal.fire({
                 icon: "error",
@@ -39,18 +35,18 @@ function handleClick(cell) {
             });
             // Refresh the game after a delay
             setTimeout(3400, refresh);
-        } else if (cell.textContent !== "X" && cell.textContent !== "O") {
+        } else if (clickedCell.textContent !== "X" && clickedCell.textContent !== "O") {
             // Log an error message for unexpected scenario
             console.log("There was a small problem with the code.");
             // Mark cell with player's symbol
-            cell.textContent = turn;
-            cell.style.opacity = "100%";
+            clickedCell.textContent = turn;
+            clickedCell.style.opacity = "100%";
             // Switch player turn
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
             // Add cell to list of marked cells
-            done.push(cell);
+            done.push(clickedCell);
             // Check for winner
             findthewinner();
             // Computer makes its move
@@ -64,6 +60,11 @@ function handleClick(cell) {
             });
         }
 }
+
+// Add event listener to each cell for player's move
+cells.forEach(cell => {
+    cell.addEventListener("click", handleClick); // Add event listener to each cell
+});
 
 // Function to refresh the game
 function refresh() {
