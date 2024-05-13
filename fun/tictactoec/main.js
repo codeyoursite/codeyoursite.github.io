@@ -12,7 +12,7 @@ cells.forEach(cell => {
             turn = turn === "X" ? "O" : "X";
             times++;
             done.push(cell);
-            checkWinner();
+            findthewinner();
         } else if (cell.classList.contains("grid")) {
             Swal.fire({
                 icon: "error",
@@ -27,7 +27,7 @@ cells.forEach(cell => {
             turn = turn === "X" ? "O" : "X";
             times++;
             done.push(cell);
-            checkWinner();
+            findthewinner();
         } else {
             Swal.fire({
                 icon: "error",
@@ -57,7 +57,7 @@ function random() {
     computer();
 }
 
-function checkWinner() {
+function findthewinner() {
     const winningCombos = [
         ["one", "two", "three"],
         ["four", "five", "six"],
