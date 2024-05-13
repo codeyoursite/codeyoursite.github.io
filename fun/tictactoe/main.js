@@ -16,6 +16,7 @@ cells.forEach(cell => {
                 title: "Oops...",
                 text: "There is an issue. Please come back later."
             });
+            setTimeout(3400, refresh);
         } else if (cell.textContent !== "X" && cell.textContent !== "O") {
             console.log("There was a small problem with the code.");
             cell.textContent = turn;
@@ -32,6 +33,10 @@ cells.forEach(cell => {
         }
     });
 });
+
+function refresh() {
+    location.reload();
+}
 
 function checkWinner() {
     const winningCombos = [
@@ -63,9 +68,13 @@ function checkWinner() {
             return;
         }
     }
-
     if (times === 9) {
-        alert("It's a draw!");
+        Swal.fire({
+            icon: "info",
+            title: "It's a draw!",
+            text: "All squares have been used.",
+            confirmButtonText: "Play again"
+        });
         resetGame();
     }
 }
