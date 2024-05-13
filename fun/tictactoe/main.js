@@ -1,5 +1,5 @@
 let turn = "X";
-let times = 1;
+let times = 0;
 const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell => {
@@ -57,7 +57,6 @@ function checkWinner() {
         const c = document.getElementById(cId);
 
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
-            alert(`Player ${a.textContent} wins!`);
             Swal.fire({
                 icon: "success",
                 title: `Player ${a.textContent} wins!`,
@@ -83,6 +82,7 @@ function resetGame() {
     const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => {
         cell.textContent = "W";
+        cell.style.opacity = "0";
     });
     turn = "X";
     times = 0;
