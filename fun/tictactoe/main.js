@@ -11,19 +11,27 @@ cells.forEach(cell => {
             times++;
             checkWinner();
         } else if (cell.classList.contains("grid")) {
-            console.log("Whaaaaaaaaaaaaaaaaaaaat!!!")
-        } else {
-            console.log("There was a small problem with the code.")
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "There is an issue. Please come back later."
+            });
+        } else if (cell.textContent !== "X" && cell.textContent !== "O") {
+            console.log("There was a small problem with the code.");
             cell.textContent = turn;
             cell.style.opacity = "100%";
             turn = turn === "X" ? "O" : "X";
             times++;
             checkWinner();
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Choose a different space",
+                text: "The cell you clicked on has already been taken."
+            });
         }
     });
 });
-
-console.log("Finished event listener");
 
 function checkWinner() {
     const winningCombos = [
@@ -45,6 +53,12 @@ function checkWinner() {
 
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
             alert(`Player ${a.textContent} wins!`);
+            Swal.fire({
+                icon: "success",
+                title: `Player ${a.textContent} wins!`,
+                text: "Well done!",
+                confirmButtonText: "Play again"
+            });
             resetGame();
             return;
         }
