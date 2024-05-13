@@ -13,6 +13,7 @@ cells.forEach(cell => {
             times++;
             done.push(cell);
             findthewinner();
+            random();
         } else if (cell.classList.contains("grid")) {
             Swal.fire({
                 icon: "error",
@@ -28,6 +29,7 @@ cells.forEach(cell => {
             times++;
             done.push(cell);
             findthewinner();
+            random();
         } else {
             Swal.fire({
                 icon: "error",
