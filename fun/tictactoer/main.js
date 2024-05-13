@@ -7,9 +7,15 @@ const cells = document.querySelectorAll(".cell"); // Select all cells on the gam
 
 // Add event listener to each cell for player's move
 cells.forEach(cell => {
-    cell.addEventListener("click", () => {
-        // Check if cell is empty
-        if (cell.textContent === "W") {
+    cell.addEventListener("click", handleClick); // Add event listener
+});
+
+// Function to handle cell click
+function handleClick() {
+    // Remove event listener from the clicked cell
+    this.removeEventListener("click", handleClick);
+    // Check if text content is the placeholder
+    if (cell.textContent === "W") {
             // Mark cell with player's symbol
             cell.textContent = turn;
             cell.style.opacity = "100%";
@@ -56,8 +62,7 @@ cells.forEach(cell => {
                 text: "The cell you clicked on has already been taken."
             });
         }
-    });
-});
+}
 
 // Function to refresh the game
 function refresh() {
