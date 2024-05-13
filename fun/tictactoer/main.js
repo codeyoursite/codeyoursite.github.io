@@ -8,11 +8,11 @@ const cells = document.querySelectorAll(".cell"); // Select all cells on the gam
 
 // Add event listener to each cell for player's move
 cells.forEach(cell => {
-    cell.addEventListener("click", handleClick); // Add event listener to each cell
+    cell.addEventListener("click", () => handleClick(cell)); // Pass the clicked cell to handleClick function
 });
 
 // Function to handle cell click
-function handleClick() {
+function handleClick(cell) {
     // Remove event listener from the clicked cell
     this.removeEventListener("click", handleClick);
     // Check if text content is the placeholder
@@ -142,6 +142,6 @@ function resetGame() {
     times = 0; // Reset move count
     // Reattach event listener to each cell for player's move
     cells.forEach(cell => {
-        cell.addEventListener("click", handleClick); // Add event listener to each cell
+        cell.addEventListener("click", () => handleClick(cell)); // Pass the clicked cell to handleClick function
     });
 }
