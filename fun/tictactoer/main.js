@@ -59,6 +59,10 @@ function refresh() {
 
 // Function for computer's move
 function computer() {
+    setTimeout(Math.floor(Math.random() * 3000) - 1000, computert);
+}
+
+function computert() {
     // Generate a random index for the computer's move
     rand = Math.floor(Math.random() * (cells.length - done.length));
     // Mark cell with player's symbol
