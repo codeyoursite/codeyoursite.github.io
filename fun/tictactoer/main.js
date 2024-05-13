@@ -75,8 +75,18 @@ function refresh() {
 function computer() {
     // Generate a random index for the computer's move
     rand = Math.floor(Math.random() * (cells.length - done.length));
-    // Click on the selected cell
-    cells[rand].click();
+    // Mark cell with player's symbol
+    cells[rand].textContent = turn;
+    // Set opacity to 100%
+    cells[rand].style.opacity = "100%";
+    // Switch player turn
+    turn = turn === "X" ? "O" : "X";
+    // Increment move count
+    times++;
+    // Add cell to list of marked cells
+    done.push(cells[rand]);
+    // Check for winner
+    findthewinner();
 }
 
 // Function to check for winner
