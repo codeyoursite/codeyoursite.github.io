@@ -1,5 +1,6 @@
 let turn = "X";
 let times = 0;
+let rand = 0;
 let done = [];
 const cells = document.querySelectorAll(".cell");
 
@@ -44,10 +45,7 @@ function refresh() {
 }
 
 function computer() {
-    let rand = 0;
-    while (cells[rand].textContent === "X" || cells[rand].textContent === "O")  {
-             rand = Math.floor(Math.random() * cells.length);
-    }
+    rand = Math.floor(Math.random() * (cells.length - done.length));
     cells[rand].click();
 }
 
@@ -97,6 +95,7 @@ function resetGame() {
         cell.textContent = "W";
         cell.style.opacity = "0";
     });
+    done = [];
     turn = "X";
     times = 0;
 }
