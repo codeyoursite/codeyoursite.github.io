@@ -26,7 +26,7 @@ function handleClick(event) {
             findthewinner();
             // Computer makes its move
             computer();
-        } else if (clickedCell.classList.contains("grid")) {
+        } else if (clickedCell.classList.contains("grid") || clickedCell.classList.contains("board")) {
             // Display error message if invalid cell is clicked
             Swal.fire({
                 icon: "error",
@@ -35,22 +35,6 @@ function handleClick(event) {
             });
             // Refresh the game after a delay
             setTimeout(3400, refresh);
-        } else if (clickedCell.textContent !== "X" && clickedCell.textContent !== "O") {
-            // Log an error message for unexpected scenario
-            console.log("There was a small problem with the code.");
-            // Mark cell with player's symbol
-            clickedCell.textContent = turn;
-            clickedCell.style.opacity = "100%";
-            // Switch player turn
-            turn = turn === "X" ? "O" : "X";
-            // Increment move count
-            times++;
-            // Add cell to list of marked cells
-            done.push(clickedCell);
-            // Check for winner
-            findthewinner();
-            // Computer makes its move
-            computer();
         } else {
             // Display error message if cell is already marked
             Swal.fire({
@@ -118,10 +102,11 @@ function findthewinner() {
                 title: `Player ${a.textContent} wins!`,
                 text: "Well done!",
                 confirmButtonText: "Play again"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                refresh();
+              }
             });
-            // Reset the game
-            resetGame();
-            return;
         }
     }
     // If all cells are marked and there is no winner, it's a draw
@@ -132,12 +117,15 @@ function findthewinner() {
             title: "It's a draw!",
             text: "All squares have been used.",
             confirmButtonText: "Play again"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            refresh();
+          }
         });
-        // Reset the game
-        resetGame();
     }
 }
 
+/*
 // Function to reset the game
 function resetGame() {
     // Select all cells
@@ -156,3 +144,4 @@ function resetGame() {
         cell.addEventListener("click", () => handleClick(cell)); // Pass the clicked cell to handleClick function
     });
 }
+*/
