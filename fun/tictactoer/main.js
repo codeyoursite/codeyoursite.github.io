@@ -122,8 +122,6 @@ function computert() {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
-            // Add cell to list of marked cells
-            done.push(cells[rand]);
             // Check for winner
             findthewinner();
         } else {
