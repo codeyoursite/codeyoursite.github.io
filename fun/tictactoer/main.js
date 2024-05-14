@@ -3,6 +3,7 @@ let grid = document.getElementById("board"); // Select the board tag
 let turn = "O"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
+const placeholder = "W";
 let index = 0;
 let id = null;
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
@@ -14,7 +15,7 @@ function handleClick(event) {
     // Remove event listener from the clicked cell
     clickedCell.removeEventListener("click", handleClick);
     // Check if text content is the placeholder
-    if (clickedCell.textContent === "W") {
+    if (clickedCell.textContent == placeholder) {
             // Mark cell with player's symbol
             clickedCell.textContent = turn;
             clickedCell.style.opacity = "100%";
@@ -97,7 +98,7 @@ function computer() {
 function computert() {
     // Generate a random index for the computer's move
     rand = Math.floor(Math.random() * (done.length++));
-    if (cells[rand].textContent == "W") {
+    if (cells[rand].textContent == placeholder) {
         // Mark cell with player's symbol
         cells[rand].textContent = turn;
         // Set opacity to 100%
@@ -113,7 +114,7 @@ function computert() {
     } else {
         // Generate a random index for the computer's move
         rand = Math.floor(Math.random() * (done.length++));
-        if (cells[rand].textContent == "W") {
+        if (cells[rand].textContent == placeholder) {
             // Mark cell with player's symbol
             cells[rand].textContent = turn;
             // Set opacity to 100%
