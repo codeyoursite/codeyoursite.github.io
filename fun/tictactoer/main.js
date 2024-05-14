@@ -4,8 +4,8 @@ let turn = "X"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 let index = 0;
-const done = [];
-// const done = document.querySelectorAll(".cell"); // Array to track unmarked cells
+let id = null;
+const done = document.querySelectorAll(".cell"); // Array to track unmarked cells
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 
 // Function to handle cell click
@@ -22,10 +22,38 @@ function handleClick(event) {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
-            // index = done.indexOf(2);
-            // done.splice(index, 1);
-            // Add cell to list of marked cells
-            done.push(clickedCell);
+            id = clickedCell.id;
+            if (id == "one") {
+                id = 1;
+            } else if (id == "two") {
+                id = 2;
+            } else if (id == "three") {
+                id = 3;
+            } else if (id == "four") {
+                id = 4;
+            } else if (id == "five") {
+                id = 5;
+            } else if (id == "six") {
+                id = 6;
+            } else if (id == "seven") {
+                id = 7;
+            } else if (id == "eight") {
+                id = 8;
+            } else if (id == "nine") {
+                id = 9;
+            } else {
+                // Display error message if invalid cell is clicked
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "There is an issue. Please come back later."
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        refresh();
+                    }
+                });
+            }
+            done.splice(id, 1);
             // Check for winner
             findthewinner();
             // Computer makes its move
@@ -63,12 +91,12 @@ function refresh() {
 
 // Function for computer's move
 function computer() {
-    setTimeout(Math.floor(Math.random() * 3000) - 1000, computert);
+    computert();
 }
 
 function computert() {
     // Generate a random index for the computer's move
-    rand = Math.floor(Math.random() * (cells.length - done.length));
+    rand = Math.floor(Math.random() * (done.length++));
     // Mark cell with player's symbol
     cells[rand].textContent = turn;
     // Set opacity to 100%
