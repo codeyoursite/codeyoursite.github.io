@@ -3,7 +3,9 @@ let grid = document.getElementById("board"); // Select the board tag
 let turn = "X"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
-let done = []; // Array to track marked cells
+let index = 0;
+const done = [];
+// const done = document.querySelectorAll(".cell"); // Array to track unmarked cells
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 
 // Function to handle cell click
@@ -20,6 +22,8 @@ function handleClick(event) {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
+            // index = done.indexOf(2);
+            // done.splice(index, 1);
             // Add cell to list of marked cells
             done.push(clickedCell);
             // Check for winner
