@@ -206,6 +206,7 @@ function computert() {
         // If the randomly generated index is out of bounds or the cell is already taken, try again
         computert();
     }
+    index = 0;
 }
 
 // Function to check for winner
