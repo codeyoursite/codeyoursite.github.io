@@ -102,11 +102,10 @@ function refresh() {
 function computer() {
     computert();
 }
-
 function computert() {
     // Generate a random index for the computer's move
-    rand = Math.floor(Math.random() * (done.length++));
-    if (cells[rand].textContent == placeholder) {
+    rand = Math.floor(Math.random() * done.length);
+    if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
         // Mark cell with player's symbol
         cells[rand].textContent = turn;
         // Set opacity to 100%
@@ -120,31 +119,8 @@ function computert() {
         // Check for winner
         findthewinner();
     } else {
-        // Generate a random index for the computer's move
-        rand = Math.floor(Math.random() * (done.length++));
-        if (cells[rand].textContent == placeholder) {
-            // Mark cell with player's symbol
-            cells[rand].textContent = turn;
-            // Set opacity to 100%
-            cells[rand].style.opacity = "100%";
-            // Switch player turn
-            turn = turn === "X" ? "O" : "X";
-            // Increment move count
-            times++;
-            // Check for winner
-            findthewinner();
-        } else {
-            // Display error message if invalid cell is clicked
-            Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "There is an issue. Please come back later."
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        refresh();
-                    }
-            });
-        }
+        // If the randomly generated index is out of bounds or the cell is already taken, try again
+        computert();
     }
 }
 
