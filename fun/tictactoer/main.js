@@ -63,7 +63,8 @@ function handleClick(event) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "There is an issue. Please come back later."
+                    text: "There is an issue. Please come back later.",
+                    allowOutsideClick: false
                 }).then((result) => {
                     if (result.isConfirmed) {
                         refresh();
@@ -80,7 +81,8 @@ function handleClick(event) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "There is an issue. Please come back later."
+                text: "There is an issue. Please come back later.",
+                allowOutsideClick: false
             }).then((result) => {
                   if (result.isConfirmed) {
                     refresh();
@@ -163,7 +165,8 @@ function findthewinner() {
                     icon: "success",
                     title: `You beat the computer!`,
                     text: "Well done.",
-                    confirmButtonText: "Play again"
+                    confirmButtonText: "Play again",
+                    allowOutsideClick: false
                 }).then((result) => {
                   if (result.isConfirmed) {
                     refresh();
@@ -176,7 +179,8 @@ function findthewinner() {
                     icon: "error",
                     title: `Oh no!`,
                     text: "The computer beat you.",
-                    confirmButtonText: "Play again"
+                    confirmButtonText: "Play again",
+                    allowOutsideClick: false
                 }).then((result) => {
                   if (result.isConfirmed) {
                     refresh();
@@ -192,7 +196,8 @@ function findthewinner() {
             icon: "info",
             title: "It's a draw!",
             text: "All squares have been used.",
-            confirmButtonText: "Play again"
+            confirmButtonText: "Play again",
+            allowOutsideClick: false
         }).then((result) => {
           if (result.isConfirmed) {
             refresh();
