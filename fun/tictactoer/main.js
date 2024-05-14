@@ -8,6 +8,8 @@ let index = 0;
 let id = null;
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
+let prevScore = 0; // Define prevScore globally
+
 if (localStorage.length > 0) {
     const prevScore = JSON.parse(localStorage.getItem('winData')); // Score from Past
     console.log(prevScore.score);
