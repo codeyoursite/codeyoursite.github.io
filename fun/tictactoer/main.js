@@ -5,7 +5,7 @@ let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 let index = 0;
 let id = null;
-const done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
+let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 
 // Function to handle cell click
