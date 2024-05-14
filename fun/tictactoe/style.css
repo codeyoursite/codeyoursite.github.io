@@ -1,27 +1,3 @@
 body {
     padding: 15px;
 }
-
-.cross {
-    font-size: 4.25rem;
-    width: 100px;
-    display: inline-block;
-    text-align: center;
-    opacity: 0%;
-}
-
-.board {
-    position: relative;
-    width: 315px;
-}
-
-.board > img {
-    display: block;
-    width: 100%;
-}
-
-.grid {
-    position: absolute;
-    top: 0px;
-    width: 315px;
-}

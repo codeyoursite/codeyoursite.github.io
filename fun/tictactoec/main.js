@@ -149,9 +149,9 @@ function computert() {
         const a1 = document.getElementById(aId);
         const b1 = document.getElementById(bId);
         const c1 = winningCombos[winningCombos.length - 1];
-        if (a.textContent == b.textContent) {
+        if (a1.textContent == b1.textContent) {
             if (c1 == "one") {
-                c1 = 1;
+                rand = 1;
             } else if (c1 == "two") {
                 rand = 2;
             } else if (c1 == "three") {
