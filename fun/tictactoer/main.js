@@ -10,6 +10,12 @@ let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList t
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 let prevScore = 0; // Define prevScore globally
 
+// Function to handle scoring
+function updateScore(delta) {
+    prevScore += delta;
+    localStorage.setItem('winData', JSON.stringify({score: prevScore }));
+}
+
 if (localStorage.length > 0) {
     prevScore = JSON.parse(localStorage.getItem('winData')).score; // Score from Past
     console.log(prevScore);
@@ -148,7 +154,7 @@ function findthewinner() {
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
             if (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") {
-                localStorage.setItem('winData', JSON.stringify({score: `${prevScore += 1}` }));
+                updateScore(1); // Increment score for player
                 // Display success message for the winner
                 Swal.fire({
                     icon: "success",
@@ -161,11 +167,7 @@ function findthewinner() {
                   }
                 });
             } else if (a.textContent == "O" && b.textContent == "O" && c.textContent == "O") {
-                if (prevScore >= 1) {
-                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore -= 1}` }));
-                } else {
-                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore}` }));
-                }
+                updateScore(-1); // Decrement score for player
                 // Display sad message for the loser
                 Swal.fire({
                     icon: "error",
