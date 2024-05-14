@@ -10,10 +10,15 @@ let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList t
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 let prevScore = 0; // Define prevScore globally
 
-// Function to handle scoring
-function updateScore(delta) {
-    prevScore += delta;
-    localStorage.setItem('winData', JSON.stringify({score: prevScore }));
+if (localStorage.length > 0 && localStorage.getItem('winData')) {
+    prevScore = JSON.parse(localStorage.getItem('winData')).score; // Score from Past
+    if (isNaN(prevScore)) {
+        prevScore = 0; // Reset score if it's not a valid number
+    }
+    console.log(prevScore);
+} else {
+    prevScore = 0;
+    console.log("This is your first game.");
 }
 
 if (localStorage.length > 0) {
