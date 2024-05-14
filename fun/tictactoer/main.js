@@ -137,7 +137,7 @@ function findthewinner() {
         ["one", "five", "nine"],
         ["three", "five", "seven"]
     ];
-    
+
     // Iterate through each winning combination
     for (let combo of winningCombos) {
         const [aId, bId, cId] = combo;
@@ -161,10 +161,10 @@ function findthewinner() {
                   }
                 });
             } else if (turn == "X") {
-                if (prevScore.score >= 1) {
-                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore.score -= 1}` }));
+                if (prevScore >= 1) {
+                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore -= 1}` }));
                 } else {
-                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore.score}` }));
+                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore}` }));
                 }
                 // Display sad message for the loser
                 Swal.fire({
