@@ -14,8 +14,6 @@ let prevScore = 0; // Define prevScore globally
 function updateScore(delta) {
     prevScore += delta;
     localStorage.setItem('winData', JSON.stringify({score: prevScore }));
-    console.log(`Changed Score by ${delta}`);
-    console.log(`New Score = ${prevScore}`);
 }
 
 if (localStorage.length > 0 && localStorage.getItem('winData')) {
