@@ -80,6 +80,7 @@ function handleClick(event) {
         }
 }
 
+computer();
 // Add event listener to each cell for player's move
 cells.forEach(cell => {
     cell.addEventListener("click", handleClick); // Add event listener to each cell
