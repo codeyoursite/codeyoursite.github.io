@@ -8,6 +8,13 @@ let index = 0;
 let id = null;
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
+if (localStorage.length > 0) {
+    const prevScore = JSON.parse(localStorage.getItem('winData')); // Score from Past
+    console.log(prevScore.score);
+} else {
+    const prevScore = 0;
+    console.log("This is your first game.");
+}
 
 // Function to handle cell click
 function handleClick(event) {
@@ -164,17 +171,37 @@ function findthewinner() {
 
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
-            // Display success message for the winner
-            Swal.fire({
-                icon: "success",
-                title: `Player ${a.textContent} wins!`,
-                text: "Well done!",
-                confirmButtonText: "Play again"
-            }).then((result) => {
-              if (result.isConfirmed) {
-                refresh();
-              }
-            });
+            if (turn == "O") {
+                localStorage.setItem('winData', JSON.stringify({score: `${prevScore += 1}` }));
+                // Display success message for the winner
+                Swal.fire({
+                    icon: "success",
+                    title: `You beat the computer!`,
+                    text: "Well done.",
+                    confirmButtonText: "Play again"
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    refresh();
+                  }
+                });
+            } else if (turn == "X") {
+                if (prevScore.score >= 1) {
+                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore.score -= 1}` }));
+                } else {
+                    localStorage.setItem('winData', JSON.stringify({score: `${prevScore.score}` }));
+                }
+                // Display sad message for the loser
+                Swal.fire({
+                    icon: "error",
+                    title: `Oh no!`,
+                    text: "The computer beat you.",
+                    confirmButtonText: "Play again"
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    refresh();
+                  }
+                });
+            }
         }
     }
     // If all cells are marked and there is no winner, it's a draw
