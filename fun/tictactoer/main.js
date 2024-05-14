@@ -97,18 +97,48 @@ function computer() {
 function computert() {
     // Generate a random index for the computer's move
     rand = Math.floor(Math.random() * (done.length++));
-    // Mark cell with player's symbol
-    cells[rand].textContent = turn;
-    // Set opacity to 100%
-    cells[rand].style.opacity = "100%";
-    // Switch player turn
-    turn = turn === "X" ? "O" : "X";
-    // Increment move count
-    times++;
-    // Add cell to list of marked cells
-    done.push(cells[rand]);
-    // Check for winner
-    findthewinner();
+    if (cells[rand].textContent == "W") {
+        // Mark cell with player's symbol
+        cells[rand].textContent = turn;
+        // Set opacity to 100%
+        cells[rand].style.opacity = "100%";
+        // Switch player turn
+        turn = turn === "X" ? "O" : "X";
+        // Increment move count
+        times++;
+        // Add cell to list of marked cells
+        done.push(cells[rand]);
+        // Check for winner
+        findthewinner();
+    } else {
+        // Generate a random index for the computer's move
+        rand = Math.floor(Math.random() * (done.length++));
+        if (cells[rand].textContent == "W") {
+            // Mark cell with player's symbol
+            cells[rand].textContent = turn;
+            // Set opacity to 100%
+            cells[rand].style.opacity = "100%";
+            // Switch player turn
+            turn = turn === "X" ? "O" : "X";
+            // Increment move count
+            times++;
+            // Add cell to list of marked cells
+            done.push(cells[rand]);
+            // Check for winner
+            findthewinner();
+        } else {
+            // Display error message if invalid cell is clicked
+            Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "There is an issue. Please come back later."
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        refresh();
+                    }
+            });
+        }
+    }
 }
 
 // Function to check for winner
