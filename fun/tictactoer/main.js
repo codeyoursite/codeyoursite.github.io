@@ -21,8 +21,6 @@ if (localStorage.length > 0) {
 // Function to handle cell click
 function handleClick(event) {
     const clickedCell = event.target; // Get the clicked cell
-    // Remove event listener from the clicked cell
-    clickedCell.removeEventListener("click", handleClick);
     // Check if text content is the placeholder
     if (clickedCell.textContent == placeholder) {
             // Mark cell with player's symbol
