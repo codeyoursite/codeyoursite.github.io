@@ -11,10 +11,10 @@ const cells = document.querySelectorAll(".cell"); // Select all cells on the gam
 let prevScore = 0; // Define prevScore globally
 
 if (localStorage.length > 0) {
-    const prevScore = JSON.parse(localStorage.getItem('winData')); // Score from Past
-    console.log(prevScore.score);
+    prevScore = JSON.parse(localStorage.getItem('winData')).score; // Score from Past
+    console.log(prevScore);
 } else {
-    const prevScore = 0;
+    prevScore = 0;
     console.log("This is your first game.");
 }
 
