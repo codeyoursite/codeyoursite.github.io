@@ -147,7 +147,7 @@ function findthewinner() {
 
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
-            if (turn == "O") {
+            if (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") {
                 localStorage.setItem('winData', JSON.stringify({score: `${prevScore += 1}` }));
                 // Display success message for the winner
                 Swal.fire({
@@ -160,7 +160,7 @@ function findthewinner() {
                     refresh();
                   }
                 });
-            } else if (turn == "X") {
+            } else if (a.textContent == "O" && b.textContent == "O" && c.textContent == "O") {
                 if (prevScore >= 1) {
                     localStorage.setItem('winData', JSON.stringify({score: `${prevScore -= 1}` }));
                 } else {
