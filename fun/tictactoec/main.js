@@ -9,6 +9,35 @@ let id = null;
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 let prevScore = 0; // Define prevScore globally
+// Define winning combinations
+const winningCombos = [
+    ["one", "two", "three"],
+    ["four", "five", "six"],
+    ["seven", "eight", "nine"],
+    ["one", "four", "seven"],
+    ["two", "five", "eight"],
+    ["three", "six", "nine"],
+    ["one", "five", "nine"],
+    ["three", "five", "seven"]
+];
+const twoInRowCombos = [
+    ["one", "two"],
+    ["two", "three"],
+    ["four", "five"],
+    ["five", "six"],
+    ["seven", "eight"],
+    ["eight", "nine"],
+    ["one", "four"],
+    ["four", "seven"],
+    ["two", "five"],
+    ["five", "eight"],
+    ["three", "six"],
+    ["six", "nine"],
+    ["one", "five"],
+    ["five", "nine"],
+    ["three", "five"],
+    ["five", "seven"]
+];
 
 // Function to handle scoring
 function updateScore(delta) {
@@ -113,9 +142,53 @@ function refresh() {
 function computer() {
     computert();
 }
+
 function computert() {
-    // Generate a random index for the computer's move
-    rand = Math.floor(Math.random() * done.length);
+    for (let combo of twoInRowCombos) {
+        const [aId, bId] = combo;
+        const a1 = document.getElementById(aId);
+        const b1 = document.getElementById(bId);
+        const c1 = winningCombos[winningCombos.length - 1];
+        if (a.textContent == b.textContent) {
+            if (c1 == "one") {
+                c1 = 1;
+            } else if (c1 == "two") {
+                rand = 2;
+            } else if (c1 == "three") {
+                rand = 3;
+            } else if (c1 == "four") {
+                rand = 4;
+            } else if (c1 == "five") {
+                rand = 5;
+            } else if (c1 == "six") {
+                rand = 6;
+            } else if (c1 == "seven") {
+                rand = 7;
+            } else if (c1 == "eight") {
+                rand = 8;
+            } else if (c1 == "nine") {
+                rand = 9;
+            } else {
+                // Display error message
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "There is an issue. Please come back later.",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        refresh();
+                    }
+                });
+            }
+        } else {
+            index += 1;
+        }
+    }
+    if (index <= twoInRowCombos.length) {
+        // Generate a random index for the computer's move
+        rand = Math.floor(Math.random() * done.length);
+    }
     if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
         // Mark cell with player's symbol
         cells[rand].textContent = turn;
@@ -137,18 +210,6 @@ function computert() {
 
 // Function to check for winner
 function findthewinner() {
-    // Define winning combinations
-    const winningCombos = [
-        ["one", "two", "three"],
-        ["four", "five", "six"],
-        ["seven", "eight", "nine"],
-        ["one", "four", "seven"],
-        ["two", "five", "eight"],
-        ["three", "six", "nine"],
-        ["one", "five", "nine"],
-        ["three", "five", "seven"]
-    ];
-
     // Iterate through each winning combination
     for (let combo of winningCombos) {
         const [aId, bId, cId] = combo;
