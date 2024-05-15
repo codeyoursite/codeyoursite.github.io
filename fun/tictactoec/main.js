@@ -20,23 +20,24 @@ const winningCombos = [
     ["one", "five", "nine"],
     ["three", "five", "seven"]
 ];
-const twoInRowCombos = [
-    ["one", "two"],
-    ["two", "three"],
-    ["four", "five"],
-    ["five", "six"],
-    ["seven", "eight"],
-    ["eight", "nine"],
-    ["one", "four"],
-    ["four", "seven"],
-    ["two", "five"],
-    ["five", "eight"],
-    ["three", "six"],
-    ["six", "nine"],
-    ["one", "five"],
-    ["five", "nine"],
-    ["three", "five"],
-    ["five", "seven"]
+
+const winningCombos1 = [
+    ["one", "two", "three"],
+    ["three", "two", "one"],
+    ["four", "five", "six"],
+    ["six", "five", "four"],
+    ["seven", "eight", "nine"],
+    ["nine", "eight", "seven"],
+    ["one", "four", "seven"],
+    ["seven", "four", "one"],
+    ["two", "five", "eight"],
+    ["eight", "five", "two"],
+    ["three", "six", "nine"],
+    ["nine", "six", "three"],
+    ["one", "five", "nine"],
+    ["nine", "five", "one"],
+    ["three", "five", "seven"],
+    ["seven", "five", "three"]
 ];
 
 // Function to handle scoring
@@ -146,50 +147,17 @@ function computer() {
 function computert() {
     let index = 0; // Initialize index
     let rand;
-
-    for (let i2 = 0; i2 < twoInRowCombos.length; i2++) {
-        let combo = twoInRowCombos[i2];
-        const [aId, bId] = combo;
-        const a1 = document.getElementById(aId);
-        const b1 = document.getElementById(bId);
-        const c1 = twoInRowCombos[i2][1];
+    for (let combo of winningCombos) {
+        const [aId1, bId1, cId1] = combo;
+        const a1 = document.getElementById(aId1);
+        const b1 = document.getElementById(bId1);
+        const c1 = document.getElementById(cId1);
         if (a1.textContent == b1.textContent) {
-            if (c1 == "one") {
-                rand = 1;
-            } else if (c1 == "two") {
-                rand = 2;
-            } else if (c1 == "three") {
-                rand = 3;
-            } else if (c1 == "four") {
-                rand = 4;
-            } else if (c1 == "five") {
-                rand = 5;
-            } else if (c1 == "six") {
-                rand = 6;
-            } else if (c1 == "seven") {
-                rand = 7;
-            } else if (c1 == "eight") {
-                rand = 8;
-            } else if (c1 == "nine") {
-                rand = 9;
-            } else {
-                // Display error message
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "There is an issue. Please come back later.",
-                    allowOutsideClick: false
-                }).then((result) => {
-                      if (result.isConfirmed) {
-                        refresh();
-                      }
-                });
-            }
-        } else {
             index += 1;
+            rand = c1;
         }
     }
-    if (index <= twoInRowCombos.length) {
+    if (index != 1) {
         // Generate a random index for the computer's move
         rand = Math.floor(Math.random() * done.length);
     }
