@@ -5,6 +5,7 @@ let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 const placeholder = "W";
 let index = 0;
+let index1 = 0;
 let id = null;
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
@@ -145,37 +146,42 @@ function computer() {
 }
 
 function computert() {
-    let index = 0; // Initialize index
-    let rand;
-    for (let combo of winningCombos) {
-        const [aId1, bId1, cId1] = combo;
-        const a1 = document.getElementById(aId1);
-        const b1 = document.getElementById(bId1);
-        const c1 = document.getElementById(cId1);
-        if (a1.textContent == b1.textContent) {
-            index += 1;
-            rand = c1;
-        }
-    }
-    if (index != 1) {
-        // Generate a random index for the computer's move
-        rand = Math.floor(Math.random() * done.length);
-    }
-    if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
-        // Mark cell with player's symbol
-        cells[rand].textContent = turn;
-        // Set opacity to 100%
-        cells[rand].style.opacity = "100%";
-        // Switch player turn
-        turn = turn === "X" ? "O" : "X";
-        // Increment move count
-        times++;
-        // Add cell to list of marked cells
-        done.push(cells[rand]);
-        // Check for winner
-        findthewinner();
+    if (index1 >= 8) {
+        return false;
     } else {
-        computert();
+        let index = 0; // Initialize index
+        let rand;
+        for (let combo of winningCombos) {
+            const [aId1, bId1, cId1] = combo;
+            const a1 = document.getElementById(aId1);
+            const b1 = document.getElementById(bId1);
+            const c1 = document.getElementById(cId1);
+            if (a1.textContent == b1.textContent) {
+                index += 1;
+                rand = c1;
+            }
+        }
+        if (index != 1) {
+            // Generate a random index for the computer's move
+            rand = Math.floor(Math.random() * done.length);
+        }
+        if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
+            // Mark cell with player's symbol
+            cells[rand].textContent = turn;
+            // Set opacity to 100%
+            cells[rand].style.opacity = "100%";
+            // Switch player turn
+            turn = turn === "X" ? "O" : "X";
+            // Increment move count
+            times++;
+            // Add cell to list of marked cells
+            done.push(cells[rand]);
+            // Check for winner
+            findthewinner();
+        } else {
+            index1 += 1;
+            computert();
+        }
     }
 }
 
