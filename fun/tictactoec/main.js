@@ -144,7 +144,11 @@ function computer() {
 }
 
 function computert() {
-    for (let i2 = 0; let combo of twoInRowCombos; i2++) {
+    let index = 0; // Initialize index
+    let rand;
+
+    for (let i2 = 0; i2 < twoInRowCombos.length; i2++) {
+        let combo = twoInRowCombos[i2];
         const [aId, bId] = combo;
         const a1 = document.getElementById(aId);
         const b1 = document.getElementById(bId);
@@ -203,11 +207,10 @@ function computert() {
         // Check for winner
         findthewinner();
     } else {
-        // If the randomly generated index is out of bounds or the cell is already taken, try again
         computert();
     }
-    index = 0;
 }
+
 
 // Function to check for winner
 function findthewinner() {
