@@ -144,11 +144,11 @@ function computer() {
 }
 
 function computert() {
-    for (let combo of twoInRowCombos) {
+    for (let i2 = 0; let combo of twoInRowCombos; i2++) {
         const [aId, bId] = combo;
         const a1 = document.getElementById(aId);
         const b1 = document.getElementById(bId);
-        const c1 = winningCombos[winningCombos.length - 1];
+        const c1 = twoInRowCombos[i2][1];
         if (a1.textContent == b1.textContent) {
             if (c1 == "one") {
                 rand = 1;
@@ -176,9 +176,9 @@ function computert() {
                     text: "There is an issue. Please come back later.",
                     allowOutsideClick: false
                 }).then((result) => {
-                    if (result.isConfirmed) {
+                      if (result.isConfirmed) {
                         refresh();
-                    }
+                      }
                 });
             }
         } else {
