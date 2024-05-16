@@ -147,7 +147,24 @@ function computer() {
 
 function computert() {
     if (index1 >= 8) {
-        return false;
+        // Generate a random index for the computer's move
+        rand = Math.floor(Math.random() * done.length);
+        if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
+            // Mark cell with player's symbol
+            cells[rand].textContent = turn;
+            // Set opacity to 100%
+            cells[rand].style.opacity = "100%";
+            // Switch player turn
+            turn = turn === "X" ? "O" : "X";
+            // Increment move count
+            times++;
+            // Add cell to list of marked cells
+            done.push(cells[rand]);
+            // Check for winner
+            findthewinner();
+        } else {
+            console.error("Error!");
+        }
     } else {
         let index = 0; // Initialize index
         let rand;
@@ -183,6 +200,7 @@ function computert() {
             computert();
         }
     }
+    index1 = 0;
 }
 
 
