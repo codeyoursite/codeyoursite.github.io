@@ -148,9 +148,10 @@ function computer() {
 }
 
 // Function to determine the best move for the computer using minimax algorithm
+// Function to determine the best move for the computer using minimax algorithm
 function getBestMove() {
     let bestScore = -Infinity;
-    let move;
+    let move = null; // Initialize move variable
 
     // Iterate through all empty cells
     for (let cell of done) {
@@ -168,13 +169,17 @@ function getBestMove() {
         }
     }
 
-    // Make the best move
-    move.textContent = turn;
-    move.style.opacity = "100%";
-    turn = turn === "X" ? "O" : "X";
-    times++;
-    done.push(move);
-    findthewinner();
+    // Make the best move if one is found
+    if (move !== null) {
+        move.textContent = turn;
+        move.style.opacity = "100%";
+        turn = turn === "X" ? "O" : "X";
+        times++;
+        done.push(move);
+        findthewinner();
+    } else {
+        console.error("No valid move found.");
+    }
 }
 
 // Minimax function
