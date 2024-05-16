@@ -200,7 +200,7 @@ function computert() {
             findthewinner();
         } else {
             index1 += 1;
-            faliure.push(rand);
+            faliures.push(rand);
             computert();
         }
     }
