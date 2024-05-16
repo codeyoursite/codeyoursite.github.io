@@ -179,16 +179,22 @@ function getBestMove() {
 
 // Minimax function
 function minimax(board, depth, isMaximizing) {
-    let result = findthewinner(); // Check if the game is over
+    let result = checkWinner(); // Check if the game is over
     if (result !== null) {
-        return result === "X" ? 1 : result === "O" ? -1 : 0; // Return score
+        if (result === "O") {
+            return 1; // Return a positive score if the computer wins
+        } else if (result === "X") {
+            return -1; // Return a negative score if the player wins
+        } else {
+            return 0; // Return 0 for a draw
+        }
     }
 
     if (isMaximizing) {
         let bestScore = -Infinity;
         for (let cell of board) {
             if (cell.textContent === placeholder) {
-                cell.textContent = "X"; // Simulate player's move
+                cell.textContent = "O"; // Simulate computer's move
                 let score = minimax(board, depth + 1, false);
                 cell.textContent = placeholder; // Undo the move
                 bestScore = Math.max(score, bestScore);
@@ -199,7 +205,7 @@ function minimax(board, depth, isMaximizing) {
         let bestScore = Infinity;
         for (let cell of board) {
             if (cell.textContent === placeholder) {
-                cell.textContent = "O"; // Simulate computer's move
+                cell.textContent = "X"; // Simulate player's move
                 let score = minimax(board, depth + 1, true);
                 cell.textContent = placeholder; // Undo the move
                 bestScore = Math.min(score, bestScore);
@@ -208,7 +214,6 @@ function minimax(board, depth, isMaximizing) {
         return bestScore;
     }
 }
-
 
 // Function to check for winner
 function findthewinner() {
