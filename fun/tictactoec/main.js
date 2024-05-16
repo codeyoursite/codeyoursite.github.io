@@ -288,7 +288,7 @@ function findthewinner() {
         }
     }
     // If all cells are marked and there is no winner, it's a draw
-    if (times === 9) {
+    if (times === 9 && (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") || (a.textContent == "O" && b.textContent == "O" && c.textContent == "O")) {
         // Display draw message
         Swal.fire({
             icon: "info",
