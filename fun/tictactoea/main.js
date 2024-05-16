@@ -179,7 +179,7 @@ function getBestMove() {
 
 // Minimax function
 function minimax(board, depth, isMaximizing) {
-    let result = checkWinner(); // Check if the game is over
+    let result = getBestMove(); // Check if the game is over
     if (result !== null) {
         if (result === "O") {
             return 1; // Return a positive score if the computer wins
