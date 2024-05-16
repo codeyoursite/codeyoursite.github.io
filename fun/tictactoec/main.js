@@ -4,6 +4,7 @@ let turn = "O"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 const placeholder = "W";
+let stop = 0;
 let index = 0;
 let index1 = 0;
 let id = null;
@@ -258,6 +259,7 @@ function findthewinner() {
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
             if (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") {
                 updateScore(1); // Increment score for player
+                stop = 1;
                 // Display success message for the winner
                 Swal.fire({
                     icon: "success",
@@ -272,6 +274,7 @@ function findthewinner() {
                 });
             } else if (a.textContent == "O" && b.textContent == "O" && c.textContent == "O") {
                 updateScore(-1); // Decrement score for player
+                stop = 1;
                 // Display sad message for the loser
                 Swal.fire({
                     icon: "error",
@@ -288,7 +291,8 @@ function findthewinner() {
         }
     }
     // If all cells are marked and there is no winner, it's a draw
-    if (times === 9 && (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") || (a.textContent == "O" && b.textContent == "O" && c.textContent == "O")) {
+    if (times == 9 && stop == 0) {
+        stop = 1;
         // Display draw message
         Swal.fire({
             icon: "info",
