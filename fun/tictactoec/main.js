@@ -7,6 +7,7 @@ const placeholder = "W";
 let index = 0;
 let index1 = 0;
 let id = null;
+let faliures = [];
 let done = Array.from(document.querySelectorAll(".cell")); // Convert NodeList to array
 const cells = document.querySelectorAll(".cell"); // Select all cells on the game board
 let prevScore = 0; // Define prevScore globally
@@ -198,6 +199,7 @@ function computert() {
             findthewinner();
         } else {
             index1 += 1;
+            faliure.push(rand);
             computert();
         }
     }
@@ -217,8 +219,6 @@ function finalTime(end) {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
-            // Add cell to list of marked cells
-            done.push(cells[rand]);
             // Check for winner
             findthewinner();
         } else {
@@ -236,8 +236,6 @@ function finalTime(end) {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
-            // Add cell to list of marked cells
-            done.push(cells[rand]);
             // Check for winner
             findthewinner();
         } else {
