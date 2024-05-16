@@ -179,7 +179,7 @@ function getBestMove() {
 
 // Minimax function
 function minimax(board, depth, isMaximizing) {
-    let result = checkWinner(); // Check if the game is over
+    let result = findthewinner(); // Check if the game is over
     if (result !== null) {
         return result === "X" ? 1 : result === "O" ? -1 : 0; // Return score
     }
