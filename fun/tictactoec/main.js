@@ -77,6 +77,7 @@ function computer() {
     if (times >= 9) return;
 
     let madeMove = false;
+    const opponent = turn === "X" ? "O" : "X";
 
     // Try to make a winning or blocking move
     for (let combo of winningCombos) {
@@ -100,17 +101,17 @@ function computer() {
             a.style.opacity = "100%";
             madeMove = true;
             break;
-        } else if (a.textContent == "X" && b.textContent == "X" && c.textContent == placeholder) {
-            a.textContent = turn;
-            a.style.opacity = "100%";
+        } else if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
+            c.textContent = turn;
+            c.style.opacity = "100%";
             madeMove = true;
             break;
-        } else if (a.textContent == "X" && c.textContent == "X" && b.textContent == placeholder) {
-            a.textContent = turn;
-            a.style.opacity = "100%";
+        } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
+            b.textContent = turn;
+            b.style.opacity = "100%";
             madeMove = true;
             break;
-        } else if (b.textContent == "X" && c.textContent == "X" && a.textContent == placeholder) {
+        } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
             a.textContent = turn;
             a.style.opacity = "100%";
             madeMove = true;
@@ -120,13 +121,15 @@ function computer() {
 
     if (!madeMove) {
         // Make a random move if no winning/blocking move is possible
-        while (!madeMove) {
+        let attempts = 0;
+        while (!madeMove && attempts < cells.length) {
             const randIndex = Math.floor(Math.random() * cells.length);
             if (cells[randIndex].textContent == placeholder) {
                 cells[randIndex].textContent = turn;
                 cells[randIndex].style.opacity = "100%";
                 madeMove = true;
             }
+            attempts++;
         }
     }
 
