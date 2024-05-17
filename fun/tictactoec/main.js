@@ -157,7 +157,7 @@ function computer() {
 }
 
 function startComputer(nom) {
-    if (nom >= 0.57) {
+    if (nom >= 0.4) {
         // Mark cell with player's symbol
         cells[4].textContent = turn;
         // Set opacity to 100%
