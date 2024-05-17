@@ -176,7 +176,7 @@ function startComputer(nom) {
 function computert() {
     if (index1 >= 8) {
         // Generate a random index for the computer's move
-        rand = Math.floor(Math.random() * done.length);
+        rand = Math.floor(Math.random() * (done.length - 1));
         if (rand >= 0 && rand < cells.length && cells[rand].textContent == placeholder) {
             // Mark cell with player's symbol
             cells[rand].textContent = turn;
@@ -267,6 +267,7 @@ function finalTime(end) {
             findthewinner();
         } else {
             console.error("Yep, the end.")
+            
         }
     }
 }
