@@ -159,15 +159,13 @@ function computer() {
 function startComputer(nom) {
     if (nom >= 0.57) {
         // Mark cell with player's symbol
-        cells[5].textContent = turn;
+        cells[4].textContent = turn;
         // Set opacity to 100%
-        cells[5].style.opacity = "100%";
+        cells[4].style.opacity = "100%";
         // Switch player turn
         turn = turn === "X" ? "O" : "X";
         // Increment move count
         times++;
-        // Add cell to list of marked cells
-        done.push(cells[5]);
         // Check for winner
         findthewinner();
     } else {
@@ -187,9 +185,6 @@ function computert() {
             // Switch player turn
             turn = turn === "X" ? "O" : "X";
             // Increment move count
-            times++;
-            // Add cell to list of marked cells
-            done.push(cells[rand]);
             // Check for winner
             findthewinner();
         } else {
@@ -227,8 +222,6 @@ function computert() {
             turn = turn === "X" ? "O" : "X";
             // Increment move count
             times++;
-            // Add cell to list of marked cells
-            done.push(cells[rand]);
             // Check for winner
             findthewinner();
         } else {
