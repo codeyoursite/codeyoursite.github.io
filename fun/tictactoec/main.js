@@ -1,6 +1,6 @@
 // Initialize game variables
 let grid = document.getElementById("board"); // Select the board tag
-let turn = "O"; // Player turn ("X" or "O")
+let turn = "X"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 const placeholder = "W";
@@ -163,7 +163,7 @@ function findthewinner() {
 
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== placeholder) {
-            if (a.textContent == "X") {
+            if (a.textContent == "O") {
                 updateScore(1); // Increment score for player
                 stop = 1;
                 // Display success message for the winner
@@ -176,7 +176,7 @@ function findthewinner() {
                 }).then((result) => {
                     if (result.isConfirmed) refresh();
                 });
-            } else if (a.textContent == "O") {
+            } else if (a.textContent == "X") {
                 updateScore(-1); // Decrement score for player
                 stop = 1;
                 // Display sad message for the loser
