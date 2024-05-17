@@ -105,7 +105,7 @@ function findthewinner() {
 
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== placeholder) {
-            if (a.textContent == "O") {
+            if (a.textContent == "X") {
                 updateScore(1); // Increment score for player
                 stop = 1;
                 // Display success message for the winner
@@ -118,7 +118,7 @@ function findthewinner() {
                 }).then((result) => {
                     if (result.isConfirmed) refresh();
                 });
-            } else if (a.textContent == "X") {
+            } else if (a.textContent == "O") {
                 updateScore(-1); // Decrement score for player
                 stop = 1;
                 // Display sad message for the loser
