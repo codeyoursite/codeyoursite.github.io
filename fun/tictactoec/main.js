@@ -79,7 +79,7 @@ function computer() {
     let madeMove = false;
     const opponent = turn === "X" ? "O" : "X";
 
-    // Try to make a winning or blocking move
+    // Try to make a winning move
     for (let combo of winningCombos) {
         const [aId, bId, cId] = combo;
         const a = document.getElementById(aId);
@@ -101,26 +101,38 @@ function computer() {
             a.style.opacity = "100%";
             madeMove = true;
             break;
-        } else if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
-            c.textContent = turn;
-            c.style.opacity = "100%";
-            madeMove = true;
-            break;
-        } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
-            b.textContent = turn;
-            b.style.opacity = "100%";
-            madeMove = true;
-            break;
-        } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
-            a.textContent = turn;
-            a.style.opacity = "100%";
-            madeMove = true;
-            break;
         }
     }
 
+    // If no winning move was made, try to make a blocking move
     if (!madeMove) {
-        // Make a random move if no winning/blocking move is possible
+        for (let combo of winningCombos) {
+            const [aId, bId, cId] = combo;
+            const a = document.getElementById(aId);
+            const b = document.getElementById(bId);
+            const c = document.getElementById(cId);
+
+            if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
+                c.textContent = turn;
+                c.style.opacity = "100%";
+                madeMove = true;
+                break;
+            } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
+                b.textContent = turn;
+                b.style.opacity = "100%";
+                madeMove = true;
+                break;
+            } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
+                a.textContent = turn;
+                a.style.opacity = "100%";
+                madeMove = true;
+                break;
+            }
+        }
+    }
+
+    // If no winning or blocking move was made, make a random move
+    if (!madeMove) {
         let attempts = 0;
         while (!madeMove && attempts < cells.length) {
             const randIndex = Math.floor(Math.random() * cells.length);
