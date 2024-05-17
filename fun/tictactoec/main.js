@@ -104,14 +104,17 @@ function computer() {
             a.textContent = turn;
             a.style.opacity = "100%";
             madeMove = true;
+            break;
         } else if (a.textContent == "X" && c.textContent == "X" && b.textContent == placeholder) {
             a.textContent = turn;
             a.style.opacity = "100%";
             madeMove = true;
+            break;
         } else if (b.textContent == "X" && c.textContent == "X" && a.textContent == placeholder) {
             a.textContent = turn;
             a.style.opacity = "100%";
             madeMove = true;
+            break;
         }
     }
 
