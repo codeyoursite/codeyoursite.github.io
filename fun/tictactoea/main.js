@@ -144,80 +144,72 @@ function refresh() {
 
 // Function for computer's move
 function computer() {
-    getBestMove();
-}
-
-// Function to determine the best move for the computer using minimax algorithm
-// Function to determine the best move for the computer using minimax algorithm
-function getBestMove() {
-    let bestScore = -Infinity;
-    let move = null; // Initialize move variable
-
-    // Iterate through all empty cells
-    for (let cell of done) {
-        // Check if the cell is empty
-        if (cell.textContent === placeholder) {
-            cell.textContent = turn; // Simulate placing the player's symbol
-            let score = minimax(done, 0, false); // Minimax search
-            cell.textContent = placeholder; // Undo the move
-
-            // Update the best move
-            if (score > bestScore) {
-                bestScore = score;
-                move = cell;
-            }
-        }
-    }
-
-    // Make the best move if one is found
-    if (move !== null) {
-        move.textContent = turn;
-        move.style.opacity = "100%";
-        turn = turn === "X" ? "O" : "X";
-        times++;
-        done.push(move);
-        findthewinner();
-    } else {
-        console.error("No valid move found.");
+    if (!findWinningMove() && !blockPlayerWinningMove()) {
+        makeRandomMove();
     }
 }
 
-// Minimax function
-function minimax(board, depth, isMaximizing) {
-    let result = getBestMove(); // Check if the game is over
-    if (result !== null) {
-        if (result === "O") {
-            return 1; // Return a positive score if the computer wins
-        } else if (result === "X") {
-            return -1; // Return a negative score if the player wins
-        } else {
-            return 0; // Return 0 for a draw
-        }
-    }
+// Function to find winning move for computer
+function findWinningMove() {
+    for (let combo of winningCombos) {
+        const [aId, bId, cId] = combo;
+        const a = document.getElementById(aId);
+        const b = document.getElementById(bId);
+        const c = document.getElementById(cId);
 
-    if (isMaximizing) {
-        let bestScore = -Infinity;
-        for (let cell of board) {
-            if (cell.textContent === placeholder) {
-                cell.textContent = "O"; // Simulate computer's move
-                let score = minimax(board, depth + 1, false);
-                cell.textContent = placeholder; // Undo the move
-                bestScore = Math.max(score, bestScore);
-            }
+        // Check if two cells in the combination are marked by the computer and the third one is empty
+        if ((a.textContent === turn && b.textContent === turn && c.textContent === placeholder) ||
+            (a.textContent === turn && c.textContent === turn && b.textContent === placeholder) ||
+            (b.textContent === turn && c.textContent === turn && a.textContent === placeholder)) {
+            // Mark the empty cell to win the game
+            markCell(cId);
+            return true;
         }
-        return bestScore;
-    } else {
-        let bestScore = Infinity;
-        for (let cell of board) {
-            if (cell.textContent === placeholder) {
-                cell.textContent = "X"; // Simulate player's move
-                let score = minimax(board, depth + 1, true);
-                cell.textContent = placeholder; // Undo the move
-                bestScore = Math.min(score, bestScore);
-            }
-        }
-        return bestScore;
     }
+    return false;
+}
+
+// Function to block player's winning move
+function blockPlayerWinningMove() {
+    for (let combo of winningCombos) {
+        const [aId, bId, cId] = combo;
+        const a = document.getElementById(aId);
+        const b = document.getElementById(bId);
+        const c = document.getElementById(cId);
+
+        // Check if two cells in the combination are marked by the player and the third one is empty
+        if ((a.textContent !== turn && b.textContent !== turn && c.textContent === placeholder) ||
+            (a.textContent !== turn && c.textContent !== turn && b.textContent === placeholder) ||
+            (b.textContent !== turn && c.textContent !== turn && a.textContent === placeholder)) {
+            // Block player's winning move by marking the empty cell
+            markCell(cId);
+            return true;
+        }
+    }
+    return false;
+}
+
+// Function to make a random move
+function makeRandomMove() {
+    const emptyCells = Array.from(cells).filter(cell => cell.textContent === placeholder);
+    if (emptyCells.length > 0) {
+        const randomIndex = Math.floor(Math.random() * emptyCells.length);
+        const randomCellId = emptyCells[randomIndex].id;
+        markCell(randomCellId);
+    }
+}
+
+// Function to mark a cell with computer's symbol
+function markCell(cellId) {
+    const cell = document.getElementById(cellId);
+    cell.textContent = turn;
+    cell.style.opacity = "100%";
+    // Switch player turn
+    turn = turn === "X" ? "O" : "X";
+    // Increment move count
+    times++;
+    // Check for winner
+    findthewinner();
 }
 
 // Function to check for winner
