@@ -1,6 +1,6 @@
 // Initialize game variables
 let grid = document.getElementById("board"); // Select the board tag
-let turn = "O"; // Player turn ("X" or "O")
+let turn = "X"; // Player turn ("X" or "O")
 let times = 0; // Number of moves made
 let rand = 0; // Index for computer's random move
 const placeholder = "W";
