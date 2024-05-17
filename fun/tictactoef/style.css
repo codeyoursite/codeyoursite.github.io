@@ -25,3 +25,7 @@ body {
     top: 0px;
     width: 315px;
 }
+
+h1:hover {
+    cursor: pointer;
+}
