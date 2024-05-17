@@ -27,20 +27,28 @@ const winningCombos = [
 const winningCombos1 = [
     ["one", "two", "three"],
     ["three", "two", "one"],
+    ["three", "one", "two"],
     ["four", "five", "six"],
     ["six", "five", "four"],
+    ["six", "four", "five"],
     ["seven", "eight", "nine"],
     ["nine", "eight", "seven"],
+    ["nine", "seven", "eight"],
     ["one", "four", "seven"],
     ["seven", "four", "one"],
+    ["seven", "one", "four"],
     ["two", "five", "eight"],
     ["eight", "five", "two"],
+    ["eight", "two", "five"],
     ["three", "six", "nine"],
     ["nine", "six", "three"],
+    ["nine", "three", "six"],
     ["one", "five", "nine"],
     ["nine", "five", "one"],
+    ["nine", "one", "five"],
     ["three", "five", "seven"],
-    ["seven", "five", "three"]
+    ["seven", "five", "three"],
+    ["seven", "three", "five"]
 ];
 
 // Function to handle scoring
