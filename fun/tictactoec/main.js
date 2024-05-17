@@ -267,7 +267,17 @@ function finalTime(end) {
             findthewinner();
         } else {
             console.error("Yep, the end.")
-            
+            // Display error message if invalid cell is clicked
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "There is an issue. Please come back later.",
+                allowOutsideClick: false
+            }).then((result) => {
+                  if (result.isConfirmed) {
+                    refresh();
+                  }
+            });
         }
     }
 }
