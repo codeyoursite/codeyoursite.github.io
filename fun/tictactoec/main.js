@@ -290,22 +290,7 @@ function findthewinner() {
 
         // Check if cells in the current combination have the same non-empty content
         if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== "W" && b.textContent !== "W" && c.textContent !== "W") {
-            if (a.textContent == "O" && b.textContent == "O" && c.textContent == "O") {
-                updateScore(-1); // Decrement score for player
-                stop = 1;
-                // Display sad message for the loser
-                Swal.fire({
-                    icon: "error",
-                    title: `Oh no!`,
-                    text: "The computer beat you.",
-                    confirmButtonText: "Play again",
-                    allowOutsideClick: false
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    refresh();
-                  }
-                });
-            } else if (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") {
+            if (a.textContent == "X" && b.textContent == "X" && c.textContent == "X") {
                 updateScore(1); // Increment score for player
                 stop = 1;
                 // Display success message for the winner
@@ -313,6 +298,21 @@ function findthewinner() {
                     icon: "success",
                     title: `You beat the computer!`,
                     text: "Well done.",
+                    confirmButtonText: "Play again",
+                    allowOutsideClick: false
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    refresh();
+                  }
+                });
+            } else if (a.textContent == "O" && b.textContent == "O" && c.textContent == "O") {
+                updateScore(-1); // Decrement score for player
+                stop = 1;
+                // Display sad message for the loser
+                Swal.fire({
+                    icon: "error",
+                    title: `Oh no!`,
+                    text: "The computer beat you.",
                     confirmButtonText: "Play again",
                     allowOutsideClick: false
                 }).then((result) => {
