@@ -202,9 +202,14 @@ function computert() {
             const a1 = document.getElementById(aId1);
             const b1 = document.getElementById(bId1);
             const c1 = document.getElementById(cId1);
-            if (a1.textContent == b1.textContent) {
-                index += 1;
+            if ((a1.textContent == b1.textContent) && (a1.textContent === "O" && b1.textContent === "O")) {
+                index = 1;
                 rand = c1;
+            } else if ((a1.textContent == b1.textContent) && (a1.textContent === "X" && b1.textContent === "X")) {
+                if (index != 1) {
+                    index = 1;
+                    rand = c1;
+                }
             }
         }
         if (index != 1) {
