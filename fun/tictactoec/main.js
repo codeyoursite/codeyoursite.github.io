@@ -184,7 +184,7 @@ function findthewinner() {
 startComputer(Math.random());
 
 function startComputer(nom) {
-    if (nom >= 0.4 && cells[4].textContent == placeholder) {
+    if (nom >= 0.3 && cells[4].textContent == placeholder) {
         // Mark center cell if it's empty
         cells[4].textContent = turn;
         cells[4].style.opacity = "100%";
