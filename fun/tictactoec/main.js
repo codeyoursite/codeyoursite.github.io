@@ -139,7 +139,8 @@ function handleClick(event) {
         }
 }
 
-computer();
+const scomputer = Math.random();
+startComputer(scomputer);
 // Add event listener to each cell for player's move
 cells.forEach(cell => {
     cell.addEventListener("click", handleClick); // Add event listener to each cell
@@ -153,6 +154,23 @@ function refresh() {
 // Function for computer's move
 function computer() {
     computert();
+}
+
+function startComputer(nom) {
+    if (nom >= 0.5) {
+        // Mark cell with player's symbol
+            cells[5].textContent = turn;
+            // Set opacity to 100%
+            cells[5].style.opacity = "100%";
+            // Switch player turn
+            turn = turn === "X" ? "O" : "X";
+            // Increment move count
+            times++;
+            // Add cell to list of marked cells
+            done.push(cells[5]);
+            // Check for winner
+            findthewinner();
+    }
 }
 
 function computert() {
