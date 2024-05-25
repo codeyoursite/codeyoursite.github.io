@@ -27,7 +27,7 @@ mybutton.style.display = "none";
 window.addEventListener('scroll', scrollFunction);
 
 function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  if (document.getElementsByClassName('scroller')[0].scrollTop > 50 || document.querySelector('.foo').scrollTop > 50) {
       mybutton.style.display = "block";
       // myhelp.style.display = "none";
       // checkHelp();
