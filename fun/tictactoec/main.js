@@ -134,14 +134,20 @@ function computer() {
     // If no winning or blocking move was made, make a random move
     if (!madeMove) {
         let attempts = 0;
-        while (!madeMove && attempts < cells.length) {
-            const randIndex = Math.floor(Math.random() * cells.length);
-            if (cells[randIndex].textContent == placeholder) {
-                cells[randIndex].textContent = turn;
-                cells[randIndex].style.opacity = "100%";
-                madeMove = true;
+        if (cells[4].textContent == placeholder) {
+            cells[4].textContent = turn;
+            cells[4].style.opacity = "100%";
+            madeMove = true;
+        } else {
+            while (!madeMove && attempts < cells.length) {
+                const randIndex = Math.floor(Math.random() * cells.length);
+                if (cells[randIndex].textContent == placeholder) {
+                    cells[randIndex].textContent = turn;
+                    cells[randIndex].style.opacity = "100%";
+                    madeMove = true;
+                }
+                attempts++;
             }
-            attempts++;
         }
     }
 
