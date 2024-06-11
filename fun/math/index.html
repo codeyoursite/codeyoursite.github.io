@@ -158,12 +158,16 @@
 			if (index == 5) {
 				document.getElementById("iframe").style.display = "none";
 			}
-			document.getElementById("iframe").addEventListener("click", function() {
-				setTimeout(function() {
-					document.getElementById("iframe").style.display = "none";
-					document.getElementById(noms[nom + 1]).style.display = "block";
-				}, 160);
-			});
+			let monitor = setInterval(function(){
+				let elem = document.activeElement;
+				if (elem && elem.tagName == "iframe"){
+					setTimeout(function() {
+						document.getElementById("iframe").style.display = "none";
+						document.getElementById(noms[nom + 1]).style.display = "block";
+					}, 160);
+					clearInterval(monitor);
+				}
+			}, 100);
 		}
 	</script>
 </body>
