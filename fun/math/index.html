@@ -69,11 +69,11 @@
             let val = document.getElementById(inputId).value;
             if (val == correctAnswer) {
                 score++;
-                Swal.fire({
-                    title: "Good job!",
-                    text: "You are correct!",
-                    icon: "success"
-                });
+                // Swal.fire({
+                //     title: "Good job!",
+                //     text: "You are correct!",
+                //     icon: "success"
+                // });
                 document.getElementById(currentFormId).style.display = "none";
                 if (nextFormId) {
                     document.getElementById(nextFormId).style.display = "block";
