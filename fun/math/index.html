@@ -27,10 +27,11 @@
 		<input type="text" name="fourth" id="fourthq">
 		<input type="submit" value="Check">
 	</form>
-	<iframe src="/tictactoecm"></iframe>
+	<iframe src="../tictactoecmm" id="iframe" style="display: block;" height="50vh" width="70vw"></iframe>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
+		let index = 0;
 		let score = 0;
 		document.getElementById("first").addEventListener("submit", function(e) {
 			e.preventDefault();
@@ -72,6 +73,7 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
+				iframe();
 			}
 		});
 		document.getElementById("third").addEventListener("submit", function(e) {
@@ -117,6 +119,19 @@
 				});
 			}
 		});
+		function iframe() {
+			index++;
+			document.getElementById("iframe").style.display = "block";
+			if (index == 5) {
+				console.log("The end.");
+				return;
+			}
+			document.getElementById("iframe").addEventListener("onclick", function() {
+				setTimeout(function() {
+					document.getElementById("iframe").style.display = "block";
+				}, 160);
+			});
+		}
 	</script>
 </body
 </html>
