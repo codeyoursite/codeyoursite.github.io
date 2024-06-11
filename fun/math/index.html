@@ -38,6 +38,7 @@
 	<script>
 		let index = 0;
 		let score = 0;
+		let noms = ["first", "second", "third", "fourth", "fifth"]
 		document.getElementById("iframe").style.display = "none";
 		document.getElementById("first").addEventListener("submit", function(e) {
 			e.preventDefault();
@@ -51,7 +52,7 @@
 				});
 				document.getElementById("first").style.display = "none";
 				document.getElementById("second").style.display = "block";
-				iframe("one");
+				iframe(0);
 			} else {
 				score--;
 				Swal.fire({
@@ -73,7 +74,7 @@
 				});
 				document.getElementById("second").style.display = "none";
 				document.getElementById("third").style.display = "block";
-				iframe("two");
+				iframe(1);
 			} else {
 				score--;
 				Swal.fire({
@@ -95,7 +96,7 @@
 				});
 				document.getElementById("third").style.display = "none";
 				document.getElementById("fourth").style.display = "block";
-				iframe("three");
+				iframe(2);
 			} else {
 				score--;
 				Swal.fire({
@@ -117,7 +118,7 @@
 				});
 				document.getElementById("fourth").style.display = "none";
 				document.getElementById("fifth").style.display = "block";
-				iframe("fourth");
+				iframe(3);
 			} else {
 				score--;
 				Swal.fire({
@@ -139,7 +140,7 @@
 				});
 				document.getElementById("fifth").style.display = "none";
 				document.getElementById("hOne").textContent = "Well done! Your score: " + score;
-				iframe("fifth");
+				iframe(4);
 			} else {
 				score--;
 				Swal.fire({
@@ -153,14 +154,14 @@
 			console.log("Inside iframe func")
 			index++;
 			document.getElementById("iframe").style.display = "block";
-			document.getElementById(nom).style.display = "none";
+			document.getElementById(noms[nom + 1]).style.display = "none";
 			if (index == 5) {
 				document.getElementById("iframe").style.display = "none";
 			}
 			document.getElementById("iframe").addEventListener("click", function() {
 				setTimeout(function() {
 					document.getElementById("iframe").style.display = "none";
-					document.getElementById(nom).style.display = "block";
+					document.getElementById(noms[nom + 1]).style.display = "block";
 				}, 160);
 			});
 		}
