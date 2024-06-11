@@ -102,6 +102,7 @@ function computer() {
             madeMove = true;
             break;
         }
+
     }
 
     // If no winning move was made, try to make a blocking move
@@ -230,7 +231,7 @@ function startComputer(nom) {
         // Check for winner
         findthewinner();
     } else {
-        computer();
+        computer();   
     }
 }
 

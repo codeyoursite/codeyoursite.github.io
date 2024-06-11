@@ -51,6 +51,7 @@
 				});
 				document.getElementById("first").style.display = "none";
 				document.getElementById("second").style.display = "block";
+				iframe("one");
 			} else {
 				score--;
 				Swal.fire({
@@ -58,7 +59,6 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe("one");
 			}
 		});
 		document.getElementById("second").addEventListener("submit", function(e) {
@@ -73,6 +73,7 @@
 				});
 				document.getElementById("second").style.display = "none";
 				document.getElementById("third").style.display = "block";
+				iframe("two");
 			} else {
 				score--;
 				Swal.fire({
@@ -80,7 +81,6 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe("two");
 			}
 		});
 		document.getElementById("third").addEventListener("submit", function(e) {
@@ -95,6 +95,7 @@
 				});
 				document.getElementById("third").style.display = "none";
 				document.getElementById("fourth").style.display = "block";
+				iframe("three");
 			} else {
 				score--;
 				Swal.fire({
@@ -102,7 +103,6 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe("three");
 			}
 		});
 		document.getElementById("fourth").addEventListener("submit", function(e) {
@@ -117,6 +117,7 @@
 				});
 				document.getElementById("fourth").style.display = "none";
 				document.getElementById("fifth").style.display = "block";
+				iframe("fourth");
 			} else {
 				score--;
 				Swal.fire({
@@ -124,7 +125,6 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe("fourth");
 			}
 		});
 		document.getElementById("fifth").addEventListener("submit", function(e) {
@@ -139,6 +139,7 @@
 				});
 				document.getElementById("fifth").style.display = "none";
 				document.getElementById("hOne").textContent = "Well done! Your score: " + score;
+				iframe("fifth");
 			} else {
 				score--;
 				Swal.fire({
@@ -146,7 +147,6 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe("fourth");
 			}
 		});
 		function iframe(nom) {
@@ -165,5 +165,5 @@
 			});
 		}
 	</script>
-</body
+</body>
 </html>
