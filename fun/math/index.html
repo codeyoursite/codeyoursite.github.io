@@ -39,137 +39,67 @@
 	<script>
 		let index = 0;
 		let score = 0;
-		let noms = ["first", "second", "third", "fourth", "fifth"];
+		const noms = ["first", "second", "third", "fourth", "fifth"];
 
 		document.getElementById("first").addEventListener("submit", function(e) {
 			e.preventDefault();
-			let val = document.getElementById("firstq").value;
-			if (val == (12 * 13)) {
-				score++;
-				Swal.fire({
-				  title: "Good job!",
-				  text: "You are correct!",
-				  icon: "success"
-				});
-				document.getElementById("first").style.display = "none";
-				document.getElementById("second").style.display = "block";
-				iframe(0);
-			} else {
-				score--;
-				Swal.fire({
-				  title: "You are incorrect.",
-				  text: "Please try again",
-				  icon: "error"
-				});
-			}
+			checkAnswer("firstq", 12 * 13, "first", "second", 0);
 		});
 
 		document.getElementById("second").addEventListener("submit", function(e) {
 			e.preventDefault();
-			let val = document.getElementById("secondq").value;
-			if (val == (14 * 14)) {
-				score++;
-				Swal.fire({
-				  title: "Good job!",
-				  text: "You are correct!",
-				  icon: "success"
-				});
-				document.getElementById("second").style.display = "none";
-				document.getElementById("third").style.display = "block";
-				iframe(1);
-			} else {
-				score--;
-				Swal.fire({
-				  title: "You are incorrect.",
-				  text: "Please try again",
-				  icon: "error"
-				});
-			}
+			checkAnswer("secondq", 14 * 14, "second", "third", 1);
 		});
 
 		document.getElementById("third").addEventListener("submit", function(e) {
 			e.preventDefault();
-			let val = document.getElementById("thirdq").value;
-			if (val == (15 * 15)) {
-				score++;
-				Swal.fire({
-				  title: "Good job!",
-				  text: "You are correct!",
-				  icon: "success"
-				});
-				document.getElementById("third").style.display = "none";
-				document.getElementById("fourth").style.display = "block";
-				iframe(2);
-			} else {
-				score--;
-				Swal.fire({
-				  title: "You are incorrect.",
-				  text: "Please try again",
-				  icon: "error"
-				});
-			}
+			checkAnswer("thirdq", 15 * 15, "third", "fourth", 2);
 		});
 
 		document.getElementById("fourth").addEventListener("submit", function(e) {
 			e.preventDefault();
-			let val = document.getElementById("fourthq").value;
-			if (val == (12 + 6)) {
-				score++;
-				Swal.fire({
-				  title: "Good job!",
-				  text: "You are correct!",
-				  icon: "success"
-				});
-				document.getElementById("fourth").style.display = "none";
-				document.getElementById("fifth").style.display = "block";
-				iframe(3);
-			} else {
-				score--;
-				Swal.fire({
-				  title: "You are incorrect.",
-				  text: "Please try again",
-				  icon: "error"
-				});
-			}
+			checkAnswer("fourthq", 12 + 6, "fourth", "fifth", 3);
 		});
 
 		document.getElementById("fifth").addEventListener("submit", function(e) {
 			e.preventDefault();
-			let val = document.getElementById("fifthq").value;
-			if (val == (20 * 21)) {
+			checkAnswer("fifthq", 20 * 21, "fifth", null, 4);
+		});
+
+		function checkAnswer(inputId, correctAnswer, currentFormId, nextFormId, index) {
+			let val = document.getElementById(inputId).value;
+			if (val == correctAnswer) {
 				score++;
 				Swal.fire({
-				  title: "Good job!",
-				  text: "You are correct!",
-				  icon: "success"
+					title: "Good job!",
+					text: "You are correct!",
+					icon: "success"
 				});
-				document.getElementById("fifth").style.display = "none";
-				document.getElementById("hOne").textContent = "Well done! Your score: " + score;
-				iframe(4);
+				document.getElementById(currentFormId).style.display = "none";
+				if (nextFormId) {
+					document.getElementById(nextFormId).style.display = "block";
+					showIframe(index);
+				} else {
+					document.getElementById("hOne").textContent = "Well done! Your score: " + score;
+				}
 			} else {
 				score--;
 				Swal.fire({
-				  title: "You are incorrect.",
-				  text: "Please try again",
-				  icon: "error"
+					title: "You are incorrect.",
+					text: "Please try again",
+					icon: "error"
 				});
 			}
-		});
+		}
 
-		function iframe(nom) {
-			console.log("Inside iframe func")
-			index++;
+		function showIframe(nom) {
 			document.getElementById("iframe-wrapper").style.display = "block";
-			document.getElementById(noms[nom + 1]).style.display = "none";
-			if (index == 5) {
-				document.getElementById("iframe-wrapper").style.display = "none";
-			}
 			document.getElementById("iframe-wrapper").addEventListener("click", function() {
 				document.getElementById("iframe-wrapper").style.display = "none";
 				if (nom + 1 < noms.length) {
 					document.getElementById(noms[nom + 1]).style.display = "block";
 				}
-			});
+			}, { once: true });
 		}
 	</script>
 </body>
