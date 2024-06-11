@@ -32,12 +32,13 @@
 		<input type="text" name="fifth" id="fifthq">
 		<input type="submit" value="Check">
 	</form>
-	<iframe src="../tictactoecmm" id="iframe" style="display: none; height: 70vh; width: 70vw;"></iframe>
+	<iframe src="../tictactoecmm" id="iframe" style="height: 70vh; width: 70vw;"></iframe>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		let index = 0;
 		let score = 0;
+		document.getElementById("iframe").style.display = "none";
 		document.getElementById("first").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("firstq").value;
