@@ -52,6 +52,7 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
+				iframe("one");
 			}
 		});
 		document.getElementById("second").addEventListener("submit", function(e) {
@@ -73,7 +74,7 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
-				iframe();
+				iframe("two");
 			}
 		});
 		document.getElementById("third").addEventListener("submit", function(e) {
@@ -95,6 +96,7 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
+				iframe("three");
 			}
 		});
 		document.getElementById("fourth").addEventListener("submit", function(e) {
@@ -108,8 +110,7 @@
 				  icon: "success"
 				});
 				document.getElementById("fourth").style.display = "none";
-				document.getElementById("hOne").textContent = "Well done! Your score: " + score;
-				
+				document.getElementById("fifth").style.display = "block";
 			} else {
 				score--;
 				Swal.fire({
@@ -117,18 +118,42 @@
 				  text: "Please try again",
 				  icon: "error"
 				});
+				iframe("fourth");
 			}
 		});
-		function iframe() {
+		document.getElementById("fifth").addEventListener("submit", function(e) {
+			e.preventDefault();
+			let val = document.getElementById("fifthq").value;
+			if (val == (12 + 6)) {
+				score++;
+				Swal.fire({
+				  title: "Good job!",
+				  text: "You are correct!",
+				  icon: "success"
+				});
+				document.getElementById("fifth").style.display = "none";
+				document.getElementById("hOne").textContent = "Well done! Your score: " + score;
+			} else {
+				score--;
+				Swal.fire({
+				  title: "You are incorrect.",
+				  text: "Please try again",
+				  icon: "error"
+				});
+				iframe("fourth");
+			}
+		});
+		function iframe(nom) {
 			index++;
 			document.getElementById("iframe").style.display = "block";
+			document.getElementById(nom).style.display = "none";
 			if (index == 5) {
-				console.log("The end.");
-				return;
+				document.getElementById("iframe").style.display = "none";
 			}
 			document.getElementById("iframe").addEventListener("onclick", function() {
 				setTimeout(function() {
 					document.getElementById("iframe").style.display = "none";
+					document.getElementById(nom).style.display = "block";
 				}, 160);
 			});
 		}
