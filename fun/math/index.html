@@ -37,7 +37,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
-		let index = 0;
 		let score = 0;
 		const noms = ["first", "second", "third", "fourth", "fifth"];
 
@@ -94,12 +93,15 @@
 
 		function showIframe(nom) {
 			document.getElementById("iframe-wrapper").style.display = "block";
-			document.getElementById("iframe-wrapper").addEventListener("click", function() {
+			document.getElementById("iframe-wrapper").addEventListener("click", hideIframe, { once: true });
+			document.getElementById("iframe").contentWindow.addEventListener("focus", hideIframe, { once: true });
+
+			function hideIframe() {
 				document.getElementById("iframe-wrapper").style.display = "none";
 				if (nom + 1 < noms.length) {
 					document.getElementById(noms[nom + 1]).style.display = "block";
 				}
-			}, { once: true });
+			}
 		}
 	</script>
 </body>
