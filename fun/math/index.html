@@ -160,7 +160,7 @@
 			}
 			let monitor = setInterval(function(){
 				let elem = document.activeElement;
-				if (elem && elem.tagName == "iframe"){
+				if (elem && elem.id == "iframe"){
 					setTimeout(function() {
 						document.getElementById("iframe").style.display = "none";
 						document.getElementById(noms[nom + 1]).style.display = "block";
