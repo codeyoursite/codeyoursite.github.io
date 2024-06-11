@@ -3,7 +3,6 @@
 <head>
 	<title>Maths Game</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
 </head>
 <body style="padding: 10px;">
 	<h1 id="hOne">Maths Game</h1>
@@ -32,14 +31,14 @@
 		<input type="text" name="fifth" id="fifthq">
 		<input type="submit" value="Check">
 	</form>
-	<iframe src="../tictactoecmm" id="iframe" style="height: 70vh; width: 70vw;"></iframe>
+	<iframe src="../tictactoecmm" id="iframe" style="height: 70vh; width: 70vw; display: none;"></iframe>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		let index = 0;
 		let score = 0;
 		let noms = ["first", "second", "third", "fourth", "fifth"];
-		document.getElementById("iframe").style.display = "none";
+
 		document.getElementById("first").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("firstq").value;
@@ -62,6 +61,7 @@
 				});
 			}
 		});
+
 		document.getElementById("second").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("secondq").value;
@@ -84,6 +84,7 @@
 				});
 			}
 		});
+
 		document.getElementById("third").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("thirdq").value;
@@ -106,6 +107,7 @@
 				});
 			}
 		});
+
 		document.getElementById("fourth").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("fourthq").value;
@@ -128,6 +130,7 @@
 				});
 			}
 		});
+
 		document.getElementById("fifth").addEventListener("submit", function(e) {
 			e.preventDefault();
 			let val = document.getElementById("fifthq").value;
@@ -150,6 +153,7 @@
 				});
 			}
 		});
+
 		function iframe(nom) {
 			console.log("Inside iframe func")
 			index++;
@@ -158,16 +162,12 @@
 			if (index == 5) {
 				document.getElementById("iframe").style.display = "none";
 			}
-			let monitor = setInterval(function(){
-				let elem = document.activeElement;
-				if (elem && elem.id == "iframe"){
-					setTimeout(function() {
-						document.getElementById("iframe").style.display = "none";
-						document.getElementById(noms[nom + 1]).style.display = "block";
-					}, 160);
-					clearInterval(monitor);
+			document.getElementById("iframe").addEventListener("click", function() {
+				document.getElementById("iframe").style.display = "none";
+				if (nom + 1 < noms.length) {
+					document.getElementById(noms[nom + 1]).style.display = "block";
 				}
-			}, 100);
+			});
 		}
 	</script>
 </body>
