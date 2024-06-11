@@ -55,7 +55,22 @@
     <script>
         let index = 0;
         let score = 0;
+        let times = 0; // Define times
+        let turn = "X"; // Define turn
+        let stop = 0; // Define stop
         const noms = ["first", "second", "third", "fourth", "fifth"];
+        const winningCombos = [
+            ["one", "two", "three"],
+            ["four", "five", "six"],
+            ["seven", "eight", "nine"],
+            ["one", "four", "seven"],
+            ["two", "five", "eight"],
+            ["three", "six", "nine"],
+            ["one", "five", "nine"],
+            ["three", "five", "seven"]
+        ];
+        const placeholder = "W"; // Define placeholder
+        const cells = document.querySelectorAll(".cell"); // Define cells
 
         // Add event listener to each form for checking answers
         noms.forEach(formId => {
@@ -123,12 +138,97 @@
                 document.querySelectorAll(".cell").forEach(cell => {
                     cell.removeEventListener("click", handleClick);
                 });
+                computer();
+                findthewinner();
             } else {
                 // Display error message if cell is already marked
                 Swal.fire({
                     icon: "error",
                     title: "Choose a different space",
                     text: "The cell you clicked on has already been taken."
+                });
+            }
+        }
+        // Function for computer's move
+        function computer() {
+            if (times >= 9) return;
+
+            let madeMove = false;
+            const opponent = turn === "X" ? "O" : "X";
+
+            // Computer makes its move...
+
+            // Switch player turn
+            turn = turn === "X" ? "O" : "X";
+            times++;
+
+            // Check for winner
+            findthewinner();
+
+            // Hide board and show next question
+            document.getElementById("board").style.display = "none";
+            index++; // Move to the next question
+            if (index < noms.length) {
+                document.getElementById(noms[index]).style.display = "block";
+            } else {
+                // If there are no more questions, you might want to handle it here.
+            }
+        }
+
+        // Function to check for winner
+        function findthewinner() {
+            // Iterate through each winning combination
+            for (let combo of winningCombos) {
+                const [aId, bId, cId] = combo;
+                const a = document.getElementById(aId);
+                const b = document.getElementById(bId);
+                const c = document.getElementById(cId);
+
+                // Check if cells in the current combination have the same non-empty content
+                if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== placeholder) {
+                    if (a.textContent == "O") {
+                        updateScore(1); // Increment score for player
+                        stop = 1;
+                        // Display success message for the winner
+                        Swal.fire({
+                            icon: "success",
+                            title: `You beat the computer!`,
+                            text: "Well done.",
+                            confirmButtonText: "Play again",
+                            allowOutsideClick: false
+                        }).then((result) => {
+                            if (result.isConfirmed) refresh();
+                        });
+                    } else if (a.textContent == "X") {
+                        updateScore(-1); // Decrement score for player
+                        stop = 1;
+                        // Display sad message for the loser
+                        Swal.fire({
+                            icon: "error",
+                            title: `Oh no!`,
+                            text: "The computer beat you.",
+                            confirmButtonText: "Play again",
+                            allowOutsideClick: false
+                        }).then((result) => {
+                            if (result.isConfirmed) refresh();
+                        });
+                    }
+                    return;
+                }
+            }
+
+            // If all cells are marked and there is no winner, it's a draw
+            if (times >= 9 && stop == 0) {
+                stop = 1;
+                // Display draw message
+                Swal.fire({
+                    icon: "info",
+                    title: "It's a draw!",
+                    text: "All squares have been used.",
+                    confirmButtonText: "Play again",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) refresh();
                 });
             }
         }
