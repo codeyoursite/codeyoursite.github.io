@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>What is the passcode?</h1>
+    <form id="form">
+      <input type="number" max-length="4" id="pass">
+      <input type="submit">
+    </form>
+  </body>
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault;
+      location.href = "https://codeyoursite.github.io/fun/math/passcode/hidden.html?pass=" + document.getElementById("pass").value
+    });
+  </script>
+</html>
