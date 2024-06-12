@@ -227,12 +227,11 @@
             times++;
             // Check for winner
             findthewinner();
-
-            // Hide board and show next question
-            document.getElementById("board").style.display = "none";
             index++; // Move to the next question
             if (index < noms.length) {
                 setTimeout(function() {
+                    // Hide board and show next question
+                    document.getElementById("board").style.display = "none";
                     document.getElementById(noms[index]).style.display = "block";
                 }, 600);
             } else {
