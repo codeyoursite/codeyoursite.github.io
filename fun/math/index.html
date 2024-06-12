@@ -232,7 +232,7 @@
             document.getElementById("board").style.display = "none";
             index++; // Move to the next question
             if (index < noms.length) {
-                setTimout(function() {
+                setTimeout(function() {
                     document.getElementById(noms[index]).style.display = "block";
                 }, 600);
             } else {
