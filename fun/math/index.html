@@ -56,6 +56,7 @@
         let times = 0; // Define times
         let turn = "X"; // Define turn
         let stop = 0; // Define stop
+        let win = 0;
         const noms = ["first", "second", "third", "fourth", "fifth"];
         const winningCombos = [
             ["one", "two", "three"],
@@ -226,14 +227,16 @@
             // Check for winner
             findthewinner();
             index++; // Move to the next question
-            if (index < noms.length) {
+            if (index < noms.length && stop !== 1) {
                 setTimeout(function() {
                     // Hide board and show next question
                     document.getElementById("board").style.display = "none";
                     document.getElementById(noms[index]).style.display = "block";
                 }, 600);
+            } else if (win == 2) {
+                document.getElementById("hOne").innerHTML = `Well done! That is the end. <a href="https://codeyoursite.github.io/fun/math/">Play again.</a>`
             } else {
-                document.getElementById("hOne").textContent = "Well done! That is the end."
+                document.getElementById("hOne").textContent = `Never mind. <a href="https://codeyoursite.github.io/fun/math/">Play again.</a>`
             }
         }
 
@@ -250,6 +253,7 @@
                 if (a.textContent && a.textContent === b.textContent && a.textContent === c.textContent && a.textContent !== placeholder) {
                     if (a.textContent == "X") {
                         stop = 1;
+                        win = 2;
                         // Display success message for the winner
                         Swal.fire({
                             icon: "success",
@@ -262,6 +266,7 @@
                         });
                     } else if (a.textContent == "O") {
                         stop = 1;
+                        win = 1;
                         // Display sad message for the loser
                         Swal.fire({
                             icon: "error",
@@ -278,6 +283,7 @@
             // If all cells are marked and there is no winner, it's a draw
             if (times >= 9 && stop == 0) {
                 stop = 1;
+                win = 3;
                 // Display draw message
                 Swal.fire({
                     icon: "info",
