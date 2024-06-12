@@ -189,20 +189,35 @@
                     const c = document.getElementById(cId);
         
                     if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
-                        c.textContent = "O";
-                        c.style.opacity = "100%";
-                        madeMove = true;
-                        break;
+                        let rand1 = Math.random();
+                        if (rand1 > 0.6) {
+                            c.textContent = "O";
+                            c.style.opacity = "100%";
+                            madeMove = true;
+                            break;
+                        } else if (rand1 > 0.8) {
+                            break;
+                        }
                     } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
-                        b.textContent = "O";
-                        b.style.opacity = "100%";
-                        madeMove = true;
-                        break;
+                        let rand2 = Math.random();
+                        if (rand2 > 0.6) {
+                            b.textContent = "O";
+                            b.style.opacity = "100%";
+                            madeMove = true;
+                            break;
+                        } else if (rand1 > 0.8) {
+                            break;
+                        }
                     } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
-                        a.textContent = "O";
-                        a.style.opacity = "100%";
-                        madeMove = true;
-                        break;
+                        let rand3 = Math.random();
+                        if (rand3 > 0.6) {
+                            a.textContent = "O";
+                            a.style.opacity = "100%";
+                            madeMove = true;
+                            break;
+                        } else if (rand1 > 0.8) {
+                            break;
+                        }
                     }
                 }
             }
