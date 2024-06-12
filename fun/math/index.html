@@ -172,32 +172,32 @@
         
                 if (a.textContent == turn && b.textContent == turn && c.textContent == placeholder) {
                     let rand3 = Math.random();
-                    if (rand3 > 0.4) {
+                    if (rand3 > 0.3) {
                         c.textContent = "O";
                         c.style.opacity = "100%";
                         madeMove = true;
                         break;
-                    } else if (rand3 > 0.6) {
+                    } else if (rand3 > 0.7) {
                         break;
                     }
                 } else if (a.textContent == turn && c.textContent == turn && b.textContent == placeholder) {
                     let rand2 = Math.random();
-                    if (rand2 > 0.4) {
+                    if (rand2 > 0.3) {
                         b.textContent = "O";
                         b.style.opacity = "100%";
                         madeMove = true;
                         break;
-                    } else if (rand2 > 0.6) {
+                    } else if (rand2 > 0.7) {
                         break;
                     }
                 } else if (b.textContent == turn && c.textContent == turn && a.textContent == placeholder) {
                     let rand1 = Math.random();
-                    if (rand1 > 0.4) {
+                    if (rand1 > 0.3) {
                         a.textContent = "O";
                         a.style.opacity = "100%";
                         madeMove = true;
                         break;
-                    } else if (rand1 > 0.6) {
+                    } else if (rand1 > 0.7) {
                         break;
                     }
                 }
@@ -213,32 +213,32 @@
         
                     if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
                         let rand1 = Math.random();
-                        if (rand1 > 0.6) {
+                        if (rand1 > 0.47) {
                             c.textContent = "O";
                             c.style.opacity = "100%";
                             madeMove = true;
                             break;
-                        } else if (rand1 > 0.8) {
+                        } else if (rand1 > 0.85) {
                             break;
                         }
                     } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
                         let rand2 = Math.random();
-                        if (rand2 > 0.6) {
+                        if (rand2 > 0.47) {
                             b.textContent = "O";
                             b.style.opacity = "100%";
                             madeMove = true;
                             break;
-                        } else if (rand2 > 0.8) {
+                        } else if (rand2 > 0.85) {
                             break;
                         }
                     } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
                         let rand3 = Math.random();
-                        if (rand3 > 0.6) {
+                        if (rand3 > 0.47) {
                             a.textContent = "O";
                             a.style.opacity = "100%";
                             madeMove = true;
                             break;
-                        } else if (rand3 > 0.8) {
+                        } else if (rand3 > 0.85) {
                             break;
                         }
                     }
