@@ -10,7 +10,7 @@
 <body>
     <h1 id="hOne">Maths Game</h1>
     <form id="first">
-        <label for="first">What's 12 x 13?</label>
+        <label for="first">What's <span id="onel"></span> x 13?</label>
         <input type="text" name="first" id="firstq">
         <input type="submit" value="Check">
     </form>
@@ -289,8 +289,7 @@
                             icon: "success",
                             title: `You beat the computer!`,
                             text: "Well done.",
-                            confirmButtonText: "Play again",
-                            allowOutsideClick: false
+                            confirmButtonText: "Close"
                         }).then((result) => {
                             if (result.isConfirmed) refresh();
                         });
@@ -302,8 +301,7 @@
                             icon: "error",
                             title: `Oh no!`,
                             text: "The computer beat you.",
-                            confirmButtonText: "Close",
-                            allowOutsideClick: false
+                            confirmButtonText: "Close"
                         })
                     }
                     return;
@@ -319,8 +317,7 @@
                     icon: "info",
                     title: "It's a draw!",
                     text: "All squares have been used.",
-                    confirmButtonText: "Close",
-                    allowOutsideClick: false
+                    confirmButtonText: "Close"
                 });
             }
         }
