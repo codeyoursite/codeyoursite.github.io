@@ -10,27 +10,27 @@
 <body>
     <h1 id="hOne">Maths Game</h1>
     <form id="first">
-        <label for="first">What's <span id="onel"></span> x 13?</label>
+        <label for="first">What's <span id="onel1"></span> x <span id="onel2"></span>?</label>
         <input type="text" name="first" id="firstq">
         <input type="submit" value="Check">
     </form>
     <form id="second" style="display: none;">
-        <label for="second">What's 14 squared?</label>
+        <label for="second">What's <span id="twol"></span> squared?</label>
         <input type="text" name="second" id="secondq">
         <input type="submit" value="Check">
     </form>
     <form id="third" style="display: none;">
-        <label for="third">What's 15 squared?</label>
+        <label for="third">What's <span id="threel"></span> squared?</label>
         <input type="text" name="third" id="thirdq">
         <input type="submit" value="Check">
     </form>
     <form id="fourth" style="display: none;">
-        <label for="fourth">What's 12 - -6?</label>
+        <label for="fourth">What's <span id="fourl1"></span> - -<span id="fourl2"></span>?</label>
         <input type="text" name="fourth" id="fourthq">
         <input type="submit" value="Check">
     </form>
     <form id="fifth" style="display: none;">
-        <label for="fifth">What's 20 x 21?</label>
+        <label for="fifth">What's <span id="fivel1"></span> x <span id="fivel2"></span>?</label>
         <input type="text" name="fifth" id="fifthq">
         <input type="submit" value="Check">
     </form>
@@ -68,6 +68,14 @@
             ["one", "five", "nine"],
             ["three", "five", "seven"]
         ];
+        document.getElementById("onel1").textContent = Math.floor(Math.random() * 16) + 12;
+        document.getElementById("onel2").textContent = Number(document.getElementById("onel1").textContent) + 1;
+        document.getElementById("twol").textContent = Math.floor(Math.random() * 19) + 13;
+        document.getElementById("threel").textContent = Number(document.getElementById("twol").textContent) + 1;
+        document.getElementById("fourl1").textContent = Math.floor(Math.random() * 22) + 11;
+        document.getElementById("fourl2").textContent = Math.floor(Math.random() * 10) + 2;
+        document.getElementById("fivel1").textContent = Math.floor(Math.random() * 23) + 13;
+        document.getElementById("fivel2").textContent = Number(document.getElementById("fivel1").textContent) + 1;
         const placeholder = "W"; // Define placeholder
         const cells = document.querySelectorAll(".cell"); // Define cells
 
@@ -85,15 +93,15 @@
         function getCorrectAnswer(index) {
             switch (index) {
                 case 0:
-                    return 12 * 13;
+                    return Number(document.getElementById("onel1").textContent) * Number(document.getElementById("onel2").textContent);
                 case 1:
-                    return 14 * 14;
+                    return Number(document.getElementById("twol").textContent) * Number(document.getElementById("twol").textContent);
                 case 2:
-                    return 15 * 15;
+                    return Number(document.getElementById("threel").textContent) * Number(document.getElementById("threel").textContent);
                 case 3:
-                    return 12 - (-6);
+                    return Number(document.getElementById("fourl1").textContent) + Number(document.getElementById("fourl2").textContent);
                 case 4:
-                    return 20 * 21;
+                    return Number(document.getElementById("fivel1").textContent) * Number(document.getElementById("fivel2").textContent);
                 default:
                     return null;
             }
@@ -266,7 +274,7 @@
             } else if (win == 2) {
                 document.getElementById("hOne").innerHTML = `Well done! That is the end. <a href="https://codeyoursite.github.io/fun/math/">Play again.</a>`
             } else {
-                document.getElementById("hOne").textContent = `Never mind. <a href="https://codeyoursite.github.io/fun/math/">Play again.</a>`
+                document.getElementById("hOne").innerHTML = `Never mind. <a href="https://codeyoursite.github.io/fun/math/">Play again.</a>`
             }
         }
 
