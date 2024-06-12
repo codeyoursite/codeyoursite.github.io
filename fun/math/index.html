@@ -152,7 +152,7 @@
             if (times >= 9) return;
         
             let madeMove = false;
-            const opponent = turn === "X" ? "O" : "X";
+            const opponent = "X";
         
             // Try to make a winning move
             for (let combo of winningCombos) {
@@ -162,17 +162,17 @@
                 const c = document.getElementById(cId);
         
                 if (a.textContent == turn && b.textContent == turn && c.textContent == placeholder) {
-                    c.textContent = turn;
+                    c.textContent = "O";
                     c.style.opacity = "100%";
                     madeMove = true;
                     break;
                 } else if (a.textContent == turn && c.textContent == turn && b.textContent == placeholder) {
-                    b.textContent = turn;
+                    b.textContent = "O";
                     b.style.opacity = "100%";
                     madeMove = true;
                     break;
                 } else if (b.textContent == turn && c.textContent == turn && a.textContent == placeholder) {
-                    a.textContent = turn;
+                    a.textContent = "O";
                     a.style.opacity = "100%";
                     madeMove = true;
                     break;
@@ -188,17 +188,17 @@
                     const c = document.getElementById(cId);
         
                     if (a.textContent == opponent && b.textContent == opponent && c.textContent == placeholder) {
-                        c.textContent = turn;
+                        c.textContent = "O";
                         c.style.opacity = "100%";
                         madeMove = true;
                         break;
                     } else if (a.textContent == opponent && c.textContent == opponent && b.textContent == placeholder) {
-                        b.textContent = turn;
+                        b.textContent = "O";
                         b.style.opacity = "100%";
                         madeMove = true;
                         break;
                     } else if (b.textContent == opponent && c.textContent == opponent && a.textContent == placeholder) {
-                        a.textContent = turn;
+                        a.textContent = "O";
                         a.style.opacity = "100%";
                         madeMove = true;
                         break;
@@ -212,7 +212,7 @@
                     while (!madeMove && attempts < cells.length) {
                         const randIndex = Math.floor(Math.random() * cells.length);
                         if (cells[randIndex].textContent == placeholder) {
-                            cells[randIndex].textContent = turn;
+                            cells[randIndex].textContent = "O";
                             cells[randIndex].style.opacity = "100%";
                             madeMove = true;
                         }
@@ -221,7 +221,7 @@
             }
         
             // Switch player turn
-            turn = turn === "X" ? "O" : "X";
+            turn = "X";
             times++;
             // Check for winner
             findthewinner();
