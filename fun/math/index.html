@@ -298,8 +298,6 @@
                             title: `You beat the computer!`,
                             text: "Well done.",
                             confirmButtonText: "Close"
-                        }).then((result) => {
-                            if (result.isConfirmed) refresh();
                         });
                     } else if (a.textContent == "O") {
                         stop = 1;
@@ -310,7 +308,7 @@
                             title: `Oh no!`,
                             text: "The computer beat you.",
                             confirmButtonText: "Close"
-                        })
+                        });
                     }
                     return;
                 }
