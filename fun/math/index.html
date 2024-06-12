@@ -163,20 +163,35 @@
                 const c = document.getElementById(cId);
         
                 if (a.textContent == turn && b.textContent == turn && c.textContent == placeholder) {
-                    c.textContent = "O";
-                    c.style.opacity = "100%";
-                    madeMove = true;
-                    break;
+                    let rand3 = Math.random();
+                    if (rand3 > 0.4) {
+                        c.textContent = "O";
+                        c.style.opacity = "100%";
+                        madeMove = true;
+                        break;
+                    } else if (rand1 > 0.6) {
+                        break;
+                    }
                 } else if (a.textContent == turn && c.textContent == turn && b.textContent == placeholder) {
-                    b.textContent = "O";
-                    b.style.opacity = "100%";
-                    madeMove = true;
-                    break;
+                    let rand2 = Math.random();
+                    if (rand2 > 0.4) {
+                        b.textContent = "O";
+                        b.style.opacity = "100%";
+                        madeMove = true;
+                        break;
+                    } else if (rand1 > 0.6) {
+                        break;
+                    }
                 } else if (b.textContent == turn && c.textContent == turn && a.textContent == placeholder) {
-                    a.textContent = "O";
-                    a.style.opacity = "100%";
-                    madeMove = true;
-                    break;
+                    let rand1 = Math.random();
+                    if (rand1 > 0.4) {
+                        a.textContent = "O";
+                        a.style.opacity = "100%";
+                        madeMove = true;
+                        break;
+                    } else if (rand1 > 0.6) {
+                        break;
+                    }
                 }
             }
         
