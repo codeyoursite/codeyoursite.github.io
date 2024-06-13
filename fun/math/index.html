@@ -48,12 +48,33 @@
             <div class="cross cell" id="nine">W</div>
         </div>
     </div>
-    <a target="_blank" href="passcode/" style="text-decoration: none;">
+<!--     <a target="_blank" href="passcode/" style="text-decoration: none;">
         <button class="help" onclick="changelink()">I need help</buuton>
-    </a>
+    </a> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+        
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
         let changeLink = 1;
         let index = 0;
         let score = 0;
