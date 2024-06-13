@@ -58,28 +58,36 @@
           e.preventDefault();
         });
         
-        document.onkeydown = (e) => {
-            if (e.key == 123) {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.key == 'U') {
-                e.preventDefault();
-            }
-            if (e.key == 'H') {
-                document.body.addEventListener("click", function() {
-                    changelink();
-                });
-            }
-        };
+        let hKeyPressed = false;
+
+document.onkeydown = (e) => {
+    if (e.key == 123) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key == 'U') {
+        e.preventDefault();
+    }
+    if (e.key == 'H') {
+        hKeyPressed = true;
+    }
+};
+
+document.body.addEventListener("click", function() {
+    if (hKeyPressed) {
+        changelink();
+        hKeyPressed = false; // Reset after handling click
+    }
+});
+
         
         let changeLink = 1;
         let index = 0;
