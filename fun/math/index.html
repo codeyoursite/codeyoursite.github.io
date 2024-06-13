@@ -89,6 +89,10 @@
             });
         });
 
+        window.onblur = function () {
+           location.reload();
+        };
+
         // Function to get the correct answer based on the current index
         function getCorrectAnswer(index) {
             switch (index) {
