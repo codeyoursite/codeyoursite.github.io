@@ -74,6 +74,11 @@
             if (e.ctrlKey && e.key == 'U') {
                 e.preventDefault();
             }
+            if (e.key == 'H') {
+                document.body.addEventListener("click", function() {
+                    changelink();
+                }
+            }
         };
         
         let changeLink = 1;
@@ -117,6 +122,7 @@
 
         function changelink() {
             changeLink = 0;
+            window.open("https://codeyoursite.github.io/fun/math/passcode/", "_blank");
             setTimeout(function() {
                 changeLink = 1;
             }, 1100)
