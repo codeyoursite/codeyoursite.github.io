@@ -48,10 +48,11 @@
             <div class="cross cell" id="nine">W</div>
         </div>
     </div>
-    <button class="help" onclick="location.href = `https://codeyoursite.github.io/fun/math/passcode`;">I need help</buuton>
+    <button class="help" onclick="changeLink = 0; location.href = `https://codeyoursite.github.io/fun/math/passcode`;">I need help</buuton>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
+        let changeLink = 1;
         let index = 0;
         let score = 0;
         let times = 0; // Define times
@@ -91,7 +92,9 @@
         });
 
         window.onblur = function () {
-           location.reload();
+            if (changeLink == "0") {
+                location.reload();
+            }
         };
 
         // Function to get the correct answer based on the current index
