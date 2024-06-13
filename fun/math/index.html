@@ -60,33 +60,37 @@
         
         let hKeyPressed = false;
 
-document.onkeydown = (e) => {
-    if (e.key == 123) {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.key == 'U') {
-        e.preventDefault();
-    }
-    if (e.key == 'H') {
-        hKeyPressed = true;
-    }
-};
+        document.onkeydown = (e) => {
+            if (e.key === 'H') {
+                hKeyPressed = true;
+            } else {
+                hKeyPressed = false; // Reset if any other key is pressed
+            }
+        
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key === 'U') {
+                e.preventDefault();
+            }
+        };
+        
+        document.body.addEventListener("click", () => {
+            if (hKeyPressed) {
+                changelink();
+                hKeyPressed = false; // Reset after handling click
+            }
+        });
 
-document.body.addEventListener("click", function() {
-    if (hKeyPressed) {
-        changelink();
-        hKeyPressed = false; // Reset after handling click
-    }
-});
 
         
         let changeLink = 1;
