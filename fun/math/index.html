@@ -93,7 +93,12 @@
             });
         });
 
-        function changelink() {changeLink = 0;}
+        function changelink() {
+            changeLink = 0;
+            setTimeout(function() {
+                changeLink = 1;
+            }, 1100)
+        }
 
         window.onblur = function () {
             if (changeLink == 1) {
