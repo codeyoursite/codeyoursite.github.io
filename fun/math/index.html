@@ -86,16 +86,19 @@
                     e.preventDefault();
                 }
             });
-    
-            document.body.addEventListener("click", () => {
+
+            document.body.addEventListener("click", (e) => {
                 console.log('Body clicked'); // Debugging statement
                 if (hKeyPressed) {
                     console.log('changelink() called'); // Debugging statement
                     changelink();
                     hKeyPressed = false; // Reset after handling click
+                } else {
+                    console.log('H key not pressed, changelink() not called'); // Debugging statement
                 }
             });
         });
+        
         let changeLink = 1;
         let index = 0;
         let score = 0;
