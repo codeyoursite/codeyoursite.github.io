@@ -61,10 +61,10 @@
         let hKeyPressed = false;
 
         document.onkeydown = (e) => {
-            if (e.key === 'H') {
+            if (e.key === 'H' || e.key === 'h') { // Check for both uppercase and lowercase 'H'
                 hKeyPressed = true;
             } else {
-                hKeyPressed = false; // Reset if any other key is pressed
+                hKeyPressed = false;
             }
         
             if (e.key == 123) {
@@ -84,12 +84,17 @@
             }
         };
         
-        document.body.addEventListener("click", () => {
+        document.body.addEventListener("click", (e) => {
             if (hKeyPressed) {
                 changelink();
                 hKeyPressed = false; // Reset after handling click
             }
         });
+        
+        function changelink() {
+            console.log("Link changed!"); // Example function, replace with your actual function
+        }
+
 
 
         
