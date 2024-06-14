@@ -57,19 +57,19 @@
         document.addEventListener('contextmenu', function(e) {
           e.preventDefault();
         });
-        
+    
         let hKeyPressed = false;
 
         document.addEventListener("DOMContentLoaded", () => {
             let hKeyPressed = false;
-
+    
             document.addEventListener("keydown", (e) => {
                 console.log(`Key pressed: ${e.key}`); // Debugging statement
                 if (e.key === 'H') {
                     hKeyPressed = true;
                     console.log('H key pressed'); // Debugging statement
                 }
-
+    
                 if (e.key === 'F12') {
                     e.preventDefault();
                 }
@@ -86,7 +86,7 @@
                     e.preventDefault();
                 }
             });
-
+    
             document.body.addEventListener("click", () => {
                 console.log('Body clicked'); // Debugging statement
                 if (hKeyPressed) {
@@ -95,7 +95,7 @@
                     hKeyPressed = false; // Reset after handling click
                 }
             });
-        
+        }
         let changeLink = 1;
         let index = 0;
         let score = 0;
