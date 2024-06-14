@@ -60,43 +60,41 @@
         
         let hKeyPressed = false;
 
-        document.onkeydown = (e) => {
-            if (e.key === 'H' || e.key === 'h') { // Check for both uppercase and lowercase 'H'
-                hKeyPressed = true;
-            } else {
-                hKeyPressed = false;
-            }
-        
-            if (e.key == 123) {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.key === 'U') {
-                e.preventDefault();
-            }
-        };
-        
-        document.body.addEventListener("click", (e) => {
-            if (hKeyPressed) {
-                changelink();
-                hKeyPressed = false; // Reset after handling click
-            }
-        });
-        
-        function changelink() {
-            console.log("Link changed!"); // Example function, replace with your actual function
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            let hKeyPressed = false;
 
+            document.addEventListener("keydown", (e) => {
+                console.log(`Key pressed: ${e.key}`); // Debugging statement
+                if (e.key === 'H') {
+                    hKeyPressed = true;
+                    console.log('H key pressed'); // Debugging statement
+                }
 
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                }
+                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                    e.preventDefault();
+                }
+                if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+                    e.preventDefault();
+                }
+                if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+                    e.preventDefault();
+                }
+                if (e.ctrlKey && e.key === 'U') {
+                    e.preventDefault();
+                }
+            });
 
+            document.body.addEventListener("click", () => {
+                console.log('Body clicked'); // Debugging statement
+                if (hKeyPressed) {
+                    console.log('changelink() called'); // Debugging statement
+                    changelink();
+                    hKeyPressed = false; // Reset after handling click
+                }
+            });
         
         let changeLink = 1;
         let index = 0;
