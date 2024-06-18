@@ -4,7 +4,7 @@ if (params.has("query")) {
     query = params.get("query");
     document.getElementById("txt").textContent += query;
 } else {
-    location.href = "../";
+    location.href = "https://codeyoursite.github.io/fun/searchengine/";
 }
 
 let data = {
@@ -335,23 +335,35 @@ let data = {
     "Segment": ["Segment", "https://segment.com", "Customer Data Platform. Services: Data Analytics, Data Management, Reporting, Data Integration, Customer Data."]
 };
 
-let index = 0;
+function search() {
+    let index = 0;
 
-for (let key in data) {
-    let queryLower = query.toLowerCase();
-    let keyLower = key.toLowerCase();
-    let data2Lower = data[key][2].toLowerCase();
+    for (let key in data) {
+        let queryLower = query.toLowerCase();
+        let keyLower = key.toLowerCase();
+        let data2Lower = data[key][2].toLowerCase();
 
-    if (queryLower.includes(keyLower) || keyLower.includes(queryLower) || data2Lower.includes(queryLower)) {
+        if (queryLower.includes(keyLower) || keyLower.includes(queryLower) || data2Lower.includes(queryLower)) {
+            index++;
+            console.log(data[key][0]);
+            let li = document.createElement("li");
+            let link = document.createElement("a");
+            let br = document.createElement("br");
+            link.innerHTML = data[key][0];
+            link.href = data[key][1];
+            li.appendChild(link);
+            document.getElementById("ul").appendChild(li);
+            document.getElementById("ul").appendChild(br);
+        }
+    }
+
+    if (index == 0) {
         index++;
-        console.log(data[key][0]);
-        let li = document.createElement("li");
-        let link = document.createElement("a");
-        let br = document.createElement("br");
-        link.innerHTML = data[key][0];
-        link.href = data[key][1];
-        li.appendChild(link);
-        document.getElementById("ul").appendChild(li);
-        document.getElementById("ul").appendChild(br);
+            console.log(data[key][0]);
+            let br = document.createElement("br");
+            let p = document.createElement("p");
+            p.innerHTML = "Nothing found.";
+            document.getElementById("ul").appendChild(br);
+            document.getElementById("ul").appendChild(p);
     }
 }
