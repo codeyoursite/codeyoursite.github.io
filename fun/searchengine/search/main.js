@@ -335,6 +335,8 @@ let data = {
     "Segment": ["Segment", "https://segment.com", "Customer Data Platform. Services: Data Analytics, Data Management, Reporting, Data Integration, Customer Data."]
 };
 
+search();
+
 function search() {
     let index = 0;
 
