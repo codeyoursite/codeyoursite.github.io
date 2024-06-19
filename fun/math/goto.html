@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What numbers do you want?</title>
+</head>
+<body>
+    <h1>What numbers did you have before?</h1>
+    <p>Please be truthful!</p>
+    <form id="form">
+        <label for="text1">First Question Number 1</label>
+        <input type="number" name="text1" id="text1" min="1" max="30" required>
+        <br>
+        <label for="text2">First Question Number 2</label>
+        <input type="number" name="text2" id="text2" min="1" max="30" required>
+        <br>
+        <label for="text3">Second Question Number 1 (if you got to it)</label>
+        <input type="number" name="text3" id="text3" min="1" max="30">
+        <br>
+        <label for="text4">Second Question Number 2 (if you got to it)</label>
+        <input type="number" name="text4" id="text4" min="1" max="30">
+        <br>
+        <label for="text5">Third Question Number 1 (if you got to it)</label>
+        <input type="number" name="text5" id="text5" min="1" max="30">
+        <br>
+        <label for="text6">Third Question Number 2 (if you got to it)</label>
+        <input type="number" name="text6" id="text6" min="1" max="30">
+        <br>
+        <label for="text7">Fourth Question Number 1 (if you got to it)</label>
+        <input type="number" name="text7" id="text7" min="1" max="30">
+        <br>
+        <label for="text8">Fourth Question Number 2 (if you got to it)</label>
+        <input type="number" name="text7" id="text7" min="1" max="30">
+        <br>
+        <label for="text9">Fifth Question Number 1 (if you got to it)</label>
+        <input type="number" name="text9" id="text9" min="1" max="30">
+        <br>
+        <label for="text10">Fifth Question Number 2 (if you got to it)</label>
+        <input type="number" name="text10" id="text10" min="1" max="30">
+        <input type="submit">
+    </form>
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let url = "https://codeyoursite.github.io/fun/math/index.html?nom1=" + document.getElementById("text1").value;
+            if (document.getElementById("text2").value !== 0) {
+                url += "&nom2=" + document.getElementById("text2").value + "&nom3=" + document.getElementById("text3").value + "&nom4=" + document.getElementById("text4").value + "&nom5=" + document.getElementById("text5").value + "&nom6=" + document.getElementById("text6").value + "&nom7=" + document.getElementById("text7").value + "&nom8=" + document.getElementById("text8").value + "&nom9=" + document.getElementById("text9").value + "&nom10=" + document.getElementById("text10").value;
+            }
+            location.href = url;
+        });
+    </script>
+</body>
+</html>
