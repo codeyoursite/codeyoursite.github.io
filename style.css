@@ -173,7 +173,7 @@ nav a:hover::after,.dropdown _menu a:hover::after {
 
 .arrow-right, .arrow-left {
   position: absolute;
-  border-radius: 50%;
+  border-radius: 20%;
   outline: none;
   border: 2px solid black;
 }
