@@ -179,7 +179,7 @@ function toggleTheme() {
 button.addEventListener("click", toggleTheme);
 buttontwo.addEventListener("click", toggleTheme);
 
-let array = ["Code Your Site", "Check out the Navbar!", "Keep moving right!"];
+let array = ["Code Your Site", "Websites for u", "How are you?"];
 let index = 0;
 function changeName(isRight) {
   let textchange = document.getElementById("text");
