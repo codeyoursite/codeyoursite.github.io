@@ -69,6 +69,7 @@ img:not(.load) {
     animation-duration: 1s;
     color: #fff !important;
     background: none;
+    padding: 20px;
 }
 
 body {
