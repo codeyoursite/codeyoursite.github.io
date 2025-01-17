@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(showPage, 3600);
+  setTimeout(showPage, 5500);
 });
 
 function showPage() {
