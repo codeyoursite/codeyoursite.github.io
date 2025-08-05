@@ -9,15 +9,15 @@ const choice = receive.get("choice");
 let points = 0;
 
 let dict = {
-    "Block Coding": {url: "https://code-cadets.getlearnworlds.com/course/space-invaders", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/4d2eb929c413e767e3a14e01a211d5a2.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway A", purl: "https://code-cadets.getlearnworlds.com/coursesa"},
-    "Scratch": {url: "https://code-cadets.getlearnworlds.com/course/scratchbasics1", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/aeccbe7a98a3df008eb4624fcc32097c.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway B", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
-    "Makecode Arcade": {url: "https://code-cadets.getlearnworlds.com/course/arcade", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/2dc429e9154f51119eaae6f469124185.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway B", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
-    "JavaScript": {url: "https://code-cadets.getlearnworlds.com/course/gamerplatform", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/92a9dfdc6140e59c02d6ef4f77a11532.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
-    "HTML": {url: "https://code-cadets.getlearnworlds.com/course/website", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/a3cb90926e19afbcccb7e90f2d317570.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway B", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
-    "Python": {url: "https://code-cadets.getlearnworlds.com/course/pytu", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/42f7fd08f470a0c54903e248a1a24057.jpeg?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
-    "Data Science": {url: "https://code-cadets.getlearnworlds.com/course/agentbriefing", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/e1ca2d31edac59cede18a980165336a3.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
-    "Advanced Web Development": {url: "https://code-cadets.getlearnworlds.com/course/gameproject", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
-    "Advanced Web Development and Data Science": {img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Learning Pathway C", purl: "https://code-cadets.getlearnworlds.com/coursesc"}
+    "Block Coding": {url: "https://code-cadets.getlearnworlds.com/course/space-invaders", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/4d2eb929c413e767e3a14e01a211d5a2.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 1", purl: "https://code-cadets.getlearnworlds.com/coursesa"},
+    "Scratch": {url: "https://code-cadets.getlearnworlds.com/course/scratchbasics1", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/aeccbe7a98a3df008eb4624fcc32097c.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 2", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
+    "Makecode Arcade": {url: "https://code-cadets.getlearnworlds.com/course/arcade", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/2dc429e9154f51119eaae6f469124185.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 2", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
+    "JavaScript": {url: "https://code-cadets.getlearnworlds.com/course/gamerplatform", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/92a9dfdc6140e59c02d6ef4f77a11532.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
+    "HTML": {url: "https://code-cadets.getlearnworlds.com/course/website", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/a3cb90926e19afbcccb7e90f2d317570.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 2", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
+    "Python": {url: "https://code-cadets.getlearnworlds.com/course/pytu", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/42f7fd08f470a0c54903e248a1a24057.jpeg?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
+    "Data Science": {url: "https://code-cadets.getlearnworlds.com/course/agentbriefing", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/e1ca2d31edac59cede18a980165336a3.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
+    "Advanced Web Development": {url: "https://code-cadets.getlearnworlds.com/course/gameproject", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
+    "Advanced Web Development and Data Science": {img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/029dfbd802e55487542efedffdfb2987.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0'", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"}
 };
 
 if (age >= 7 && age <= 9) {
@@ -84,7 +84,7 @@ if (points == 3) {
                 change("Advanced Web Development");
             } else {
                 o = "The AI has chosen Advanced Web Development and Data Science for you.";
-                txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
+                txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Software Developer C</a>.`;
             }
         }
     } else {
@@ -94,7 +94,7 @@ if (points == 3) {
             change("Advanced Web Development");
         } else {
             o = "The AI has chosen Advanced Web Development and Data Science for you.";
-            txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Learning Pathway C</a>.`;
+            txt.innerHTML = o + "<br>" + `Click <a href="https://code-cadets.getlearnworlds.com/course/agentbriefing">here</a> for Adavanced Web Development and <a href="https://code-cadets.getlearnworlds.com/course/space-invaders">here</a> for Data Science in <a href="https://code-cadets.getlearnworlds.com/coursesc">Software Developer C</a>.`;
         }
     }
 }
@@ -106,3 +106,4 @@ function change(act) {
     img.src = dict[act].img;
     a.href = dict[act].url;
 }
+
