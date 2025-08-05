@@ -9,7 +9,7 @@ const choice = receive.get("choice");
 let points = 0;
 
 let dict = {
-    "Block Coding": {url: "https://code-cadets.getlearnworlds.com/course/space-invaders", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/4d2eb929c413e767e3a14e01a211d5a2.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 1", purl: "https://code-cadets.getlearnworlds.com/coursesa"},
+    "Block Coding": {url: "https://code-cadets.getlearnworlds.com/course/space-invaders", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/4d2eb929c413e767e3a14e01a211d5a2.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 1", purl: "https://code-cadets.getlearnworlds.com/coursesa", diff: "1", tag: ["block coding", "space invaders"]},
     "Scratch": {url: "https://code-cadets.getlearnworlds.com/course/scratchbasics1", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/aeccbe7a98a3df008eb4624fcc32097c.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 2", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
     "Makecode Arcade": {url: "https://code-cadets.getlearnworlds.com/course/arcade", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/2dc429e9154f51119eaae6f469124185.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 2", purl: "https://code-cadets.getlearnworlds.com/coursesb"},
     "JavaScript": {url: "https://code-cadets.getlearnworlds.com/course/gamerplatform", img: "https://api.us-e2.learnworlds.com/imagefile/https://lwfiles.mycourse.app/64da7ae07ffc46ecefdad7ed-public/92a9dfdc6140e59c02d6ef4f77a11532.png?client_id=64da7ae07ffc46ecefdad7ed&width=400&height=0", path: "Software Developer 3", purl: "https://code-cadets.getlearnworlds.com/coursesc"},
@@ -106,4 +106,5 @@ function change(act) {
     img.src = dict[act].img;
     a.href = dict[act].url;
 }
+
 
