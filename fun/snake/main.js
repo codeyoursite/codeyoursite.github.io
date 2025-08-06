@@ -42,7 +42,7 @@ function placeSpeed() {
 
 function backToNormal() {
     clearInterval(interval);
-    t = 300;
+    t = 1000; //300
     interval = setInterval(update, t);
 }
 
@@ -69,7 +69,7 @@ function update() {
         color = "whitesmoke";
         const time = setTimeout(placeSpeed, 30000);
         clearInterval(interval);
-        t = 50;
+        t = 1000; // 50
         interval = setInterval(update, t);
         const intervalChange = setTimeout(backToNormal, 10000);
     }
@@ -144,5 +144,5 @@ document.body.addEventListener("keydown", movement);
 
 placeFood();
 let startSpeed = setTimeout(placeSpeed, 20000);
-let t = 300;
+let t = 1000;// 300
 let interval = setInterval(update, 300);
