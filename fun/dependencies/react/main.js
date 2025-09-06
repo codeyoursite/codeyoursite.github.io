@@ -158,7 +158,7 @@ function addMore() {
     } else {
         document.getElementById("addMore").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addMore").textContent = `Shallumm - Increases the amount you get per click by x5 - ${Math.round(item_three_price)} Wilsons`;
+            document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${Math.round(item_three_price)} Wilsons`;
         }, 600);
     }
 }
@@ -166,4 +166,5 @@ function addMore() {
 document.getElementById("addBumwacker").addEventListener("click", addBumwacker);
 document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
+
 document.getElementById("addMore").addEventListener("click", addMore);
