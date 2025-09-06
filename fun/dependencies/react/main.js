@@ -96,11 +96,11 @@ function addBumwacker() {
         counter -= item_one;
         item_one = item_one * 1.06;
         const newPrice = Math.round(item_one);
-        document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${newPrice} Wilsons`;
+        document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${newPrice} Wilsons - ${cursors.length}`;
     } else {
         document.getElementById("addBumwacker").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${Math.round(item_one)} Wilsons`;
+            document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${Math.round(item_one)} Wilsons - ${cursors.length}`;
         }, 600);
     }
 }
@@ -111,18 +111,18 @@ function addWilson() {
         if (!worker) {
             startWorker();
         }
-        nippys.push(nippys.length + 1);
+        wilsons.push(wilsons.length + 1);
         
         setTimeout(updateWorkerCps, 100);
         
         counter -= item_two_price;
         item_two_price = item_two_price * 1.04;
         const newPrice = Math.round(item_two_price);
-        document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${newPrice} Wilsons`;
+        document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${newPrice} Wilsons - ${wilsons.length}`;
     } else {
         document.getElementById("addWilson").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${Math.round(item_two_price)} Wilsons`;
+            document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${Math.round(item_two_price)} Wilsons - ${wilsons.length}`;
         }, 600);
     }
 }
@@ -140,11 +140,11 @@ function addNipps() {
         counter -= item_four_price;
         item_four_price = item_four_price * 1.15;
         const newPrice = Math.round(item_four_price);
-        document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons`;
+        document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons - ${nippys.length}`;
     } else {
         document.getElementById("addNipps").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_four_price)} Wilsons`;
+            document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_four_price)} Wilsons - ${nippys.length}`;
         }, 600);
     }
 }
@@ -162,11 +162,11 @@ function addJim() {
         counter -= item_five_price;
         item_five_price = item_five_price * 1.15;
         const newPrice = Math.round(item_five_price);
-        document.getElementById("addJim").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons`;
+        document.getElementById("addJim").textContent = `Jim - 300 clicks per second - ${newPrice} Wilsons - ${jims.length}`;
     } else {
         document.getElementById("addJim").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addJIm").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_five_price)} Wilsons`;
+            document.getElementById("addJIm").textContent = `Jim - 300 clicks per second - ${Math.round(item_five_price)} Wilsons - ${jims.length}`;
         }, 600);
     }
 }
@@ -192,4 +192,5 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
