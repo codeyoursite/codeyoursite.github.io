@@ -8,10 +8,12 @@ let item_one = 25;
 let item_two_price = 100; // Renamed for clarity
 let item_three_price = 300; // Renamed for clarity
 let item_four_price = 500; // Renamed for clarity
+let item_five_price = 2000; // Renamed for clarity
 let click_amount = 1
 let cursors = []; // Represents Bumwackers (1 CPS)
 let wilsons = []; // New array for Wilsons (5 CPS)
 let nippys = []; // New array for Nippy (20 CPS)
+let jims = []; // New array for jims (500 CPS)
 let worker;
 
 window.onkeydown = function(e) { if (e.keyCode == 87) {cool.style.display = "block"; haha.style.display = "none";}; }
@@ -148,6 +150,28 @@ function addNipps() {
 }
 
 // Function to add a Wilson (5 CPS)
+function addJim() {
+    if (counter >= item_five_price) {
+        if (!worker) {
+            startWorker();
+        }
+        jims.push(jims.length + 1);
+        
+        setTimeout(updateWorkerCps, 100);
+        
+        counter -= item_five_price;
+        item_five_price = item_five_price * 1.15;
+        const newPrice = Math.round(item_five_price);
+        document.getElementById("addJim").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons`;
+    } else {
+        document.getElementById("addJim").textContent = "Insufficient funds.";
+        setTimeout(() => {
+            document.getElementById("addJIm").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_five_price)} Wilsons`;
+        }, 600);
+    }
+}
+
+// Function to add a Wilson (5 CPS)
 function addMore() {
     if (counter >= item_three_price) {
         click_amount = click_amount*5;
@@ -166,5 +190,6 @@ function addMore() {
 document.getElementById("addBumwacker").addEventListener("click", addBumwacker);
 document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
-
 document.getElementById("addMore").addEventListener("click", addMore);
+document.getElementById("addJim").addEventListener("click", addJim);
+
