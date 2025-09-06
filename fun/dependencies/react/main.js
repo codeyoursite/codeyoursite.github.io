@@ -52,7 +52,8 @@ function updateWorkerCps() {
             type: 'updateCps',
             bumwackers: cursors.length,
             wilsons: wilsons.length,
-            nippys: nippys.length
+            nippys: nippys.length,
+            jims: jims.length
         };
         worker.postMessage(payload);
         console.log('Updated CPS sent to worker:', payload);
@@ -192,5 +193,6 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
