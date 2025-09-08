@@ -95,7 +95,7 @@ function addBumwacker() {
         setTimeout(updateWorkerCps, 100);
         
         counter -= item_one_price;
-        item_one = Math.round(item_one_price * 1.06);
+        item_one_price = Math.round(item_one_price * 1.06);
         document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${item_one_price} Wilsons - x${cursors.length}`;
     } else {
         document.getElementById("addBumwacker").textContent = "Insufficient funds.";
@@ -188,6 +188,7 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
 
