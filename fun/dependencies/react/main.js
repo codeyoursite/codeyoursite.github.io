@@ -97,11 +97,11 @@ function addBumwacker() {
         counter -= item_one;
         item_one = item_one * 1.06;
         const newPrice = Math.round(item_one);
-        document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${newPrice} Wilsons - ${cursors.length}`;
+        document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${newPrice} Wilsons - x${cursors.length}`;
     } else {
         document.getElementById("addBumwacker").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${Math.round(item_one)} Wilsons - ${cursors.length}`;
+            document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${Math.round(item_one)} Wilsons - x${cursors.length}`;
         }, 600);
     }
 }
@@ -119,11 +119,11 @@ function addWilson() {
         counter -= item_two_price;
         item_two_price = item_two_price * 1.04;
         const newPrice = Math.round(item_two_price);
-        document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${newPrice} Wilsons - ${wilsons.length}`;
+        document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${newPrice} Wilsons - x${wilsons.length}`;
     } else {
         document.getElementById("addWilson").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${Math.round(item_two_price)} Wilsons - ${wilsons.length}`;
+            document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${Math.round(item_two_price)} Wilsons - x${wilsons.length}`;
         }, 600);
     }
 }
@@ -141,11 +141,11 @@ function addNipps() {
         counter -= item_four_price;
         item_four_price = item_four_price * 1.15;
         const newPrice = Math.round(item_four_price);
-        document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons - ${nippys.length}`;
+        document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons - x${nippys.length}`;
     } else {
         document.getElementById("addNipps").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_four_price)} Wilsons - ${nippys.length}`;
+            document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${Math.round(item_four_price)} Wilsons - x${nippys.length}`;
         }, 600);
     }
 }
@@ -179,11 +179,11 @@ function addMore() {
         counter -= item_three_price;
         item_three_price = item_three_price * 1.2;
         const newPrice = Math.round(item_three_price);
-        document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${newPrice} Wilsons`;
+        document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${newPrice} Wilsons - ${click_amount} per click`;
     } else {
         document.getElementById("addMore").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${Math.round(item_three_price)} Wilsons`;
+            document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${Math.round(item_three_price)} Wilsons - ${click_amount} per click`;
         }, 600);
     }
 }
@@ -193,6 +193,7 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
 
