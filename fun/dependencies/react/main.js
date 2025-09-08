@@ -86,7 +86,7 @@ function stopWorker() {
 
 // Function to add a Bumwacker (1 CPS)
 function addBumwacker() {
-    if (counter >= item_one) {
+    if (Math.round(counter) >= item_one) {
         if (!worker) {
             startWorker();
         }
@@ -94,7 +94,7 @@ function addBumwacker() {
         
         setTimeout(updateWorkerCps, 100);
         
-        counter -= item_one;
+        Math.round(counter) -= item_one;
         item_one = item_one * 1.06;
         const newPrice = Math.round(item_one);
         document.getElementById("addBumwacker").textContent = `Bumwacker - 1 click per second - ${newPrice} Wilsons - x${cursors.length}`;
@@ -108,7 +108,7 @@ function addBumwacker() {
 
 // Function to add a Wilson (5 CPS)
 function addWilson() {
-    if (counter >= item_two_price) {
+    if (Math.round(counter) >= item_two_price) {
         if (!worker) {
             startWorker();
         }
@@ -116,7 +116,7 @@ function addWilson() {
         
         setTimeout(updateWorkerCps, 100);
         
-        counter -= item_two_price;
+        Math.round(counter) -= item_two_price;
         item_two_price = item_two_price * 1.04;
         const newPrice = Math.round(item_two_price);
         document.getElementById("addWilson").textContent = `I've found Wilson - 5 clicks per second - ${newPrice} Wilsons - x${wilsons.length}`;
@@ -130,7 +130,7 @@ function addWilson() {
 
 // Function to add a Wilson (5 CPS)
 function addNipps() {
-    if (counter >= item_four_price) {
+    if (Math.round(counter) >= item_four_price) {
         if (!worker) {
             startWorker();
         }
@@ -138,7 +138,7 @@ function addNipps() {
         
         setTimeout(updateWorkerCps, 100);
         
-        counter -= item_four_price;
+        Math.round(counter) -= item_four_price;
         item_four_price = item_four_price * 1.15;
         const newPrice = Math.round(item_four_price);
         document.getElementById("addNipps").textContent = `Nippy Nippy - 20 clicks per second - ${newPrice} Wilsons - x${nippys.length}`;
@@ -152,7 +152,7 @@ function addNipps() {
 
 // Function to add a Wilson (5 CPS)
 function addJim() {
-    if (counter >= item_five_price) {
+    if (Math.round(counter) >= item_five_price) {
         if (!worker) {
             startWorker();
         }
@@ -160,7 +160,7 @@ function addJim() {
         
         setTimeout(updateWorkerCps, 100);
         
-        counter -= item_five_price;
+        Math.round(counter) -= item_five_price;
         item_five_price = item_five_price * 1.15;
         const newPrice = Math.round(item_five_price);
         document.getElementById("addJim").textContent = `Jim - 300 clicks per second - ${newPrice} Wilsons - ${jims.length}`;
@@ -174,7 +174,7 @@ function addJim() {
 
 // Function to add a Wilson (5 CPS)
 function addMore() {
-    if (counter >= item_three_price) {
+    if (Math.round(counter) >= item_three_price) {
         click_amount = click_amount*5;
         counter -= item_three_price;
         item_three_price = item_three_price * 1.2;
@@ -193,6 +193,7 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
 
