@@ -159,11 +159,11 @@ function addJim() {
         
         counter -= item_five_price;
         item_five_price = Math.round(item_five_price * 1.15);
-        document.getElementById("addJim").textContent = `Jim - 300 clicks per second - ${item_five_price} Wilsons - ${jims.length}`;
+        document.getElementById("addJim").textContent = `Jim - 500 clicks per second - ${item_five_price} Wilsons - x${jims.length}`;
     } else {
         document.getElementById("addJim").textContent = "Insufficient funds.";
         setTimeout(() => {
-            document.getElementById("addJim").textContent = `Jim - 300 clicks per second - ${Math.round(item_five_price)} Wilsons - ${jims.length}`;
+            document.getElementById("addJim").textContent = `Jim - 500 clicks per second - ${Math.round(item_five_price)} Wilsons - x${jims.length}`;
         }, 600);
     }
 }
@@ -188,6 +188,7 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
 
