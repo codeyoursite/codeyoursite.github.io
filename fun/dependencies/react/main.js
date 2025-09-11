@@ -45,6 +45,13 @@ function handleAutoclick() {
     info.innerHTML = counter;
 }
 
+// Function to handle clicks from the Web Worker
+function handleBigclick() {
+    counter += 500;
+    counter = Math.round(counter);
+    info.innerHTML = counter;
+}
+
 // Function to send the combined CPS message to the worker
 function updateWorkerCps() {
     if (worker) {
@@ -68,6 +75,10 @@ function startWorker() {
             if (event.data === 'autoclick') {
                 // This is where the "click" signal from the worker is received
                 handleAutoclick();
+            }
+            if (event.data === 'superclick') {
+                // This is where the "click" signal from the worker is received
+                handleBigclick();
             }
         };
         console.log('Autoclicker worker created and started.');
@@ -188,6 +199,7 @@ document.getElementById("addWilson").addEventListener("click", addWilson);
 document.getElementById("addNipps").addEventListener("click", addNipps);
 document.getElementById("addMore").addEventListener("click", addMore);
 document.getElementById("addJim").addEventListener("click", addJim);
+
 
 
 
