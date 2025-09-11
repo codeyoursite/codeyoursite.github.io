@@ -4,16 +4,15 @@ let superTimerId;
 self.addEventListener('message', function(event) {
     console.log("Worker: Hi there, I'm your new friend the worker :)");
     if (event.data && event.data.type === 'updateCps') {
-        const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5) + (event.data.nippys * 20) + (event.data.jims * 500);
-        console.log('Worker: Received updateCps message. New total CPS:', totalCps);
         
-        // This is the main change: It is necessary to check if a 'superclick' is active
-        // and handle it separately.
+        // This is the main change: Check for 'jims' first.
         if (event.data.jims > 0) {
             console.log('Worker: Jim detected. Starting bigInterval.');
             bigInterval();
         } else {
-            // Only reset the standard interval if no 'jims' are present.
+            // Only calculate and reset the standard interval if no 'jims' are present.
+            const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5) + (event.data.nippys * 20);
+            console.log('Worker: Received updateCps message. New total CPS:', totalCps);
             resetInterval(totalCps);
         }
     }
