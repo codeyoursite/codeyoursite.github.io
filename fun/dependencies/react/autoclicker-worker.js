@@ -2,14 +2,15 @@ let timerId;
 let cursorCount = 0;
 
 self.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'updateCps' && event.data.jims == 0) {
-        const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5)  + (event.data.nippys * 20)  + (event.data.jims * 500); // 1 CPS for bumwackers, 5 for wilsons
+    if (event.data && event.data.type === 'updateCps') {
+        const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5)  + (event.data.nippys * 20); // 1 CPS for bumwackers, 5 for wilsons
         console.log('Worker: Received updateCps message. New total CPS:', totalCps);
         resetInterval(totalCps);
-    } else if (event.data.jims < 0) {
-        const totalCps = 500;
-        console.log('Worker: Received updateCps message. New total CPS:', totalCps);
-        bigInterval(totalCps);
+        if (event.data.jims < 0) {
+            const totalCps = 500;
+            console.log('Worker: Received updateCps message that contains jims. New total CPS:', totalCps);
+            bigInterval(totalCps);
+        }
     }
 });
 
@@ -46,6 +47,7 @@ function bigInterval(newCps) {
         console.log('Worker: Total CPS is zero, stopping interval.');
     }
 }
+
 
 
 
