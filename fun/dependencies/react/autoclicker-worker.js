@@ -2,6 +2,7 @@ let timerId;
 let cursorCount = 0;
 
 self.addEventListener('message', function(event) {
+    console.log("Worker: Hi there, I'm your new friend the worker :)")
     if (event.data && event.data.type === 'updateCps') {
         const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5)  + (event.data.nippys * 20); // 1 CPS for bumwackers, 5 for wilsons
         console.log('Worker: Received updateCps message. New total CPS:', totalCps);
@@ -47,6 +48,7 @@ function bigInterval(newCps) {
         console.log('Worker: Total CPS is zero, stopping interval.');
     }
 }
+
 
 
 
