@@ -155,7 +155,7 @@ function addJim() {
         jims.push(jims.length + 1);
         updateWorkerCps();
         counter -= item_five_price;
-        item_five_price = Math.round(item_five_price * 1.15);
+        item_five_price = Math.round(item_five_price * 6);
         document.getElementById("addJim").textContent = `Jim - 500 clicks per second - ${item_five_price} Wilsons - x${jims.length}`;
     } else {
         document.getElementById("addJim").textContent = "Insufficient funds.";
@@ -170,7 +170,7 @@ function addMore() {
     if (counter >= item_three_price) {
         click_amount = click_amount * 5;
         counter -= item_three_price;
-        item_three_price = Math.round(item_three_price * 1.2);
+        item_three_price = Math.round(item_three_price * 4.9);
         document.getElementById("addMore").textContent = `Henry Woof Woof - Increases the amount you get per click by x5 - ${item_three_price} Wilsons - ${click_amount} per click`;
     } else {
         document.getElementById("addMore").textContent = "Insufficient funds.";
@@ -188,3 +188,4 @@ document.getElementById("addJim").addEventListener("click", addJim);
 
 // Start the worker when the page loads, not just after a purchase.
 startWorker();
+
