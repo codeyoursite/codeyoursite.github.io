@@ -8,7 +8,7 @@ self.addEventListener('message', function(event) {
         // This is the main change: Check for 'jims' first.
         if (event.data.jims > 0) {
             console.log('Worker: Jim detected. Starting bigInterval.');
-            bigInterval(jims.length);
+            bigInterval(event.data.jims);
         } else {
             // Only calculate and reset the standard interval if no 'jims' are present.
             const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5) + (event.data.nippys * 20);
@@ -58,4 +58,5 @@ function bigInterval(jims) {
     }, delay);
     console.log('Worker: Big interval started with delay:', delay);
 }
+
 
