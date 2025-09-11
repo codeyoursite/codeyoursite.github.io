@@ -8,7 +8,7 @@ self.addEventListener('message', function(event) {
         // This is the main change: Check for 'jims' first.
         if (event.data.jims > 0) {
             console.log('Worker: Jim detected. Starting bigInterval.');
-            bigInterval();
+            bigInterval(jims.length);
         } else {
             // Only calculate and reset the standard interval if no 'jims' are present.
             const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5) + (event.data.nippys * 20);
@@ -40,7 +40,7 @@ function resetInterval(newCps) {
     }
 }
 
-function bigInterval() {
+function bigInterval(jims) {
     // Clear the standard interval to prevent conflicts.
     if (timerId) {
         clearInterval(timerId);
@@ -52,9 +52,10 @@ function bigInterval() {
         clearInterval(superTimerId);
     }
 
-    const delay = 1000;
+    const delay = 1000/jims;
     superTimerId = setInterval(() => {
         self.postMessage('superclick');
     }, delay);
     console.log('Worker: Big interval started with delay:', delay);
 }
+
