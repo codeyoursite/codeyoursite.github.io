@@ -1,56 +1,61 @@
 let timerId;
-let cursorCount = 0;
+let superTimerId;
 
 self.addEventListener('message', function(event) {
-    console.log("Worker: Hi there, I'm your new friend the worker :)")
+    console.log("Worker: Hi there, I'm your new friend the worker :)");
     if (event.data && event.data.type === 'updateCps') {
-        const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5)  + (event.data.nippys * 20); // 1 CPS for bumwackers, 5 for wilsons
+        const totalCps = (event.data.bumwackers * 1) + (event.data.wilsons * 5) + (event.data.nippys * 20) + (event.data.jims * 500);
         console.log('Worker: Received updateCps message. New total CPS:', totalCps);
-        resetInterval(totalCps);
-        if (event.data.jims < 0) {
-            const totalCps = 500;
-            console.log('Worker: Received updateCps message that contains jims. New total CPS:', totalCps);
-            bigInterval(totalCps);
+        
+        // This is the main change: It is necessary to check if a 'superclick' is active
+        // and handle it separately.
+        if (event.data.jims > 0) {
+            console.log('Worker: Jim detected. Starting bigInterval.');
+            bigInterval();
+        } else {
+            // Only reset the standard interval if no 'jims' are present.
+            resetInterval(totalCps);
         }
     }
 });
 
 function resetInterval(newCps) {
+    // Clear any active timers first.
     if (timerId) {
         clearInterval(timerId);
     }
+    if (superTimerId) {
+        clearInterval(superTimerId);
+        superTimerId = null; // Reset the super timer ID
+    }
 
     if (newCps > 0) {
-        const delay = 1000 / newCps; 
+        const delay = 1000 / newCps;
         timerId = setInterval(() => {
             self.postMessage('autoclick');
         }, delay);
-        console.log('Worker: Interval started with delay:', delay);
+        console.log('Worker: Standard interval started with delay:', delay);
     } else {
         timerId = null;
         console.log('Worker: Total CPS is zero, stopping interval.');
     }
 }
 
-function bigInterval(newCps) {
+function bigInterval() {
+    // Clear the standard interval to prevent conflicts.
     if (timerId) {
         clearInterval(timerId);
+        timerId = null; // Reset the standard timer ID
+    }
+    
+    // Clear the existing super interval before starting a new one.
+    if (superTimerId) {
+        clearInterval(superTimerId);
     }
 
-    if (newCps > 0) {
-        const delay = 1000; 
-        timerId = setInterval(() => {
-            self.postMessage('superclick');
-        }, delay);
-        console.log('Worker: Interval started with delay:', delay);
-    } else {
-        timerId = null;
-        console.log('Worker: Total CPS is zero, stopping interval.');
-    }
+    const delay = 1000;
+    superTimerId = setInterval(() => {
+        self.postMessage('superclick');
+    }, delay);
+    console.log('Worker: Big interval started with delay:', delay);
 }
-
-
-
-
-
-
