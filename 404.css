@@ -35,13 +35,13 @@ div {
 div h1 {
     font-size: 190px;
     margin: 0;
-    color: black;
+    color: white;
     letter-spacing: 20px;
     background: transparent;
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-stroke-width: 10px;
+    -webkit-text-stroke-width: 8px;
     font-family: 'Roboto Slab', serif;
 }
 
