@@ -41,7 +41,7 @@ div h1 {
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-width: 22px;
     font-family: 'Roboto Slab', serif;
 }
 
