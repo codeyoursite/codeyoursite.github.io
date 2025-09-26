@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .metronome {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .pendulum {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            transform-origin: 50% 0; 
+        }
+
+        .swing {
+            animation-name: swing;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(-45deg); }
+            50% { transform: rotate(45deg); }
+            100% { transform: rotate(-45deg); }
+        }
+
+        .controls {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        #start-stop-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #start-stop-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Metronome</h1>
+
+    <div class="metronome">
+        <div class="pendulum">
+            <svg height="200" width="100">
+                <line id="pendulum-arm" x1="50" y1="0" x2="50" y2="150" style="stroke:black;stroke-width:4" />
+                <circle cx="50" cy="150" r="10" fill="black" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="start-stop-btn">Start</button>
+        
+        <div class="control-group">
+            <input type="range" id="bpm-slider" min="40" max="208" value="120">
+            <p><span id="bpm-display">120</span> BPM</p>
+        </div>
+
+        <div class="control-group">
+            <label for="beats-per-measure">Beats per measure:</label>
+            <input type="number" id="beats-per-measure" min="1" max="16" value="4">
+        </div>
+
+        <div class="control-group">
+            <label for="no-upbeat">No Upbeat:</label>
+            <input type="checkbox" id="no-upbeat">
+        </div>
+    </div>
+
+    <script>
+        // --- DOM Elements ---
+        const startStopBtn = document.getElementById('start-stop-btn');
+        const bpmSlider = document.getElementById('bpm-slider');
+        const bpmDisplay = document.getElementById('bpm-display');
+        const beatsPerMeasureInput = document.getElementById('beats-per-measure');
+        const noUpbeatCheckbox = document.getElementById('no-upbeat');
+        const pendulumArm = document.querySelector('.pendulum');
+
+        // --- Metronome State and Audio ---
+        let bpm = 120;
+        let beatsPerMeasure = 4;
+        let isNoUpbeat = false;
+        let isRunning = false;
+        let audioContext;
+        let nextNoteTime = 0.0;
+        let scheduleAheadTime = 0.1; // How far ahead to schedule audio (sec)
+        let scheduler;
+
+        // --- Audio Context Handling ---
+        function getAudioContext() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            return audioContext;
+        }
+
+        // --- Scheduling Logic ---
+        function scheduleNote(beatNumber, time) {
+            // create an oscillator
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            // Set frequency: a higher pitch for the first beat of a measure, unless "No Upbeat" is checked
+            const frequency = (beatNumber % beatsPerMeasure === 0 && !isNoUpbeat) ? 880 : 440;
+            osc.frequency.setValueAtTime(frequency, time);
+            
+            // Fade out the sound quickly to create a "tick"
+            gain.gain.setValueAtTime(1, time);
+            gain.gain.exponentialRampToValueAtTime(0.001, time + 0.05);
+
+            osc.start(time);
+            osc.stop(time + 0.05);
+        }
+
+        let currentBeat = 0;
+        function schedulerLoop() {
+            while (nextNoteTime < audioContext.currentTime + scheduleAheadTime) {
+                scheduleNote(currentBeat, nextNoteTime);
+                const secondsPerBeat = 60.0 / bpm;
+                nextNoteTime += secondsPerBeat;
+                
+                // Advance the beat number and reset if it exceeds beatsPerMeasure
+                currentBeat = (currentBeat + 1) % beatsPerMeasure;
+            }
+        }
+
+        // --- Animation and Controls ---
+        function updateAnimation() {
+            const secondsPerBeat = 60.0 / bpm;
+            // Animation duration is for a full swing cycle (left -> right -> left)
+            pendulumArm.style.animationDuration = `${2 * secondsPerBeat}s`;
+        }
+
+        function startMetronome() {
+            if (isRunning) return;
+
+            getAudioContext(); 
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            
+            isRunning = true;
+            currentBeat = 0;
+            nextNoteTime = audioContext.currentTime + 0.1;
+            scheduler = setInterval(schedulerLoop, 25);
+            
+            pendulumArm.classList.add('swing');
+            updateAnimation();
+
+            startStopBtn.textContent = 'Stop';
+            startStopBtn.style.backgroundColor = '#dc3545';
+        }
+
+        function stopMetronome() {
+            if (!isRunning) return;
+            
+            isRunning = false;
+            clearInterval(scheduler);
+            pendulumArm.classList.remove('swing');
+            
+            startStopBtn.textContent = 'Start';
+            startStopBtn.style.backgroundColor = '#007BFF';
+        }
+
+        // --- Event Listeners ---
+        startStopBtn.addEventListener('click', () => {
+            if (isRunning) {
+                stopMetronome();
+            } else {
+                startMetronome();
+            }
+        });
+
+        bpmSlider.addEventListener('input', () => {
+            bpm = bpmSlider.value;
+            bpmDisplay.textContent = bpm;
+            if (isRunning) {
+                updateAnimation();
+            }
+        });
+
+        beatsPerMeasureInput.addEventListener('change', () => {
+            const newBeats = parseInt(beatsPerMeasureInput.value, 10);
+            if (!isNaN(newBeats) && newBeats >= 1 && newBeats <= 16) {
+                beatsPerMeasure = newBeats;
+            }
+        });
+
+        noUpbeatCheckbox.addEventListener('change', () => {
+            isNoUpbeat = noUpbeatCheckbox.checked;
+        });
+    </script>
+</body>
+</html>
