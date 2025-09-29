@@ -99,7 +99,7 @@
 
         <div class="control-group">
             <label for="no-upbeat">No Upbeat:</label>
-            <input type="checkbox" id="no-upbeat">
+            <input type="checkbox" id="no-upbeat" checked>
         </div>
     </div>
 
@@ -227,7 +227,9 @@
 
         noUpbeatCheckbox.addEventListener('change', () => {
             isNoUpbeat = noUpbeatCheckbox.checked;
+            beatsPerMeasureInput.toggleAttribute("disabled");
         });
     </script>
 </body>
 </html>
+
