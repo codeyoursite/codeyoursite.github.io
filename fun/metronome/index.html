@@ -55,10 +55,6 @@
             margin-bottom: 10px;
         }
 
-        #perMeasureGroup {
-            display: none;
-        }
-
         #start-stop-btn {
             padding: 10px 20px;
             font-size: 16px;
@@ -230,6 +226,7 @@
             }
         });
 
+        perMeasureGroup.style.display = "none";
         noUpbeatCheckbox.addEventListener('change', () => {
             isNoUpbeat = noUpbeatCheckbox.checked;
             if (perMeasureGroup.style.display === "none") {
@@ -243,6 +240,7 @@
     </script>
 </body>
 </html>
+
 
 
 
