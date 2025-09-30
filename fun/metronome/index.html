@@ -55,6 +55,10 @@
             margin-bottom: 10px;
         }
 
+        #perMeasureGroup {
+            display: block;
+        }
+
         #start-stop-btn {
             padding: 10px 20px;
             font-size: 16px;
@@ -92,7 +96,7 @@
             <p><span id="bpm-display">120</span> BPM</p>
         </div>
 
-        <div class="control-group">
+        <div class="control-group" id="perMeasureGroup">
             <label for="beats-per-measure">Beats per measure:</label>
             <input type="number" id="beats-per-measure" min="1" max="16" value="4" disabled>
         </div>
@@ -109,6 +113,7 @@
         const bpmSlider = document.getElementById('bpm-slider');
         const bpmDisplay = document.getElementById('bpm-display');
         const beatsPerMeasureInput = document.getElementById('beats-per-measure');
+        const perMeasureGroup = document.getElementById('perMeasureGroup');
         const noUpbeatCheckbox = document.getElementById('no-upbeat');
         const pendulumArm = document.querySelector('.pendulum');
 
@@ -227,11 +232,16 @@
 
         noUpbeatCheckbox.addEventListener('change', () => {
             isNoUpbeat = noUpbeatCheckbox.checked;
-            beatsPerMeasureInput.toggleAttribute("disabled");
+            if (perMeasureGroup.style.display === "none") {
+                perMeasureGroup.style.display = "block";
+            } else {
+                perMeasureGroup.style.display = "none";
+            }
         });
     </script>
 </body>
 </html>
+
 
 
 
