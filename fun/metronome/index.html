@@ -116,7 +116,7 @@
         // --- Metronome State and Audio ---
         let bpm = 120;
         let beatsPerMeasure = 4;
-        let isNoUpbeat = false;
+        let isUpbeat = false;
         let isRunning = false;
         let audioContext;
         let nextNoteTime = 0.0;
@@ -141,7 +141,7 @@
             gain.connect(audioContext.destination);
             
             // Set frequency: a higher pitch for the first beat of a measure, unless "No Upbeat" is checked
-            const frequency = (beatNumber % beatsPerMeasure === 0 && isNoUpbeat) ? 880 : 440;
+            const frequency = (beatNumber % beatsPerMeasure === 0 && isUpbeat) ? 880 : 440;
             osc.frequency.setValueAtTime(frequency, time);
             
             // Fade out the sound quickly to create a "tick"
@@ -228,7 +228,7 @@
 
         perMeasureGroup.style.display = "none";
         noUpbeatCheckbox.addEventListener('change', () => {
-            isNoUpbeat = noUpbeatCheckbox.checked;
+            isUpbeat = noUpbeatCheckbox.checked;
             if (perMeasureGroup.style.display === "none") {
                 perMeasureGroup.style.display = "block";
                 console.log("Hello!")
@@ -240,6 +240,7 @@
     </script>
 </body>
 </html>
+
 
 
 
