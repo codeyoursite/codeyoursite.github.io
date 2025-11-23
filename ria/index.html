@@ -38,13 +38,13 @@
       let write_btn = document.getElementById("write_btn");
       let home_btn = document.getElementById("home_btn");
         
-      write_btn.addEventListener(onclick, => () {
+      write_btn.addEventListener(onclick, () => {
         write.style.display = "block";
         write_btn.toggle("active");
         home_btn.toggle("active");
       });
 
-      home_btn.addEventListener(onclick, => () {
+      home_btn.addEventListener(onclick, () => {
         write.style.display = "none";
         write_btn.toggle("active");
         home_btn.toggle("active");
