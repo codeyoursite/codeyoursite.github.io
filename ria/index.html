@@ -15,7 +15,7 @@
     <ul>
       <li><a href="#" class="active">Home</a></li>
       <li><a href="#">Book Reviews</a></li>
-      <li><a href="#">Write a Review</a></li>
+      <li><a href="#" id="write_btn">Write a Review</a></li>
     </ul>
   </nav>
   <body>
@@ -34,14 +34,15 @@
       >
       </iframe>
       <script type="text/javascript">
-      let write = document.getElementById("text")
-      write.addEventListener(onclick, => () {
+      let write = document.getElementById("text");
+      let write_btn = document.getElementById("write_btn");
+      write_btn.addEventListener(onclick, => () {
         if (write.style.display == "none") {
           write.style.display = "block";
         } else {
           write.style.display = "none";
-        }
-      })
+        };
+      });
         
       var ifr = document.getElementById("JotFormIFrame-232175277178362");
       if (ifr) {
