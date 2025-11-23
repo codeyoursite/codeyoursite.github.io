@@ -13,7 +13,7 @@
   </center>
   <nav>
     <ul>
-      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#" class="active" id="home_btn">Home</a></li>
       <li><a href="#">Book Reviews</a></li>
       <li><a href="#" id="write_btn">Write a Review</a></li>
     </ul>
@@ -36,13 +36,19 @@
       <script type="text/javascript">
       let write = document.getElementById("text");
       let write_btn = document.getElementById("write_btn");
+      let home_btn = document.getElementById("home_btn");
+        
       write_btn.addEventListener(onclick, => () {
-        if (write.style.display == "none") {
-          write.style.display = "block";
-        } else {
-          write.style.display = "none";
-        };
+        write.style.display = "block";
+        write_btn.toggle("active");
+        home_btn.toggle("active");
       });
+
+      home_btn.addEventListener(onclick, => () {
+        write.style.display = "none";
+        write_btn.toggle("active");
+        home_btn.toggle("active");
+      });  
         
       var ifr = document.getElementById("JotFormIFrame-232175277178362");
       if (ifr) {
