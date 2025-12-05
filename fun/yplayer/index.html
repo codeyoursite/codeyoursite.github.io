@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoCookie YouTube Player</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .player-container {
+            margin-top: 20px;
+            /* Optional: Add some styling for responsiveness or centering */
+            max-width: 560px;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 315px; /* Standard YouTube height ratio */
+            border: none;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .input-area {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube NoCookie Player</h1>
+    <p>Paste a YouTube link below and click "Load Video" to watch it in privacy-enhanced mode.</p>
+    
+    <div class="input-area">
+        <input type="text" id="videoUrlInput">
+        <button onclick="loadVideo()">Load Video</button>
+    </div>
+
+    <div class="player-container">
+        <!-- The iframe will be inserted here by the script -->
+        <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function loadVideo() {
+            const inputElement = document.getElementById('videoUrlInput');
+            const url = inputElement.value;
+            const videoId = extractVideoId(url);
+            const player = document.getElementById('videoPlayer');
+
+            if (videoId) {
+                // Construct the nocookie embed URL
+                const embedSrc = `www.youtube-nocookie.com{videoId}`;
+                player.src = embedSrc;
+            } else {
+                alert('Please enter a valid YouTube URL.');
+                player.src = ''; // Clear the player if the URL is invalid
+            }
+        }
+
+        // Helper function to extract the video ID from various YouTube URL formats
+        function extractVideoId(url) {
+            // Standard watch URL: www.youtube.com
+            let videoIdMatch = url.match(/(?:v=|\/embed\/|\/watch\?v=|youtu.be\/)([a-zA-Z0-9_-]{11})/);
+            
+            if (videoIdMatch && videoIdMatch[1]) {
+                return videoIdMatch[1];
+            }
+            
+            // Share link format: youtu.be
+            videoIdMatch = url.match(/youtu.be\/([a-zA-Z0-9_-]{11})/);
+            if (videoIdMatch && videoIdMatch[1]) {
+                return videoIdMatch[1];
+            }
+
+            return null; // Return null if no ID is found
+        }
+    </script>
+</body>
+</html>
