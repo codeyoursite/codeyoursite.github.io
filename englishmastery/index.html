@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Mastery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-4 shadow">
+        <div class="container">
+            <span class="navbar-brand fw-bold">EnglishMastery<span class="text-primary">.pro</span></span>
+            <div class="text-white">XP: <span id="score" class="badge bg-primary">0</span></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Topic Selection -->
+        <div id="dashboard" class="row g-4">
+            <div class="col-12"><h2 class="text-center mb-4">Select a Topic</h2></div>
+            <!-- Topics will be injected here by JS -->
+        </div>
+
+        <!-- Question Arena -->
+        <div id="arena" class="row justify-content-center d-none">
+            <div class="col-md-8">
+                <div class="card shadow border-0 p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="goBack()">← Back</button>
+                        <div class="progress flex-grow-1 mx-3" style="height: 8px;">
+                            <div id="progress-bar" class="progress-bar bg-primary" style="width: 0%"></div>
+                        </div>
+                        <span id="q-count" class="small fw-bold">0/0</span>
+                    </div>
+
+                    <div id="question-container" class="text-center py-4">
+                        <h4 id="question-text" class="mb-4">Question goes here?</h4>
+                        
+                        <!-- Dynamic Content Area -->
+                        <div id="answer-area"></div>
+                        
+                        <div id="feedback" class="mt-4 p-2 rounded d-none"></div>
+                        <button id="next-btn" class="btn btn-primary mt-3 d-none" onclick="loadQuestion()">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. LOAD GSAP FIRST (Using highly reliable Cloudflare CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    
+    <!-- 2. LOAD BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- 3. LOAD YOUR APP LOGIC LAST -->
+    <script src="main.js"></script>
+</body>
+</html>
+

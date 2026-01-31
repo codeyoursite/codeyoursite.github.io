@@ -1,0 +1,77 @@
+:root {
+    --primary-navy: #1a2a6c;
+    --accent-blue: #4a90e2;
+    --slate-grey: #f4f7f6;
+    --text-main: #2c3e50;
+    --border-color: #dee2e6;
+}
+
+body {
+    background-color: var(--slate-grey);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary-navy) !important;
+    padding: 1rem 0;
+}
+
+.skill-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background: white;
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--accent-blue);
+}
+
+.card-title {
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+.progress {
+    background-color: #e9ecef;
+    border-radius: 20px;
+}
+
+#answer-area button {
+    padding: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#user-input {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+}
+
+#user-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: none;
+}
+
+.text-success {
+    color: #28a745 !important;
+    font-weight: 700;
+}
+
+.bg-slate {
+    background-color: #f8f9fa;
+}
+
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+}
