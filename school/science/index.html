@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Science Mastery | Active Recall Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1; --secondary: #a855f7; --bg: #0b0f1a;
+            --card-bg: rgba(255, 255, 255, 0.04); --text: #f8fafc;
+            --success: #10b981; --error: #f43f5e; --border: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at top right, #1e1b4b, #0b0f1a);
+            color: var(--text); margin: 0; min-height: 100vh;
+        }
+        nav {
+            background: rgba(11, 15, 26, 0.85); backdrop-filter: blur(15px);
+            padding: 1rem 2rem; display: flex; justify-content: space-between;
+            align-items: center; position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-weight: 800; background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links button { background: none; border: none; color: var(--text); margin-left: 1.2rem; cursor: pointer; font-weight: 600; opacity: 0.8; transition: 0.3s; }
+        .nav-links button:hover { opacity: 1; color: var(--primary); }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+        .page { display: none; animation: slideUp 0.4s ease; }
+        .active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem; margin-bottom: 2rem; backdrop-filter: blur(8px); }
+        
+        /* FIX: touch-action: none is required for stylus/touch drawing */
+        .canvas-container { 
+            position: relative; 
+            margin: 15px 0; 
+            border-radius: 12px; 
+            background: rgba(0,0,0,0.3); 
+            border: 1px solid #334155; 
+            touch-action: none; 
+        }
+        canvas { display: block; width: 100%; height: 180px; cursor: crosshair; }
+        .canvas-controls { position: absolute; top: 10px; right: 10px; }
+        .tool-btn { background: rgba(239, 68, 68, 0.2); border: 1px solid var(--error); color: #fca5a5; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; }
+        
+        .answer-row { display: flex; gap: 10px; margin-top: 15px; }
+        input { flex-grow: 1; background: #0f172a; border: 1px solid #475569; border-radius: 10px; padding: 14px; color: white; font-size: 1rem; }
+        .check-btn { background: var(--primary); border: none; padding: 0 25px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .feedback { display: block; margin-top: 12px; font-weight: bold; font-size: 0.95rem; }
+        .correct { color: var(--success); } .wrong { color: var(--error); }
+        .tag { font-size: 0.7rem; background: var(--secondary); padding: 2px 8px; border-radius: 4px; opacity: 0.9; margin-bottom: 8px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">SCIENCE MASTERY HUB</div>
+    <div class="nav-links">
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('biology')">Biology</button>
+        <button onclick="showPage('physics')">Physics</button>
+    </div>
+</nav>
+
+<div class="container">
+    <section id="home" class="page active">
+        <div class="card">
+            <h1>Revision Dashboard</h1>
+            <p>Select your subject. Use your stylus to draw diagrams or show working in the dark panels.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                <div class="card" style="background: rgba(34, 197, 94, 0.1); cursor: pointer;" onclick="showPage('biology')"><h3>🌿 Biology Exam</h3></div>
+                <div class="card" style="background: rgba(99, 102, 241, 0.1); cursor: pointer;" onclick="showPage('physics')"><h3>⚡ Physics Exam</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="biology" class="page">
+        <h2>Biology: Curriculum Questions</h2>
+        <div id="bio-container"></div>
+    </section>
+
+    <section id="physics" class="page">
+        <h2>Physics: Curriculum Questions</h2>
+        <div id="phy-container"></div>
+    </section>
+</div>
+
+<script>
+    /* YOUR CURRICULUM DATA - UNCHANGED */
+    const bioQs = [
+        { tag: "2.3 Cell Structure", q: "Which organelle contains genetic material and controls the cell?", a: "nucleus" },
+        { tag: "2.3 Cell Structure", q: "Name the site of aerobic respiration.", a: "mitochondria" },
+        { tag: "2.2 Cell Structure", q: "Which structure is only in plant cells and stores cell sap?", a: "vacuole" },
+        { tag: "1.2 Plants", q: "Plants store carbohydrates as which molecule?", a: "starch" },
+        { tag: "1.2 Animals", q: "Animals store carbohydrate as which molecule?", a: "glycogen" },
+        { tag: "1.2 Fungi", q: "What are the thread-like structures in a fungal mycelium called?", a: "hyphae" },
+        { tag: "1.2 Fungi", q: "Fungal cell walls are made of which material?", a: "chitin" },
+        { tag: "1.2 Protoctists", q: "Which protoctist causes malaria?", a: "plasmodium" },
+        { tag: "1.3 Bacteria", q: "Bacteria lack a nucleus, instead having a circular chromosome of...?", a: "dna" },
+        { tag: "1.4 Pathogens", q: "What term describes an organism that causes disease?", a: "pathogen" },
+        { tag: "1.4 Viruses", q: "Viruses are surrounded by a coat made of what?", a: "protein" },
+        { tag: "2.8 Biological Molecules", q: "Proteins are made from long chains of what?", a: "amino acids" },
+        { tag: "2.8 Biological Molecules", q: "Lipids are composed of glycerol and three...?", a: "fatty acids" },
+        { tag: "2.9 Food Tests", q: "Which reagent is used to test for starch?", a: "iodine" },
+        { tag: "2.9 Food Tests", q: "A positive Benedict's test for glucose turns which color?", a: "brick red" },
+        { tag: "2.24 Nutrition", q: "Which mineral ion is needed to make hemoglobin?", a: "iron" },
+        { tag: "2.25 Nutrition", q: "Lack of Vitamin D leads to which deficiency disease?", a: "rickets" },
+        { tag: "2.1 Enzymes", q: "What term describes enzymes as they speed up reactions?", a: "biological catalysts" },
+        { tag: "2.11 Enzymes", q: "What happens to the active site when an enzyme is overheated?", a: "denatures" },
+        { tag: "2.33 Energy", q: "Energy in food is usually measured using which process?", a: "calorimetry" }
+    ];
+
+    const phyQs = [
+        { tag: "3.2 Waves", q: "In which wave are vibrations parallel to energy transfer?", a: "longitudinal" },
+        { tag: "3.2 Waves", q: "Which type of wave are light waves?", a: "transverse" },
+        { tag: "3.3 Wave Terms", q: "The distance from one peak to the next is called the...?", a: "wavelength" },
+        { tag: "3.3 Wave Terms", q: "What is the unit of frequency?", a: "hertz" },
+        { tag: "3.4 Energy", q: "Waves transfer energy and info without transferring...?", a: "matter" },
+        { tag: "3.6 Time Period", q: "Formula: Frequency = 1 / ...?", a: "time period" },
+        { tag: "3.15 Reflection", q: "The angle of incidence equals the angle of...?", a: "reflection" },
+        { tag: "3.14 Refraction", q: "The bending of light as it enters a denser medium is...?", a: "refraction" },
+        { tag: "3.24P Hearing", q: "What is the upper limit of human hearing (in Hz)?", a: "20000" },
+        { tag: "3.28P Pitch", q: "Higher pitch in a sound corresponds to higher...?", a: "frequency" },
+        { tag: "3.29P Loudness", q: "Louder sounds have a larger wave...?", a: "amplitude" },
+        { tag: "5.3 Density", q: "Calculate density (kg/m3) for mass=100kg, volume=2m3.", a: "50" },
+        { tag: "5.3 Density", q: "Density = Mass / ...?", a: "volume" },
+        { tag: "5.5 Pressure", q: "Calculate pressure (Pa) for force=50N, area=10m2.", a: "5" },
+        { tag: "5.5 Pressure", q: "Pressure = Force / ...?", a: "area" },
+        { tag: "5.7 Pressure Diff", q: "Pressure difference = h x ρ x ...?", a: "g" },
+        { tag: "5.7 Gravity", q: "What is the value of 'g' on Earth (N/kg)?", a: "10" },
+        { tag: "3.26P Oscilloscope", q: "Which device is used to display sound waves?", a: "oscilloscope" },
+        { tag: "3.14 Light", q: "Can light waves be reflected and refracted? (Yes/No)", a: "yes" },
+        { tag: "5.6 Fluids", q: "Pressure in a liquid at rest acts equally in all...?", a: "directions" }
+    ];
+
+    function render(data, containerId, prefix) {
+        const container = document.getElementById(containerId);
+        data.forEach((item, i) => {
+            const id = `${prefix}-${i}`;
+            container.innerHTML += `
+                <div class="card">
+                    <span class="tag">${item.tag}</span>
+                    <p><strong>Q${i+1}: ${item.q}</strong></p>
+                    <div class="canvas-container">
+                        <div class="canvas-controls"><button class="tool-btn" onclick="clearCanvas('${id}')">Clear</button></div>
+                        <canvas id="canvas-${id}"></canvas>
+                    </div>
+                    <div class="answer-row">
+                        <input type="text" id="ans-${id}" placeholder="Final answer...">
+                        <button class="check-btn" onclick="checkAns('${id}', '${item.a}')">Check</button>
+                    </div>
+                    <span id="fb-${id}" class="feedback"></span>
+                </div>
+            `;
+        });
+    }
+
+    /* FIX: Modern Pointer Events logic for Stylus/Mouse/Touch */
+    function initCanvases() {
+        document.querySelectorAll('canvas').forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            
+            // Set canvas resolution to match visual size
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 180;
+
+            const startDrawing = (e) => {
+                isDrawing = true;
+                draw(e);
+            };
+
+            const stopDrawing = () => {
+                isDrawing = false;
+                ctx.beginPath();
+            };
+
+            const draw = (e) => {
+                if (!isDrawing) return;
+                
+                // Get correct coordinates accounting for scrolling
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#818cf8';
+                
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            };
+
+            // Use PointerEvents to support stylus, mouse, and touch simultaneously
+            canvas.addEventListener('pointerdown', startDrawing);
+            canvas.addEventListener('pointermove', draw);
+            window.addEventListener('pointerup', stopDrawing);
+        });
+    }
+
+    function clearCanvas(id) {
+        const c = document.getElementById(`canvas-${id}`);
+        c.getContext('2d').clearRect(0,0,c.width,c.height);
+    }
+
+    function checkAns(id, correct) {
+        const val = document.getElementById(`ans-${id}`).value.toLowerCase().trim();
+        const fb = document.getElementById(`fb-${id}`);
+        if (val === correct.toLowerCase()) { 
+            fb.innerHTML = "✓ Correct!"; fb.className="feedback correct"; 
+        } else { 
+            fb.innerHTML = "✗ Try again."; fb.className="feedback wrong"; 
+        }
+    }
+
+    function showPage(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
+        // Re-initialize canvases when page is shown to ensure correct width
+        initCanvases();
+    }
+
+    render(bioQs, 'bio-container', 'bio');
+    render(phyQs, 'phy-container', 'phy');
+    
+    // Initial load
+    window.addEventListener('load', initCanvases);
+    window.addEventListener('resize', initCanvases);
+</script>
+</body>
+</html>
