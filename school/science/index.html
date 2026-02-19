@@ -57,7 +57,7 @@
     <div class="logo">SCIENCE MASTERY HUB</div>
     <div class="nav-links">
         <button onclick="showPage('home')">Home</button>
-        <button onclick="showPage('biology')">Biology</button>
+        <button onclick="showPage('biology')">Geography</button>
         <button onclick="showPage('physics')">Physics</button>
     </div>
 </nav>
@@ -88,27 +88,38 @@
 <script>
     /* YOUR CURRICULUM DATA - UNCHANGED */
     const bioQs = [
-        { tag: "2.3 Cell Structure", q: "Which organelle contains genetic material and controls the cell?", a: "nucleus" },
-        { tag: "2.3 Cell Structure", q: "Name the site of aerobic respiration.", a: "mitochondria" },
-        { tag: "2.2 Cell Structure", q: "Which structure is only in plant cells and stores cell sap?", a: "vacuole" },
-        { tag: "1.2 Plants", q: "Plants store carbohydrates as which molecule?", a: "starch" },
-        { tag: "1.2 Animals", q: "Animals store carbohydrate as which molecule?", a: "glycogen" },
-        { tag: "1.2 Fungi", q: "What are the thread-like structures in a fungal mycelium called?", a: "hyphae" },
-        { tag: "1.2 Fungi", q: "Fungal cell walls are made of which material?", a: "chitin" },
-        { tag: "1.2 Protoctists", q: "Which protoctist causes malaria?", a: "plasmodium" },
-        { tag: "1.3 Bacteria", q: "Bacteria lack a nucleus, instead having a circular chromosome of...?", a: "dna" },
-        { tag: "1.4 Pathogens", q: "What term describes an organism that causes disease?", a: "pathogen" },
-        { tag: "1.4 Viruses", q: "Viruses are surrounded by a coat made of what?", a: "protein" },
-        { tag: "2.8 Biological Molecules", q: "Proteins are made from long chains of what?", a: "amino acids" },
-        { tag: "2.8 Biological Molecules", q: "Lipids are composed of glycerol and three...?", a: "fatty acids" },
-        { tag: "2.9 Food Tests", q: "Which reagent is used to test for starch?", a: "iodine" },
-        { tag: "2.9 Food Tests", q: "A positive Benedict's test for glucose turns which color?", a: "brick red" },
-        { tag: "2.24 Nutrition", q: "Which mineral ion is needed to make hemoglobin?", a: "iron" },
-        { tag: "2.25 Nutrition", q: "Lack of Vitamin D leads to which deficiency disease?", a: "rickets" },
-        { tag: "2.1 Enzymes", q: "What term describes enzymes as they speed up reactions?", a: "biological catalysts" },
-        { tag: "2.11 Enzymes", q: "What happens to the active site when an enzyme is overheated?", a: "denatures" },
-        { tag: "2.33 Energy", q: "Energy in food is usually measured using which process?", a: "calorimetry" }
+        // Water Cycle Terms
+        { tag: "Water Cycle", q: "What is the process by which a liquid becomes a gas?", a: "evaporation" },
+        { tag: "Water Cycle", q: "What is the process of changing from a gaseous to a liquid state?", a: "condensation" },
+        { tag: "Water Cycle", q: "What is the term for any form of water falling to Earth?", a: "precipitation" },
+        { tag: "Water Cycle", q: "What is the loss of water from a plant through its leaves?", a: "transpiration" },
+        { tag: "Water Cycle", q: "What is the seepage of water into soil or rock called?", a: "infiltration" },
+        { tag: "Water Cycle", q: "What is the slow movement of water through pores in soil or permeable rock?", a: "percolation" },
+        { tag: "Water Cycle", q: "What is water that runs along the surface into collection points?", a: "surface runoff" },
+        { tag: "Water Cycle", q: "What is water found beneath Earth's surface called?", a: "ground water" },
+        { tag: "Water Cycle", q: "What is the name for the top of the saturated zone?", a: "water table" },
+        { tag: "Water Cycle", q: "What term describes waters emptying from one moving source into another?", a: "discharge" },
+        { tag: "Water Cycle", q: "What is a rock layer that stores and allows the flow of ground water?", a: "aquifer" },
+        { tag: "Water Cycle", q: "What is the term for evaporation specifically from plants?", a: "evapotranspiration" },
+        { tag: "Water Cycle", q: "What is a rock's ability to let water through it called?", a: "permeability" },
+        { tag: "Water Cycle", q: "What term describes a rock that tends to stop the flow of water?", a: "impermeable" },
+        { tag: "Water Cycle", q: "What is the continuous process of water moving between Earth and the atmosphere?", a: "water cycle" },
+        { tag: "Water Cycle", q: "What is the amount of moisture in the air called?", a: "humidity" },
+        { tag: "Water Cycle", q: "What is the percentage of water vapor in the air compared to its maximum capacity?", a: "relative humidity" },
+        { tag: "Water Cycle", q: "Which instrument uses wet and dry bulb thermometers to measure humidity?", a: "psychrometer" },
+        { tag: "Water Cycle", q: "What is the temperature at which water vapor becomes saturated and condenses?", a: "dew point" },
+        { tag: "Water Cycle", q: "What is the open-ended tube used to collect rainfall?", a: "rain gauge" },
+        { tag: "Water Cycle", q: "What is the most common form of liquid precipitation?", a: "rain" },
+        { tag: "Water Cycle", q: "What are ice particles smaller than 5 millimeters in diameter?", a: "sleet" },
+        { tag: "Water Cycle", q: "What is precipitation in the form of ice crystals?", a: "snow" },
+        { tag: "Water Cycle", q: "What are ice pellets larger than 5mm formed in cumulonimbus clouds?", a: "hail" },
+        { tag: "Water Cycle", q: "What is precipitation that evaporates before reaching the surface?", a: "virga" },
+        { tag: "Water Cycle", q: "What is it called when water droplets fuse to create larger droplets?", a: "coalescence" },
+        { tag: "Water Cycle", q: "What is the process of encouraging rainfall by adding condensation nuclei to the air?", a: "cloud seeding" },
+        { tag: "Water Cycle", q: "What is rain that freezes immediately upon hitting a cold surface?", a: "freezing rain" },
+        { tag: "Water Cycle", q: "What is a long period without rain called?", a: "drought" }
     ];
+
 
     const phyQs = [
         { tag: "3.2 Waves", q: "In which wave are vibrations parallel to energy transfer?", a: "longitudinal" },
